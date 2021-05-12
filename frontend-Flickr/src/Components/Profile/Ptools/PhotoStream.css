@@ -1,0 +1,106 @@
+/* Dropdown Button */
+.clr{
+ clear:both;   
+}
+.dropbtnP {
+    background-color:#f3f5f6;
+    color: rgb(89, 89, 91);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  /* Dropdown button on hover & focus */
+  .dropbtnP:hover, .dropbtnP:focus {
+    background-color: none;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdownP {
+    position: relative;
+    float:left;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdownContentP {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdownContentP a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdownContentP a:hover {background-color: #ddd}
+  
+  /* Show the dropdown menu  */
+  .show {display:block;}
+
+.contain{
+    background-color: #f3f5f6;
+    height:1000px;
+}
+* {box-sizing: border-box}
+
+/* Container needed to position the overlay */
+.imgovr {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+  margin-left:210px;
+  margin-top:30px;
+}
+.imageP {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+.overlayP {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+  /* When you mouse over the container, fade in the overlay title */
+.imgovr:hover .overlayP {
+    opacity: 0.4;
+  }
+  /*container for dropdown lists on photostream*/
+.contButns
+  {
+    margin-left: 125px;
+    }
+  /*container for images lists on photostream*/
+.imgscont{
+  margin-top: -18px;
+  margin-left:-73px;
+}
+.picInfoProfile{
+  display: flex;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 600;
+  min-height: 17px;
+  margin-top:-15px
+}
+.infolistProfile{
+ list-style-type: none;
+ margin-left: -50px;
+}

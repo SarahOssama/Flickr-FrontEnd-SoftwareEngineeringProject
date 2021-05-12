@@ -1,0 +1,166 @@
+.OrowHomePage{
+  background-color: rgb(243, 245, 246);
+}
+/* Main Hompage CSS */
+.rowHomePage {
+  display: flex;
+  align-items: top;
+  height: max-content;
+  width: 100%;
+  max-height: auto;
+  margin: 0 auto;
+  padding: 0 auto;
+  background-size: 300px 100px;
+  max-width: 80%;
+  padding-top: 20px;
+  background-color: rgb(243, 245, 246);
+  justify-content: space-between;
+}
+/* if NO Task */
+ #noActivityH {
+  font-family: "Proxima Nova", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.5em;
+  margin: 0 0 12px;
+  text-align: center;
+  color: rgb(33,33,36);
+  font-weight: 100px;
+
+}
+
+.noActivity h2 {
+  font-family: "Proxima Nova", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: start;
+  font-weight: 400;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+#noActivityP{
+  color: rgb(33,33,36);
+  font-weight: normal;
+  font-size: 16px;
+
+}
+/* .feedNews,
+.infoColumn {
+  background-color: rgb(243, 245, 246);
+} */
+
+.infoColumn {
+  /* background-color: rgb(157, 142, 185); */
+  background-color: rgb(243, 245, 246);
+  position: fixed;
+  margin: 0 0 0 40px;
+  overflow-y: hidden;
+
+}
+
+.feedNews {
+  /* background-color: rgb(235, 221, 221); */
+  height: 500vh;
+  min-height: auto;
+  margin-left: auto;
+  position: fixed;
+
+  background-color: rgb(243, 245, 246);
+}
+
+@media screen and (max-width: 1150px) {
+  .infoColumn {
+    display: none;
+  }
+  .rowHomePage {
+    max-width: 100%;
+  }
+  .feedNews {
+    max-width: 100%;
+  }
+}
+
+/* HomeToolBar CSS */
+.layoutBar {
+  display: flex;
+  align-items: center;
+}
+
+.layoutIcons {
+  color: rgb(137, 137, 137);
+  size: 30px;
+  margin-left: 20px;
+}
+.layoutIcons :hover {
+  color: rgb(102, 102, 102);
+}
+.layoutIcons :active {
+  color: #006dac;
+}
+
+.layoutBar .HomeFilterContainer {
+  margin-right: auto;
+  display: flex;
+}
+.layoutBar .TabLayoutContainer {
+  margin-left: auto;
+  display: flex;
+  position: relative;
+  height: 30px;
+}
+.rowHomePage button {
+  font-family: "Proxima Nova", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 16px;
+  color: rgb(137, 137, 137);
+  border: 0;
+  background-color: rgb(243, 245, 246);
+}
+
+/* Addvertise Comp */
+.advertise {
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  max-width: 0 auto;
+  margin: 0 auto;
+  border-bottom: 1px solid rgb(32, 32, 35);
+  background-color: rgb(33, 33, 36);
+}
+/* Rail Item */
+.railItem {
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 4px;
+}
+.slimFooter {
+  text-align: left;
+  text-align: justify;
+}
+.slimFooter a {
+  color: rgb(137, 137, 137);
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.infoColumn ,.noActivity h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  line-height: 1.2em;
+  font-weight: 500;
+  text-align: start;
+}
+.detailsStatContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 32px;
+}
+.detailsStatContainer h3 {
+  font-size: 44px;
+  line-height: 1;
+  margin-left: 15px;
+}

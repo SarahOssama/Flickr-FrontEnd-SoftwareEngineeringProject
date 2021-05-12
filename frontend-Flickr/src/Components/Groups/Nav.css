@@ -1,0 +1,29 @@
+
+.Nav {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    max-width: 0 auto;
+    margin: 0 auto;
+    border-bottom: 1px solid rgb(227, 227, 233);
+    background-color:white
+  }
+  
+  .Nav .link {
+    margin-right: auto;
+    padding-left: 70px;
+  }
+  .Nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    padding: 10px;
+    color: rgb(89, 89, 91);
+  }
+  .Nav a:hover {
+    color:black;
+    border-bottom: 3px solid rgb(72, 72, 216);
+  }
+  .Nav a:active {
+    border-bottom: 3px solid blue;
+  }
+  

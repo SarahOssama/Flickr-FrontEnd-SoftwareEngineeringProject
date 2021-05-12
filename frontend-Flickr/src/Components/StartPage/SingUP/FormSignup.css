@@ -1,0 +1,122 @@
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+
+.formSignUpContent {
+  background-image: url('./signupbackground.jpg');
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-size:100% 100%;
+  
+  margin: 5px auto;
+  width: 100%;
+  position: relative;
+  height: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  }
+
+  .Flickr-icon {
+    content: url("https://cdn3.iconfinder.com/data/icons/flat-icons-web/40/Flickr-512.png"); width: 25px; height: 25px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+
+.Signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    width: 300px;
+    border-radius: 5px;
+    display: flex;
+    background:white;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+  }
+  
+
+  .Form-user-inputs {
+    margin-bottom: 0.5rem;
+    width: 90%;    
+  }
+
+  .Form-user-input {
+    padding-left: 10px;
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+    border-width: 1px;
+    border-color:rgb(211, 211, 211);
+    border-style: solid;
+    background-color: white;
+  }
+
+  
+  .Form-user-input:focus {
+    outline: none !important;
+    border:1px solid rgb(69, 137, 240);
+  }
+  
+  .Form-user-inputs p {
+    font-weight: 2;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: #f00e0e;
+    text-align:left;
+  }
+  
+  .Signup-button {
+    width: 90%;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    color:white;
+    font-size: 1rem;
+    background-color:rgb(69, 137, 240);
+  }
+  
+
+  hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 80%;               
+    background-color:rgb(211, 211, 211);
+    height: 1px;
+  }
+
+  .Form-input-login {
+    font-size: 0.8rem;
+    color:black;
+  }
+  
+  .Form-input-login h {
+    text-decoration: none;
+    color:rgb(69, 137, 240);
+   
+  }

@@ -1,0 +1,33 @@
+{
+    "profileUsers":[
+    {
+        "Name":"Omar Magdy",
+        "followers":"5",
+        "followings":"7",
+        "img":"//combo.staticflickr.com/pw/images/buddyicon00_r.png#192812172@N04",
+        "email":"mercol58@ymail.com",
+        "DateJoined":"2021",
+        "PhotoImg":"//live.staticflickr.com/65535/51128077926_2efaaaeeae_n.jpg",
+        "description":"picName",
+        "NumberOfPhotos":"1",
+        "imgOwner":"You"
+    }
+  
+    ],
+    "Groups":[
+        {
+            "GroupName": "Just Street Photography",
+            "Members":84.708 ,
+            "PhotosNum":2.4000 ,
+            "Discussions" :297 ,
+            "Admin" :"Tozzophoto" ,
+            "date": "Apr 25,2005",
+            "intro":"Most images posted to this group are deleted. Look at the first page and make sure you are posting to the correct group. Urban Landscape photos are not the kinds of photos that should be posted here. Please do not upload images of just buildings or objects on a street; there should be a story element. NO LANDSCAPES, NO BUILDINGS, NO CLOSE UP PORTRAITS, NO STILL LIFE OBJECTS. If there is not a story or message in your photo do not post it.... 1 image per month allowed.",
+            "description":"Just Street Photography  is a group created by tozzo in April 2005 to showcase street photographs created by Flickr members.",
+            "rules": "Landscape photos are not the kinds of photos that should be posted here. Please do not upload images of just buildings or objects on a street; there should be a story element. NO LANDSCAPES, NO BUILDINGS, NO CLOSE UP PORTRAITS, NO STILL LIFE OBJECTS.",
+            "info":"" ,
+            "Profilepicture":"/Pictured Rocks.jpg",
+            "Coverphoto": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetware.com%2Fpictures%2Ffrance-f.htm&psig=AOvVaw3Hs2PyMbs1NJm2_iTY9WAu&ust=1620345303603000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMCRvuPes_ACFQAAAAAdAAAAABAD"
+         }
+       ]
+}

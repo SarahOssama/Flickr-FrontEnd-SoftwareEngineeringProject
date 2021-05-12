@@ -1,0 +1,79 @@
+/* the main dev that contains background and profile infos */
+.profile-container{
+  
+    background-image: url(//combo.staticflickr.com/pw/images/coverphoto05_h.jpg.v3);
+      background-size: cover;
+      background-size: 100% 100%;
+    }
+    /* an overlay above background image to make it darken*/
+    .profile-container .profile-overlay{
+      display: flex;
+      align-items: center;
+      text-align: unset;
+      padding: 150px 100px 35px 100px;
+      background-image: linear-gradient(
+    180deg
+    ,transparent 0,rgba(0,0,0,.03) 8%,rgba(0,0,0,.11) 21%,rgba(0,0,0,.61) 78%,rgba(0,0,0,.7) 95%,rgba(0,0,0,.7));
+      
+    }
+    /* a div contains the profile image*/
+    .profile-container .profile-overlay .profile-image{
+      height: 100px;
+    } /*the image itself*/
+    .profile-container .profile-overlay .profile-image img{
+      max-height: 100%;
+      min-height: 100%;
+      border-radius: 50%;
+    }
+    /* left dev contains user info*/
+    .profile-container .profile-overlay .profile-links{
+      margin: 0 20px;
+    }
+    .profile-container .profile-overlay .profile-links .name h1{
+      font-weight: lighter;
+      text-align: initial;
+      color: #fff;
+    }/* dev contains mail , followers , followings as list items*/
+    .profile-container .profile-overlay .profile-links .links{
+      text-align: initial;
+      margin-top: 15px;
+      color: #fff;
+    }
+    .profile-container .profile-overlay .profile-links .links ul{
+      list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+    .profile-container .profile-overlay .profile-links .links ul li{
+      display: block;
+        margin: 0 25px;
+    }
+    .profile-container .profile-overlay .profile-links .links ul li a{
+      display: block;
+      color: #fff;
+    
+    }
+    
+    .profile-container .profile-overlay .profile-links .links ul li:first-of-type{
+      margin-left: 0;
+    }
+    /* dev contains photos number and date joined*/
+    .profile-container .profile-overlay .photos-details{
+      color: #fff;
+        margin-top: 43px;
+        margin-left: auto;
+    }
+    
+    .profile-container .profile-overlay .photos-details ul{
+      list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+    
+    .profile-container .profile-overlay .photos-details ul li{
+      display: block;
+        margin: 0 15px;
+    }
+    

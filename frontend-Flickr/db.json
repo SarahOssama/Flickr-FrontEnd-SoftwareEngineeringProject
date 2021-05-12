@@ -1,0 +1,82 @@
+{
+  "photoData": [
+    {
+      "id": 1,
+      "photoName": "The First Photo",
+      "avatar": "https://www.w3schools.com/w3images/avatar2.png",
+      "img": "https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg",
+      "owner": {
+        "ownerName": "Sara",
+        "ownerId": "123"
+      },
+      "description": "Such a great description for a great photo",
+      "visibility": {
+        "isPublic": true,
+        "isFriend": false,
+        "isFamily": false
+      },
+      "commentNum": 5,
+      "favoritsNum": 4,
+      "date": "4h ago"
+    },
+    {
+      "id": 2,
+      "photoName": "The Second Photo",
+      "avatar": "https://www.w3schools.com/howto/img_avatar.png",
+      "img": "https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg",
+      "owner": {
+        "ownerName": "Aya",
+        "ownerId": "234"
+      },
+      "description": "Such a great description for a great photo",
+      "commentNum": 11,
+      "favoritsNum": 50,
+      "date": "6h ago"
+    },
+    {
+      "id": 3,
+      "photoName": "The Third Photo",
+      "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
+      "img": "https://www.pandasecurity.com/en/mediacenter/src/uploads/2013/11/pandasecurity-facebook-photo-privacy.jpg",
+      "owner": {
+        "ownerName": "Ahmed",
+        "ownerId": "345"
+      },
+      "description": "Such a great description for a great photo",
+      "commentNum": 30,
+      "favoritsNum": 90,
+      "date": "6h ago"
+    }
+  ],
+  "users": [
+    {
+      "NewuserFirstname": "sara",
+      "NewuserLastname": "osama",
+      "Newuserage": "21",
+      "Newuseremailaddress": "sara@gmail.com",
+      "Newuserpassword": "sara123456789"
+    },
+    {
+      "NewuserFirstname": "ahmed",
+      "NewuserLastname": "ali",
+      "Newuserage": "35",
+      "Newuseremailaddress": "ahmed@gmail.com",
+      "Newuserpassword": "ahmed123456789"
+    }
+  ],
+  "profileUsers":[
+    {
+        "Name":"Omar Magdy",
+        "followers":"5",
+        "followings":"7",
+        "img":"//combo.staticflickr.com/pw/images/buddyicon00_r.png#192812172@N04",
+        "email":"mercol58@ymail.com",
+        "DateJoined":"2021",
+        "PhotoImg":"//live.staticflickr.com/65535/51128077926_2efaaaeeae_n.jpg",
+        "description":"picName",
+        "NumberOfPhotos":"1",
+        "imgOwner":"You"
+    }
+  
+    ]
+}

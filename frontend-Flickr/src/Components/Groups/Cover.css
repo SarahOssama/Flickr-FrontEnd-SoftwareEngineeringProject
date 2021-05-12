@@ -1,0 +1,90 @@
+.profile-container{
+  
+    background-image: url(https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg);
+    background-size: cover;
+    background-size: 100% 100%;
+  }
+  
+  .profile-container .profile-overlay{
+    display: flex;
+    align-items: center;
+    text-align: unset;
+    padding: 150px 100px 35px 100px;
+    background-image: linear-gradient(
+  180deg
+  ,transparent 0,rgba(0,0,0,.03) 8%,rgba(0,0,0,.11) 21%,rgba(0,0,0,.61) 78%,rgba(0,0,0,.7) 95%,rgba(0,0,0,.7));
+    
+  }
+  
+  .profile-container .profile-overlay .profile-image{
+    height: 100px;
+  }
+  .profile-container .profile-overlay .profile-image img{
+    max-height: 100%;
+    min-height: 100%;
+    border-radius: 50%;
+  }
+  .profile-container .profile-overlay .profile-links{
+    margin: 0 20px;
+  }
+  .profile-container .profile-overlay .profile-links .name a{
+    font-weight: lighter;
+    font-size: xx-large;
+    margin-right: 30px;
+    color: #fff;
+  }
+  .profile-container .profile-overlay .profile-links .name a:link{
+    color:#fff;
+    text-decoration: none;
+  }
+  .profile-container .profile-overlay .profile-links .name button{
+    padding: 5px 10px;
+    border-radius: 4px;
+    border-color: white;
+    font-size: medium;
+    font-weight: bold;
+  }
+  .profile-container .profile-overlay .profile-links .links{
+    text-align: initial;
+    margin-top: 15px;
+    color: #fff;
+    padding-left: 30px;
+    font-size:xx-small;
+  }
+  .profile-container .profile-overlay .profile-links .links ul{
+    list-style-type: none;
+      padding: 0;
+      font-size:small;
+      font-weight: lighter;
+      margin: 0;
+      display: flex;
+  }
+  .profile-container .profile-overlay .profile-links .links ul li{
+    display: block;
+      margin: 0 25px;
+  }
+  .profile-container .profile-overlay .profile-links .links ul li a{
+    color:white;
+    padding-left:4px;
+  }
+  .profile-container .profile-overlay .profile-links .links ul li:first-of-type{
+    margin-left: 0;
+  }
+  
+  .profile-container .profile-overlay .photos-details{
+    color: #fff;
+      margin-top: 43px;
+      margin-left: auto;
+  }
+  
+  .profile-container .profile-overlay .photos-details ul{
+    list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+  }
+  
+  .profile-container .profile-overlay .photos-details ul li{
+    display: block;
+      margin: 0 15px;
+  }

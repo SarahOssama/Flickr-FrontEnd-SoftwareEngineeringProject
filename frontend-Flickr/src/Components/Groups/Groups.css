@@ -1,0 +1,38 @@
+.Share a{
+    text-align: left;
+    color:grey;
+    padding-left: 1000px;
+}
+.Share a:link{
+    color: grey;
+    text-decoration: none;
+}
+.titles{
+    padding-left: 110px;
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 30px; 
+    text-align: left ;
+    padding-top: 20px;
+    }
+    .titles p{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    }
+    .titles span{
+        font-size: 17px;
+        text-align: left ;
+    }
+    .intro {
+        padding-right: 750px;
+        padding-left: 110px;
+        text-align: left;
+    }
+    .ADMIN {
+        padding-left: 110px;
+        padding-top: 30px;
+        padding-bottom: 20px;
+        font-size:medium;
+        color:grey;
+        text-align: left;
+    }

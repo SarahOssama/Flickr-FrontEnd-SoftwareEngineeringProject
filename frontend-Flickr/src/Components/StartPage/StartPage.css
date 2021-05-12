@@ -1,0 +1,78 @@
+.StartContainer {
+    background-image: url('./startpagebackground.jpg');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size:100% 110%;
+    margin: auto auto auto auto;
+    width: 100%;
+    position: relative;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    text-align: center;
+    
+}
+
+.h1container {
+
+    position: absolute;
+    top: 25%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+
+}
+.Pcontainer {
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+
+
+p {
+    font-weight:700;
+    font-size: 1.3rem ;
+    color:white;
+    text-align: center;
+}
+
+h1 {
+    
+    font-weight:500;
+    font-size: 3rem ;
+    color:white;
+    text-align: center;
+}
+
+.Startforfreebutton{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 70px;
+    outline: none;
+    border: none;
+    color:black;
+    font-size: 1.5rem ;
+    font-weight:bold;
+    background-color:white;
+}
