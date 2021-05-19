@@ -7,7 +7,7 @@ import FormSignup from './Components/StartPage/SingUP/FormSignup';
 import Home from './Components/HomePage/Home';
 import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
-import Footer from './Components/Footer/Footer';
+// import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 import Groups from './Components/Groups/Groups';
 
@@ -30,7 +30,7 @@ function App() {
           </Route>
           <Route path="/about" component={About} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
 

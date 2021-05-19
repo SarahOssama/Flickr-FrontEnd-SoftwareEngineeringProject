@@ -17,7 +17,62 @@
 }
 .navbar{
   background-color: rgba(33, 33, 36, 0.938) !important ;
-  /* height: 50px !important ; */
+  height: 50px !important ;
+  padding-right: 10%!important ;
+  padding-left: 7%!important ;
+}
+.form-inline{
+  height:33px !important;
+  width: 250px !important;
+  margin-top: 0px !important;
+  background-color: #D2D2D3 !important;
+
+}
+
+.form-control, .input-group-text{
+  background-color: #D2D2D3 !important;
+}
+.input-group-text{
+  /* width: 30px !important; */
+}
+.form-control{
+  font-size: 15px;
+  /* padding: 6px 10px; */
+  /* width: 180px !important; */
+  height:33px !important;
+}
+
+#searchIcon {
+  display: none ;
+}
+
+@media screen and (max-width: 1080px) {
+  #hideIcon {
+    display: none !important;
+  }
+  #searchIcon {
+    display: block ;
+  }
+ .navbar{
+   padding-left: 0!important;
+   padding-right: 0!important;
+ }
+ 
+}
+@media screen and (max-width: 1200px) {
+  .dropbtn{
+    font-size: 14px!important;;
+  }
+}
+.avatarNavBar {
+  vertical-align: middle;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left:23px;
+  margin-top: 4px;
+
 }
 
 
@@ -30,7 +85,7 @@
   height: 50px;
   margin-left: 30px;
 
-  
+
 }
 .Hnavbar h1 {
   color: white;
@@ -66,11 +121,16 @@
 
 .Hicon {
   color: red;
-  padding-left: 30px;
+  padding-left: 0px;
+  margin-right: 0;
+  margin-left: 23px;
+  margin-top: 4px;
+
 }
 
 .HnavRight{
   display: flex;
+  align-items: center;
 }
 
 /* Nav bar Hover */

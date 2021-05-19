@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 /* eslint-disable react/prop-types */
 
-const Photo = ({ pCard }) => (
+const PhotoSet1 = ({ pCard }) => (
   <div className="containerHome">
     <div className="imageHeaderHome">
       <img src={pCard.avatar} alt="Avatar" className="avatar" />
@@ -44,4 +44,4 @@ const Photo = ({ pCard }) => (
   </div>
 );
 
-export default Photo;
+export default PhotoSet1;
