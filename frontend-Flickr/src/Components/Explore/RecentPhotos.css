@@ -12,6 +12,7 @@
     position: fixed;
     width: 100%;
     top: 100px;
+    z-index: -1;
   }
   
   .scrollingLayout {
@@ -58,7 +59,7 @@
   /* } */
   
   .photos {
-    display: grid;
+    display:block;
     /* row-gap: 2px; */
     /* grid-template-rows: auto; */
     height: 5992px;
