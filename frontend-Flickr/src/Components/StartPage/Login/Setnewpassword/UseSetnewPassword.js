@@ -1,23 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-
 /**
- * Useform
- * @param {[function]} SignUpValidate [function from SignUpValidate to check on user inpus]
+ * UseSetnewPassword
+ * @param {[function]} SetnewpasswordValidate [function from SignUpValidate to check on user inpus]
  * @returns handleChange, values, handleSubmit, errors,
  */
-const useform = (SignUpValidate) => {
+const UseSetnewPassword = (SetnewpasswordValidate) => {
   const history = useHistory();
-
   const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    age: '',
-    emailaddress: '',
-    password: '',
+    newpassword: '',
   });
 
-  const [errors, setErrors] = useState({});
+  const [passworderror, setErrors] = useState({});
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   /**
@@ -36,20 +30,20 @@ const useform = (SignUpValidate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrors(SignUpValidate(values));
+    setErrors(SetnewpasswordValidate(values));
     setIsSubmitting(true);
   };
 
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(passworderror).length === 0 && isSubmitting) {
       console.log(values);
-      history.push('/check-email/sign-up');
+      history.push('/change-complete/forgot-password');
     }
-  }, [errors]);
+  }, [passworderror]);
 
   return {
-    handleChange, values, handleSubmit, errors,
+    handleChange, values, handleSubmit, passworderror,
   };
 };
 
-export default useform;
+export default UseSetnewPassword;

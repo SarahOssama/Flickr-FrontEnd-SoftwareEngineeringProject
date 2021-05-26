@@ -1,122 +1,119 @@
 import React from 'react';
-// import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import useform from './UseSignupform';
-import Validate from './Validate';
+import SignUpValidate from './SignUpValidate';
 import './FormSignup.css';
 
+/**
+ * FormSignup
+ * @returns SignUp Form
+ */
 const FormSignup = () => {
   const {
     handleChange, values, handleSubmit, errors,
-  } = useform(Validate);
+  } = useform(SignUpValidate);
 
   return (
     <div className="formSignUpContent">
 
-      <form onSubmit={handleSubmit} className="Signup-form">
-        <i className="Flickr-icon" />
-        <h> Sign up for Flickr </h>
+      <form onSubmit={handleSubmit} className="signupForm">
+        <i className="flickrIcon" />
+        <h className="signupformTitle"> Sign up for Flickr </h>
 
-        <div className="Form-user-inputs">
+        <div className="signupInputs">
 
           <input
             type="text"
-            name="NewuserFirstname"
-            className="Form-user-input"
+            name="firstname"
+            className="signupInput"
             placeholder="First name"
             no-autoFocus
-            value={values.NewuserFirstname}
+            value={values.firstname}
             onChange={handleChange}
           />
-          {errors.NewuserFirstname && <p>{errors.NewuserFirstname}</p>}
+          {errors.firstname && <p>{errors.firstname}</p>}
 
         </div>
 
-        <div className="Form-user-inputs">
+        <div className="signupInputs">
 
           <input
             type="text"
-            name="NewuserLastname"
-            className="Form-user-input"
-            placeholder="Last name"
-            value={values.NewuserLastname}
+            name="lastname"
+            className="signupInput"
+            placeholder="last name"
+            value={values.lastname}
             onChange={handleChange}
           />
-          {errors.NewuserLastname && <p>{errors.NewuserLastname}</p>}
+          {errors.lastname && <p>{errors.lastname}</p>}
 
         </div>
 
-        <div className="Form-user-inputs">
+        <div className="signupInputs">
 
           <input
             type="number"
-            name="Newuserage"
-            className="Form-user-input"
+            name="age"
+            className="signupInput"
             placeholder="Your age"
-            value={values.Newuserage}
+            value={values.age}
             onChange={handleChange}
           />
-          {errors.Newuserage && <p>{errors.Newuserage}</p>}
+          {errors.age && <p>{errors.age}</p>}
 
         </div>
 
-        <div className="Form-user-inputs">
+        <div className="signupInputs">
 
           <input
             type="text"
-            name="Newuseremailaddress"
-            className="Form-user-input"
+            name="emailaddress"
+            className="signupInput"
             placeholder="Email address"
-            value={values.Newuseremailaddress}
+            value={values.emailaddress}
             onChange={handleChange}
             novalid
           />
-          {errors.Newuseremailaddress && <p>{errors.Newuseremailaddress}</p>}
+          {errors.emailaddress && <p>{errors.emailaddress}</p>}
 
         </div>
 
-        <div className="Form-user-inputs">
+        <div className="signupInputs">
 
           <input
             type="password"
-            name="Newuserpassword"
-            className="Form-user-input"
+            name="password"
+            className="signupInput"
             placeholder="Password"
             value={values.Newuserpassword}
             onChange={handleChange}
           />
-          {errors.Newuserpassword && <p>{errors.Newuserpassword}</p>}
+          {errors.password && <p>{errors.password}</p>}
 
         </div>
 
         <button
-          className="Signup-button"
+          className="signupButton"
           type="submit"
         >
           Sign up
         </button>
 
-        <section>
-          <span className="Form-input-login">
-            By signing up, you agree with Flickrs Terms of
-            <br />
-            <h> Services </h>
-            {' '}
-            and
-            {' '}
-            <h>Privacy Policy </h>
-            .
-          </span>
-        </section>
+        <span className="formLogin">
+          By signing up, you agree with Flickrs Terms of
+          <br />
+          <h> Services </h>
+          {' '}
+          and
+          {' '}
+          <h>Privacy Policy </h>
+          .
 
-        <hr />
+          <hr className="seperationLine" />
 
-        <section>
-          <span className="Form-input-login">
-            Already a Flickr member?
-            <h>Log in here</h>
-            .
-          </span>
-        </section>
+          Already a Flickr member?
+          <Link to="/login">Log in here.</Link>
+        </span>
 
       </form>
 

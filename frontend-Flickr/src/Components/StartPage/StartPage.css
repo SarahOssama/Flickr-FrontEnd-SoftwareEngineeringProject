@@ -1,4 +1,4 @@
-.StartContainer {
+.startContainer {
     background-image: url('./startpagebackground.jpg');
     background-repeat: no-repeat;
     background-position-x: center;
@@ -14,11 +14,11 @@
     
 }
 
-.h1container {
+.h1Container {
 
     position: absolute;
-    top: 25%;
-    left: 58%;
+    top: 35%;
+    left: 56%;
     transform: translate(-50%, -50%);
     height: 200px;
     width: 600px;
@@ -27,40 +27,32 @@
     align-self: center;
     align-content: center;
     text-align: center;
+    
+    font-weight: 700;
+    font-size: 2.5rem ;
+    color:white;
+    text-align: center;
 
 }
-.Pcontainer {
+.pContainer {
     position: absolute;
-    top: 38%;
-    left: 55%;
+    top: 48%;
+    left: 51%;
     transform: translate(-50%, -50%);
     height: 200px;
     width: 600px;
     display: flex;
     align-items: center;
     text-align: center;
-  }
-  
-
-
-p {
     font-weight:700;
-    font-size: 1.3rem ;
+    font-size: 1.4rem ;
     color:white;
     text-align: center;
-}
+  }
 
-h1 {
-    
-    font-weight:500;
-    font-size: 3rem ;
-    color:white;
-    text-align: center;
-}
-
-.Startforfreebutton{
+.startForFreeButton{
     position: absolute;
-    top: 55%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
