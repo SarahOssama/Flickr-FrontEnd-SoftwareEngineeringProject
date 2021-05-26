@@ -33,7 +33,6 @@ function App() {
           <Route path="/photos/upload" exact component={UploadPhoto} />
           <Route path="/photos" exact component={ViewPhoto} />
 
-
           <Route path="/SignUp" exact component={FormSignup} title="Flickr Login" />
           <Route path="/check-email/sign-up" exact component={CompleteSignup} title="Flickr Login" />
 
@@ -42,7 +41,6 @@ function App() {
           <Route path="/check-email/forgot-password" exact component={Checkinbox} title="Flickr Login" />
           <Route path="/check-email-confirm" exact component={SetnewPassword} title="Flickr Login" />
           <Route path="/change-complete/forgot-password" exact component={ChangeComplete} title="Flickr Login" />
-
 
           <Route path="/about" component={About} />
         </Switch>

@@ -13,7 +13,7 @@ import InfoColumn from './Items/InfoColumn';
 // import axiosInstance from '../../axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxOTkxNTk1LCJqdGkiOiI0M2QwYTU0NjdiOTM0NjRkYTI1OWQ5MzMzNzg2NTBhZCIsInVzZXJfaWQiOjExfQ.-VoNmCeTmm_4Hay7jGZcV9_Ud4zknRLsb-yHtw7JMbc';
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxOTk1OTQyLCJqdGkiOiJlOGQ5MTQ3NzllOWY0MTQyOGYwYzUyYWY4NDM3NDcyNCIsInVzZXJfaWQiOjExfQ.9r6dwQDoYybI_crqUHVbazz8hsbx30L5UpTFQZRoz28';
 
 const Home = () => {
   document.title = 'Home | Flickr';
