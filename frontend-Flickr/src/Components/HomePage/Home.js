@@ -1,43 +1,104 @@
+/* eslint-disable no-unused-vars */
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Container, Row, Col } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import HomeToolBar from './HomeToolBar';
 import PhotoCard from './Items/PhotoCard';
 import InfoColumn from './Items/InfoColumn';
 // import Advertise from './Adver/Advertise';
 
-const Home = () => {
-  const [photoData, setphotoData] = useState([
+// import axiosInstance from '../../axios';
+import Conf from '../../Conf';
 
-  ]);
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxOTkxNTk1LCJqdGkiOiI0M2QwYTU0NjdiOTM0NjRkYTI1OWQ5MzMzNzg2NTBhZCIsInVzZXJfaWQiOjExfQ.-VoNmCeTmm_4Hay7jGZcV9_Ud4zknRLsb-yHtw7JMbc';
+
+const Home = () => {
+  document.title = 'Home | Flickr';
+  const [showComp, setShowComp] = useState(true);
+  const [showComp2, setShowComp2] = useState(false);
+  const [showComp3, setShowComp3] = useState(false);
 
   /**
-   * Fetch Photo from Server
-   * @returns data
-   */
-  const fetchPhoto = async () => {
-    const res = await fetch('http://localhost:5000/photoData');
-    const data = await res.json();
-    return data;
-  };
+ * to hold the Photo from the backend
+ */
+  const [photoData, setphotoData] = useState([]);
   useEffect(() => {
     const getPhoto = async () => {
-      const photoFromServer = await fetchPhoto();
-      setphotoData(photoFromServer);
+      axios
+        .get(`${Conf.localURL}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
+
+          },
+        })
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          // console.log(res.data);
+          const photoFromServer = res.data;
+          setphotoData(photoFromServer);
+        });
     };
     getPhoto();
-  }, []);
+
+    const getTasks = async () => {
+      axios
+        .get(`${Conf.backURL}gallery/`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
+
+          },
+        })
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          console.log(res.data);
+        });
+    };
+    getTasks();
+  }, [/* dependency array (value when it changes we want the code to run) */]);
 
   return (
     <div className=".container fluid-centered  OrowHomePage">
       <div className="advertise" />
       <div className="container-lg  rowHomePage">
         <div className="col-xl-8 feedNews">
-          <HomeToolBar />
+          <HomeToolBar
+            showCom={() => {
+              setShowComp(!showComp);
+              setShowComp2(showComp);
+              setShowComp3(showComp);
+            }}
+            showCom2={() => {
+              setShowComp2(!showComp2);
+              setShowComp(showComp2);
+              setShowComp3(showComp2);
+            }}
+            showCom3={() => {
+              setShowComp3(!showComp3);
+              setShowComp(showComp3);
+              setShowComp2(showComp3);
+            }}
+          />
           {/* <h2>Feed</h2> */}
           {photoData.length > 0 ? (
-            <PhotoCard photoData={photoData} />
+            <>
+              <PhotoCard
+                photoData={photoData}
+                layout1={showComp}
+                layout2={showComp2}
+                layout3={showComp3}
+              />
+            </>
           ) : (
             <div className="noActivity">
               <h2 id="noActivityH">There is no activity to show right now.</h2>
