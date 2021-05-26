@@ -24,6 +24,8 @@
         // suppress errors for missing 'import React' in files
         "react/react-in-jsx-scope": "off",
         "import/no-unresolved":"off",
-        "no-unused-vars":"warn"
+        "no-unused-vars":"warn",
+        "eslint react/prop-types": 0 ,
+        "react/prop-types":[0]
     }
 }

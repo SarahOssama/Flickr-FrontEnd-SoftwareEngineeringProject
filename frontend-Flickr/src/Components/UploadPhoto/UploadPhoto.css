@@ -1,0 +1,55 @@
+
+.uploadPage{
+    color: black;
+    width:100% ;
+    height: 100%;
+    margin:0;
+    padding: 0;
+}
+.uploadGlobalNavBar{
+    display:flex;
+    height: 43px ;
+    width:100% ;
+    background-color: brown ;
+}
+.uploadWorkingAreaControls{
+    display:flex;
+
+    height: 41px ;
+    width:100%;
+    background-color: rgb(42, 140, 165) ;
+}
+.uploadBody{
+    height: 100%;
+    width:100%;
+    background-color: rgb(101, 204, 115) ;
+}
+/* CSS for the Navbar  */
+.uploadLeftNavBar{
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    /* background-color: rgba(33, 33, 36,0.5); */
+    height: 50px;
+    margin-left: 30px;
+}
+.uploadRightNavBar{
+    display: flex;
+    align-items: center;
+}
+
+/* CSS for the Tool conrol  */
+.uploadLeftAreaControls{
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    /* background-color: rgba(33, 33, 36,0.5); */
+    height: 50px;
+    margin-left: 30px;
+}
+.uploadRightAreaControls{
+    display: flex;
+    align-items: center;
+}
