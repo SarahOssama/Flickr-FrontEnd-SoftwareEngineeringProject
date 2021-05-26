@@ -2,7 +2,6 @@ import { MdCloudUpload } from 'react-icons/md';
 import { BsBell } from 'react-icons/bs';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { IoMdSearch } from 'react-icons/io';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaTimes } from 'react-icons/fa';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,10 +9,29 @@ import { useHistory, Link } from 'react-router-dom';
 import { useState } from 'react';
 import './SideNav.css';
 import './NavBar.css';
+import NotificationCard from './Notification/NotificationCard';
 
 // eslint-disable-next-line no-unused-vars
 const NavBar = (props) => {
   const history = useHistory();
+
+  function toggleNotification() {
+    document.getElementById('myDropdown').classList.toggle('show');
+  }
+
+  /**
+ * handle NOtification Click
+ * @param {Event} e
+ */
+  window.onclick = function hideNotificationOnWindowClick(e) {
+    if (!e.target.matches('.notificationButton')) {
+      const myDropdown = document.getElementById('myDropdown');
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  };
+
   /* Set the width of the side navigation to 250px */
   function openNav() {
     document.getElementById('mySidenav').style.width = '250px';
@@ -24,7 +42,9 @@ const NavBar = (props) => {
     document.getElementById('mySidenav').style.width = '0';
   }
   const [buttonToggle, setButtonToggle] = useState(false);
-
+  /**
+ * used to toggle the sidebar navigation
+ */
   const toggleSideNavButton = () => {
     if (buttonToggle) {
       openNav();
@@ -50,10 +70,10 @@ const NavBar = (props) => {
               size="25px"
               onClick={closeNav}
             />
-            <a href="/">About</a>
-            <a href="/">Services</a>
-            <a href="/">Clients</a>
-            <a href="/">Contact</a>
+            <Link to="/profile">You</Link>
+            <Link to="/">Explore</Link>
+            <Link to="/prints">Prints</Link>
+            <Link to="/">GetPro</Link>
           </div>
         </div>
 
@@ -117,7 +137,7 @@ const NavBar = (props) => {
 
       </nav>
       <div className="HnavRight">
-        <form className="form-inline" id="hideIcon">
+        <form className="form-inline" id="hideIconSearch">
           <div className="input-group">
             <div className="input-group-prepend">
               <span className="input-group-text" id="basic-addon1">
@@ -133,8 +153,36 @@ const NavBar = (props) => {
 
         {/* TODO:Padding in Icons */}
         <IoMdSearch color="white" size="25px" className="Hicon" id="searchIcon" />
-        <MdCloudUpload color="white" size="25px" className="Hicon" id="hideIcon" />
-        <BsBell color="white" size="25px" className="Hicon" />
+        <MdCloudUpload
+          color="white"
+          size="25px"
+          className="Hicon"
+          id="hideIconUpload"
+          onClick={() => history.push('/photos/upload')}
+        />
+
+        <div className="dropdownNotification">
+          <BsBell
+            className="Hicon notificationButton "
+            onClick={toggleNotification}
+            color="white"
+            size="25px"
+          />
+          <div className="dropdownNotificationContent dropdown-menu-right" id="myDropdown">
+            <div className="notificationHeader">
+              <h2 className="dropdownNotificationHeader">Notifications</h2>
+            </div>
+            <NotificationCard />
+            <a href="/">Recent Photos</a>
+            <a href="/">Trending</a>
+            <a href="/">Events</a>
+
+            <div className="notificationHeader">
+              <h2 className="dropdown-header text-center">View Recent Activity</h2>
+            </div>
+          </div>
+        </div>
+
         <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" size="60px" className="avatarNavBar" />
 
       </div>

@@ -19,7 +19,7 @@ const PhotoSet1 = ({ pCard }) => (
       <img src={pCard.img} alt="Avatar" className="imageCompHome" />
       <div className="imgOverlayHome">
         <div className="overlayLeftContHome">
-          <Link className="photoNameLinkHome" to="/viewImage">{pCard.photoName}</Link>
+          <Link className="photoNameLinkHome" to="/photos">{pCard.photoName}</Link>
 
         </div>
         <div className="overlayRightContHome" />

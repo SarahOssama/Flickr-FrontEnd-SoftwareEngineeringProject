@@ -11,29 +11,10 @@ import InfoColumn from './Items/InfoColumn';
 // import Advertise from './Adver/Advertise';
 import { ConfigContext } from '../../Context/ConfigContext';
 
-import axiosInstance from '../../axios';
+// import axiosInstance from '../../axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxMzY3OTAyLCJqdGkiOiJjZjE3YzJiNjE4OTA0ZGMyYWZhNTAyY2E5Yjg0NjllOCIsInVzZXJfaWQiOjF9.1xxmA7SrDGEUKisF6wamp6maXHOPhtFQoNdHn6JTXvc';
-
-// axios.interceptors.request.use(
-//   (config) => {
-//     // eslint-disable-next-line no-param-reassign
-//     config.headers.authorization = `Bearer ${accessToken}`;
-//     return config;
-//   },
-//   (error) => Promise.reject(error),
-// );
-
-// const authAxios = axios.create(
-//   {
-//     baseURL: Conf.apiURL,
-//     headers: {
-//       Authorization: `Bearer ${accessToken}`,
-//       'Content-type': 'application/json',
-//     },
-//   },
-// );
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxOTkxNTk1LCJqdGkiOiI0M2QwYTU0NjdiOTM0NjRkYTI1OWQ5MzMzNzg2NTBhZCIsInVzZXJfaWQiOjExfQ.-VoNmCeTmm_4Hay7jGZcV9_Ud4zknRLsb-yHtw7JMbc';
 
 const Home = () => {
   document.title = 'Home | Flickr';
@@ -45,54 +26,47 @@ const Home = () => {
  * to hold the Photo from the backend
  */
   const [photoData, setphotoData] = useState([]);
-
-  /**
-   * Fetch Photo from Server
-   * @returns data
-   */
-  // const fetchPhoto = async () => {
-  //   const res = await fetch(`${URL}/photoData`);
-  //   const data = await res.json();
-  //   return data;
-  // };
   useEffect(() => {
-    axiosInstance.get(
-      // {
-      //   headers: {
-      //     authorization: `Bearer ${accessToken}`,
-      //     'Content-type': 'application/json',
+    const getPhoto = async () => {
+      axios
+        .get(`${Conf.localURL}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
 
-      //   },
-      // },
-    ).then((res) => {
-      const photoFromServer = res.data;
-      setphotoData(photoFromServer);
-      // eslint-disable-next-line no-console
-      console.log(photoFromServer);
-    });
+          },
+        })
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          // console.log(res.data);
+          const photoFromServer = res.data;
+          setphotoData(photoFromServer);
+        });
+    };
+    getPhoto();
 
-    // const getPhoto = async () => {
-    //   const photoFromServer = await fetchPhoto();
-    //   setphotoData(photoFromServer);
-    // };
-    // getPhoto();
-  }, []);
+    const getTasks = async () => {
+      axios
+        .get(`${Conf.backURL}gallery/`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
 
-  // const fetchData = useCallback(async () => {
-  //   const result = await authAxios.get('/gallery');
-  //   setphotoData(result.data);
-  //   // eslint-disable-next-line no-console
-  //   console.log(result.data);
-  //   // try {
-  //   //   const result = await authAxios.get('/gallery/');
-  //   //   setphotoData(result.data);
-  //   //   // eslint-disable-next-line no-console
-  //   //   console.log(result.data);
-  //   // } catch (err) {
-  //   //   // eslint-disable-next-line no-console
-  //   //   console.log(err.message);
-  //   // }
-  // });
+          },
+        })
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          console.log(res.data);
+        });
+    };
+    getTasks();
+  }, [/* dependency array (value when it changes we want the code to run) */]);
 
   return (
     <div className=".container fluid-centered  OrowHomePage">
