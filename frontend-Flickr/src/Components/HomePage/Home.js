@@ -9,7 +9,6 @@ import HomeToolBar from './HomeToolBar';
 import PhotoCard from './Items/PhotoCard';
 import InfoColumn from './Items/InfoColumn';
 // import Advertise from './Adver/Advertise';
-import { ConfigContext } from '../../Context/ConfigContext';
 
 // import axiosInstance from '../../axios';
 import Conf from '../../Conf';
