@@ -31,13 +31,14 @@
  ```
 
 ## For mocking server
+use JSON server in mocking
  ```
-
+ LocalNoPath: 'http://localhost:5000'
  ```
 
 ## For Backend server
  ```
-
+   backURL: 'http://fotone.me:8000/'
  ```
 
 ## Functional Documentation 
@@ -55,6 +56,7 @@
 
 ## Unit Testing 
  ```
+ jest 
  ```
 
 ## For building the website
@@ -74,5 +76,5 @@
 * Sarah Osama Osman Ahmed  (Front-End Team Leader)
 * Mariam Essam
 * Mennatallah Hany Elkhodary
-* Mennatallah Nawar Kamel
+* Mennatallah Kamel Nawar
 * Omar Mohamed Magdy
