@@ -1,23 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-
 /**
  * Useform
- * @param {[function]} SignUpValidate [function from SignUpValidate to check on user inpus]
- * @returns handleChange, values, handleSubmit, errors,
+ * @param {[function]} Validate [function from validateinfo to check on user inpus]
+ * @returns handleChange, values, handleSubmit, emailerror,
  */
-const useform = (SignUpValidate) => {
+const useforgotpasswordform = (Validate) => {
   const history = useHistory();
-
   const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    age: '',
+
     emailaddress: '',
-    password: '',
+
   });
 
-  const [errors, setErrors] = useState({});
+  const [emailerror, setErrors] = useState({});
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   /**
@@ -32,24 +28,27 @@ const useform = (SignUpValidate) => {
       [name]: value,
     });
   };
+  /**
+   * handleSubmit
+   * @param {*} e
+   */
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setErrors(SignUpValidate(values));
     setIsSubmitting(true);
-  };
+    setErrors(Validate(values));
 
+    e.preventDefault();
+  };
   useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
+    if (Object.keys(emailerror).length === 0 && isSubmitting) {
       console.log(values);
-      history.push('/check-email/sign-up');
+      history.push('/check-email/forgot-password');
     }
-  }, [errors]);
+  }, [emailerror]);
 
   return {
-    handleChange, values, handleSubmit, errors,
+    handleChange, values, handleSubmit, emailerror,
   };
 };
 
-export default useform;
+export default useforgotpasswordform;
