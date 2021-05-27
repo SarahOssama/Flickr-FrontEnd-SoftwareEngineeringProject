@@ -1,27 +1,22 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { BrowserRouter as Router/* , Route, Switch */ } from 'react-router-dom';
-/* import StartPage from './Components/StartPage/StartPage'; */
-/* import FormSignup from './Components/StartPage/SingUP/FormSignup'; */
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import StartPage from './Components/StartPage/StartPage';
+import FormSignup from './Components/StartPage/SingUP/FormSignup';
 // import './App.css';
 // import Addv from './Components/Addv';
-/* import Home from './Components/HomePage/Home'; */
-/* import NavBar from './Components/NavBar/NavBar'; */
-/* import About from './Components/NavBar/About'; */
-/* import Footer from './Components/Footer/Footer'; */
-/* import Profile from './Components/Profile/Profile'; */
-/* import Groups from './Components/Groups/Groups'; */
-import RecentPhotos from './Components/Explore/RecentPhotos';
-/* import SubNav from './Components/Explore/SubNav'; */
-/* import Galleries from './Components/Profile/Galleries/Galleries';
+import Home from './Components/HomePage/Home';
+import About from './Components/NavBar/About';
+import Footer from './Components/Footer/Footer';
+import Profile from './Components/Profile/Profile';
+import Groups from './Components/Groups/Groups';
+import Galleries from './Components/Profile/Galleries/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
- */
+
 function App() {
   return (
     <Router>
       <div className="App">
-        <RecentPhotos />
-        {/*         <NavBar />
         <Switch>
 
           <Route path="/" exact component={StartPage} title="Find your inspiration. | Flickr" />
@@ -36,7 +31,7 @@ function App() {
           </Route>
           <Route path="/about" component={About} />
         </Switch>
-        <Footer /> */}
+        <Footer />
       </div>
     </Router>
 
