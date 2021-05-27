@@ -108,12 +108,12 @@
     list-style: none;
     margin: auto;
     padding-left: 0px;
-    z-index: 1;
+    z-index: 20;
   }
 
   li {
     background-color: #fff;
-    z-index: 1;
+    z-index:20;
   }
   
   .more:hover .dropDownContent {

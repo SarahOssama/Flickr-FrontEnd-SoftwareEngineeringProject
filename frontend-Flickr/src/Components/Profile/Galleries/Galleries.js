@@ -1,7 +1,10 @@
 import './Galleries.css';
 import { BiAddToQueue } from 'react-icons/bi';
 import { RiShareForwardLine } from 'react-icons/ri';
+import { ImFacebook2, ImTumblr2 } from 'react-icons/im';
+import { FaTwitterSquare, FaPinterestSquare } from 'react-icons/fa';
 import { BsX } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 import Background from '../ProBackground';
 /* import ProNav from '../Profile/Ptools/ProNav'; */
 
@@ -17,6 +20,20 @@ function closeForm(e) {
   e.preventDefault();
   // eslint-disable-next-line no-console
   console.log('closeForm');
+}
+
+function shareGallery(e) {
+  document.getElementById('shareGallery').style.display = 'block';
+  e.preventDefault();
+  // eslint-disable-next-line no-console
+  console.log('Share gallery');
+}
+
+function closeShareGallery(e) {
+  document.getElementById('shareGallery').style.display = 'none';
+  e.preventDefault();
+  // eslint-disable-next-line no-console
+  console.log('close Share gallery');
 }
 
 const Galleries = () => (
@@ -38,23 +55,45 @@ const Galleries = () => (
           </div>
         </div>
       </div>
-      <Background />
-      <div className="cameraRollNav">
-        <div className="containerNav">
-          <div className="scrollingLayoutNav">
-            <a href="/About">About </a>
-            <a href="/Photostream">Photostream</a>
-            <a href="/Albums">Albums</a>
-            <a href="/Faves">Faves</a>
-            <a className="selectedLink" href="/Galleries">Galleries</a>
-            <a href="/Groups">Groups</a>
-            <a href="/Stats">Stats</a>
-            <a href="/CameraRoll">CameraRoll</a>
+      <div id="shareGallery">
+        <div className="addGalleryLayout">
+          <div className="addGalleryForm">
+            <div className="formLayout">
+              <BsX style={{ alignSelf: 'end', cursor: 'pointer' }} onClick={closeShareGallery} />
+              <h4 style={{ fontWeight: 'bolder', marginBottom: '5px' }}>Share gallery to:</h4>
+              <div id="shareIconsLinks">
+                <span style={{ borderBottom: '3px solid #0091dc' }}>Share</span>
+                <span>Embed</span>
+                <span>Email</span>
+              </div>
+              <div id="shareIcons">
+                <ImFacebook2 />
+                <ImTumblr2 />
+                <FaTwitterSquare />
+                <FaPinterestSquare />
+              </div>
+              <h5 id="shareLink">https://flic.kr/y/3Gy5FCb</h5>
+            </div>
           </div>
         </div>
       </div>
-      <div className="LayoutCamRoll">
-        <div className="tools">
+      <Background />
+      <div className="galleriesNav">
+        <div className="containerGalleriesNav">
+          <div className="scrollingLayoutGalleriesNav">
+            <Link to="/">About </Link>
+            <Link to="/">Photostream</Link>
+            <Link to="/">Albums</Link>
+            <Link to="/">Faves</Link>
+            <Link to="/Galleries" className="selectedLink">Galleries</Link>
+            <Link to="/">Groups</Link>
+            <Link to="/">Stats</Link>
+            <Link to="/CameraRoll">CameraRoll</Link>
+          </div>
+        </div>
+      </div>
+      <div className="layoutGalleries">
+        <div className="toolsGalleries">
           <a href="/" onClick={openForm} style={{ textDecoration: 'none', color: 'rgb(131, 129, 129)', marginRight: '20px' }}>
             <BiAddToQueue style={{ fontSize: 'larger', marginRight: '5px' }} />
             New Gallery
@@ -69,7 +108,7 @@ const Galleries = () => (
               <a style={{ textDecoration: 'none', color: 'black', padding: '5px' }} href="/">The Beginning</a>
               <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgb(131, 129, 129)' }}>
                 3 items · 4 views · 0 comments
-                <RiShareForwardLine className="shareIcon" style={{ alignSelf: 'end', fontSize: 'x-large' }} />
+                <RiShareForwardLine className="shareIcon" onClick={shareGallery} style={{ alignSelf: 'end', fontSize: 'x-large', cursor: 'pointer' }} />
               </div>
             </div>
           </div>
