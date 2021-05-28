@@ -141,11 +141,13 @@ const NavBar = (props) => {
           <div className="input-group">
             <div className="input-group-prepend">
               <span className="input-group-text" id="basic-addon1">
-                {' '}
-                <a href="/searchgroups">
-                  <AiOutlineSearch color="black" size="18px" style={{ paddingLeft: 0 }} />
-                </a>
-                {' '}
+                <AiOutlineSearch
+                  color="black"
+                  onClick={() => history.push('/searchgroups')}
+                  size="18px"
+                  style={{ paddingLeft: 0 }}
+                />
+
               </span>
 
             </div>
