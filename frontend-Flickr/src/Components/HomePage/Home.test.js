@@ -1,5 +1,7 @@
+// import { render, screen } from '@testing-library/react';
 // import Home from './Home';
 
-// test('Home should ', () => {
-//   expect(true).toBeTruthy();
-// });
+// eslint-disable-next-line no-undef
+test('Home should ', () => {
+  expect(true).toBeTruthy();
+});
