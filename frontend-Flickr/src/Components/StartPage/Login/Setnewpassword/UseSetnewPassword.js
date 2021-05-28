@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 /**
@@ -8,7 +9,7 @@ import { useHistory } from 'react-router-dom';
 const UseSetnewPassword = (SetnewpasswordValidate) => {
   const history = useHistory();
   const [values, setValues] = useState({
-    newpassword: '',
+    password: '',
   });
 
   const [passworderror, setErrors] = useState({});
@@ -37,6 +38,20 @@ const UseSetnewPassword = (SetnewpasswordValidate) => {
   useEffect(() => {
     if (Object.keys(passworderror).length === 0 && isSubmitting) {
       console.log(values);
+      axios
+        .patch('http://localhost:5000/users', {
+          headers: {
+
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
+            values,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+        });
       history.push('/change-complete/forgot-password');
     }
   }, [passworderror]);

@@ -50,18 +50,17 @@
   ],
   "users": [
     {
-      "NewuserFirstname": "sara",
-      "NewuserLastname": "osama",
-      "Newuserage": "21",
-      "Newuseremailaddress": "sara@gmail.com",
-      "Newuserpassword": "sara123456789"
-    },
+      "firstname": "menna",
+      "lastname": "kamel",
+      "age": "22",
+      "emailaddress": "menna@gmail.com",
+      "password": "menna123456789"
+    }
+
+  ],
+  "user": [
     {
-      "NewuserFirstname": "ahmed",
-      "NewuserLastname": "ali",
-      "Newuserage": "35",
-      "Newuseremailaddress": "ahmed@gmail.com",
-      "Newuserpassword": "ahmed123456789"
+
     }
   ],
   "profileUsers": [

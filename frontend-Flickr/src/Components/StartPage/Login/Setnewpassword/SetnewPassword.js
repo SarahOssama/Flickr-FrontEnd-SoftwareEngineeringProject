@@ -22,13 +22,13 @@ function Setnewpassword() {
 
           <input
             type="password"
-            name="newpassword"
+            name="password"
             className="passwordInput"
             placeholder="Password"
-            value={values.newpassword}
+            value={values.password}
             onChange={handleChange}
           />
-          {passworderror.newpassword && <p>{passworderror.newpassword}</p>}
+          {passworderror.password && <p>{passworderror.password}</p>}
           <span style={{
             fontSize: '0.75rem', color: 'grey',
           }}
