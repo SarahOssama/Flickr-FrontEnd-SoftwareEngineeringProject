@@ -3,13 +3,15 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import StartPage from './Components/StartPage/StartPage';
 import FormSignup from './Components/StartPage/SingUP/FormSignup';
-// import './App.css';
+import './App.css';
 // import Addv from './Components/Addv';
 import Home from './Components/HomePage/Home';
+import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
 import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 import Groups from './Components/Groups/Groups';
+import RecentPhotos from './Components/Explore/RecentPhotos';
 import Galleries from './Components/Profile/Galleries/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
 
@@ -17,6 +19,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <NavBar />
         <Switch>
 
           <Route path="/" exact component={StartPage} title="Find your inspiration. | Flickr" />
@@ -26,6 +29,8 @@ function App() {
           <Route path="/SignUp" exact component={FormSignup} title="Flickr Login" />
           <Route path="/Profile/CameraRoll" exact component={CameraRoll} title="Camera Roll | Flickr" />
           <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" />
+          <Route path="/explore" exact component={RecentPhotos} title="Galleries | Flickr" />
+
           <Route path="/SignUp" exact>
             <FormSignup />
           </Route>

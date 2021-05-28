@@ -7,23 +7,23 @@ import Background from '../ProBackground';
 const CameraRoll = () => (
   <div>
     <Background />
-    <div className="cameraRollNav">
-      <div className="camRollContainerNav">
-        <div className="camRollScrollingLayoutNav">
+    <div className="cameraRollNavBar">
+      <div className="camRollContainerNavBar">
+        <div className="camRollScrollingLayoutNavBar">
           <Link to="/About">About </Link>
           <Link to="/Photostream">Photostream</Link>
           <Link to="/Albums">Albums</Link>
           <Link to="/Faves">Faves</Link>
-          <Link to="/Galleries">Galleries</Link>
+          <Link to="/Profile/Galleries">Galleries</Link>
           <Link to="/Groups">Groups</Link>
           <Link to="/Stats">Stats</Link>
-          <Link className="selectedLink" to="/CameraRoll">CameraRoll</Link>
+          <Link className="selectedLinkCamRoll" to="/CameraRoll">CameraRoll</Link>
         </div>
       </div>
     </div>
     <div className="LayoutCamRoll">
       <div className="toolsCameraRollBar">
-        <div className="dateTaken">
+        <div className="dateTakenCamRoll">
           Data taken &nbsp;
           <MdKeyboardArrowDown />
           <ul id="dateTakenMenu">
@@ -41,7 +41,6 @@ const CameraRoll = () => (
             <li><BsFillGrid3X3GapFill /></li>
           </div>
         </div>
-
       </div>
     </div>
   </div>

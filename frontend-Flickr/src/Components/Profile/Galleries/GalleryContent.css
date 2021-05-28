@@ -1,4 +1,4 @@
-.actionBar{
+.actionBarGalleryContent{
     top: 50px;
     position: sticky;
     width:100%;
@@ -6,7 +6,7 @@
     height: 60px;
 }
 
-.actionBarScrollingLayout{
+.actionBarScrollingLayoutGalleryContent{
     display: flex;
     width: 80%;
     margin-left: auto;
@@ -16,24 +16,24 @@
     justify-content: space-between;
 }
 
-a{
-    text-decoration: none;
-    color: black;
-}
+/* a{ */
+/*     text-decoration: none; */
+/*     color: black; */
+/* } */
 
 span{
     margin-right: 10px;
     margin-left: 5px;
 }
 
-.galleryContent{
+.galleryContentGalleryContent{
     width: 80%;
     margin-left: auto;
     margin-right: auto;
     display: block;
 }
 
-section{
+.galleryContentGalleryContent > section{
     margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -41,7 +41,7 @@ section{
     justify-content: center;
 }
 
-#galleryContentTitle{
+#galleryContentTitleGalleryContent{
     width: min-content;
     font-size: x-large;
 }

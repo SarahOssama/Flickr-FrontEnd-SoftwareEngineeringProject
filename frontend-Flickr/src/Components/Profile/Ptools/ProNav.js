@@ -8,10 +8,10 @@ const ProNav = () => (
         <a href="/Photostream">Photostream</a>
         <a href="/Albums">Albums</a>
         <a href="/Faves">Faves</a>
-        <a href="/Gallaries">Gallaries</a>
+        <a href="/Profile/Galleries">Galleries</a>
         <a href="/Groups">Groups</a>
         <a href="/Stats">Stats</a>
-        <a href="/CameraRoll">Camera Roll</a>
+        <a href="/Profile/CameraRoll">Camera Roll</a>
       </div>
     </nav>
   </div>

@@ -85,10 +85,10 @@ const Galleries = () => (
             <Link to="/">Photostream</Link>
             <Link to="/">Albums</Link>
             <Link to="/">Faves</Link>
-            <Link to="/Galleries" className="selectedLink">Galleries</Link>
+            <Link to="/Profile/Galleries" className="selectedLink">Galleries</Link>
             <Link to="/">Groups</Link>
             <Link to="/">Stats</Link>
-            <Link to="/CameraRoll">CameraRoll</Link>
+            <Link to="/Profile/CameraRoll">CameraRoll</Link>
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ const Galleries = () => (
             <img className="imgRow1" src="https://i0.wp.com/www.runtoradiance.com/wp-content/uploads/2018/11/cute-iphone-wallpaper-of-cat.jpg" alt="" />
             <img className="imgRow2" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg" alt="" />
             <div className="infoBar">
-              <a style={{ textDecoration: 'none', color: 'black', padding: '5px' }} href="/">The Beginning</a>
+              <Link style={{ textDecoration: 'none', color: 'black', padding: '5px' }} to="/Profile/GalleryContent">The Beginning</Link>
               <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgb(131, 129, 129)' }}>
                 3 items · 4 views · 0 comments
                 <RiShareForwardLine className="shareIcon" onClick={shareGallery} style={{ alignSelf: 'end', fontSize: 'x-large', cursor: 'pointer' }} />

@@ -2,23 +2,23 @@ import './SubNav.css';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 
 const SubNav = () => (
-  <div className="subNavbar">
-    <div className="scrollingLayout">
+  <div className="subNavbarExplore">
+    <div className="scrollingLayoutExplore">
       <div>
-        <div className="container">
+        <div className="containerExplore">
           <div>
-            <a className="selectedLink" href="/"> Explore </a>
+            <a className="selectedLinkExplore" href="/"> Explore </a>
             {' '}
             {/* To be edited in status as item selected */}
             <a href="/"> Trending </a>
             <a href="/"> Events </a>
           </div>
-          <div className="more">
-            <a href="/" className="dropDown" style={{ paddingRight: '0px', marginRight: '0px' }}>
+          <div className="moreExplore">
+            <a href="/" className="dropDownExplore" style={{ paddingRight: '0px', marginRight: '0px' }}>
               More &nbsp;
             </a>
             <MdKeyboardArrowDown style={{ paddingTop: '15px' }} />
-            <ul className="dropDownContent">
+            <ul className="dropDownContentExplore">
               <li>
                 {' '}
                 <a href="/">The Commons</a>

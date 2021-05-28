@@ -48,7 +48,7 @@ const NavBar = (props) => {
             <div className="dropdown">
               <button className="dropbtn" type="button">Explore</button>
               <div className="dropdown-content">
-                <a href="/">Recent Photos</a>
+                <Link to="/explore">Recent Photos</Link>
                 <a href="/">Trending</a>
                 <a href="/">Events</a>
                 <a href="/">The Commons</a>

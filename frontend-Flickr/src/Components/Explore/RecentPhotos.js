@@ -23,13 +23,13 @@ const RecentPhotos = () => {
   }, []);
 
   return (
-    <div className="main">
+    <div className="mainExplore">
       <SubNav />
-      <div className="scrollingLayout">
-        <div className="content">
-          <div className="headerRow">
+      <div className="scrollingLayoutExplore">
+        <div className="contentExplore">
+          <div className="headerRowExplore">
             <h4>Explore</h4>
-            <div className="layout">
+            <div className="layoutExplore">
               <a href="/">
                 <RiShareForwardLine />
           &nbsp;&nbsp;Share
@@ -45,7 +45,7 @@ const RecentPhotos = () => {
               </a>
             </div>
           </div>
-          <div className="photos">
+          <div className="photosExplore">
             {' '}
             <ImageGrid photoData={photoData} />
             {' '}
