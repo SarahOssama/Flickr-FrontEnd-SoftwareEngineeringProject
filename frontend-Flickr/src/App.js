@@ -15,9 +15,13 @@ import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
 // import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
-import Groups from './Components/Groups/Groups';
+import GroupOverview from './Components/Groups/Groupoverview/GroupOverview';
+import GroupMembers from './Components/Groups/Groupmembers/GroupMembers';
 import UploadPhoto from './Components/UploadPhoto/UploadPhoto';
 import ViewPhoto from './Components/ViewPhoto/ViewPhoto';
+import Searchphotosmain from './Components/Search/Searchphotos/Searchphotosmain';
+import Searchpeoplemain from './Components/Search/Searchpeople/Searchpeoplemain';
+import Searchgroupsmain from './Components/Search/Searchgroup/Searchgroupmain';
 
 function App() {
   return (
@@ -29,9 +33,13 @@ function App() {
           <Route path="/" exact component={StartPage} title="Find your inspiration. | Flickr" />
           <Route path="/Home" exact component={Home} title="Home | Flickr" />
           <Route path="/profile" exact component={Profile} title="Home | Flickr" />
-          <Route path="/group" exact component={Groups} title="Groups | Flickr" />
+          <Route path="/groupoverview" exact component={GroupOverview} title="GroupOverview | Flickr" />
+          <Route path="/groupmembers" exact component={GroupMembers} title="GroupMembers | Flickr" />
           <Route path="/photos/upload" exact component={UploadPhoto} />
           <Route path="/photos" exact component={ViewPhoto} />
+          <Route path="/searchphotos" exact component={Searchphotosmain} title="SearchPhotos | Flickr" />
+          <Route path="/searchpeople" exact component={Searchpeoplemain} title="SearchPeople | Flickr" />
+          <Route path="/searchgroups" exact component={Searchgroupsmain} title="SearchGroups | Flickr" />
 
           <Route path="/SignUp" exact component={FormSignup} title="Flickr Login" />
           <Route path="/check-email/sign-up" exact component={CompleteSignup} title="Flickr Login" />

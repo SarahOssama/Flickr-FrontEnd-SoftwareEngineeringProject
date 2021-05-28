@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { RiShareForwardLine } from 'react-icons/ri';
-import Data from '../../db2.json';
-import './Groups.css';
-import Nav from './Nav';
-import CoverPicture from './Cover';
-import Photos from './Photos';
+import Data from '../../../db2.json';
+import './GroupOverview.css';
+import Nav from '../Nav';
+import CoverPicture from '../Cover';
+import Photos from '../Photos';
 
 /**
  * Group Overview component
  */
-class Groups extends Component {
+class GroupOverview extends Component {
   constructor(props) {
     super(props);
     this.props = props;
@@ -59,4 +59,4 @@ class Groups extends Component {
     );
   }
 }
-export default Groups;
+export default GroupOverview;
