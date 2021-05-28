@@ -33,7 +33,7 @@ const img = {
   height: '100%',
 };
 
-function Previews(props) {
+function Previews() {
   const [files, setFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
