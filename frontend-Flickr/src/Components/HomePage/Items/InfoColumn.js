@@ -15,7 +15,7 @@ const InfoColumn = () => (
     </div>
     <div className="railItem ">
       <h2>Groups for you</h2>
-      <a href="/group" className="testGroup">Just Street Phoyography</a>
+      <a href="/groupoverview" className="testGroup">Just Street Phoyography</a>
     </div>
     <div className="railItem">
       <h2>Flickr Blog</h2>

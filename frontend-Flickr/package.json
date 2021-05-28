@@ -31,7 +31,7 @@
     "doc": "jsdoc -c jsdoc.json",
     "lint": "eslint src",
     "server": "json-server --watch db.json --port 5000",
-    "testJest":"jest --watchAll"
+    "testJest": "jest --watchAll"
   },
   "eslintConfig": {
     "extends": [

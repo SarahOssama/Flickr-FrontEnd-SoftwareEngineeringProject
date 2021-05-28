@@ -1,0 +1,9 @@
+.Share a{
+    text-align: left;
+    color:grey;
+    padding-left: 1000px;
+}
+.Share a:link{
+    color: grey;
+    text-decoration: none;
+}
