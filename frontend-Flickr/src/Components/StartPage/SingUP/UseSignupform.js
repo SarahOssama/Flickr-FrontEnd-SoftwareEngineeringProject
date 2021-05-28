@@ -1,5 +1,7 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import Conf from '../../../Conf';
 
 /**
  * Useform
@@ -9,7 +11,7 @@ import { useHistory } from 'react-router-dom';
 const useform = (SignUpValidate) => {
   const history = useHistory();
 
-  const [values, setValues] = useState({
+  const [values, setValues, getValues] = useState({
     firstname: '',
     lastname: '',
     age: '',
@@ -37,13 +39,31 @@ const useform = (SignUpValidate) => {
     e.preventDefault();
 
     setErrors(SignUpValidate(values));
+
     setIsSubmitting(true);
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       console.log(values);
-      history.push('/check-email/sign-up');
+
+      axios
+        .post('http://localhost:5000/user', {
+        // headers: {
+
+          //   'content-type': 'application/json',
+          //   accept: 'application/json',
+          // },
+          // body: {
+          //   values,
+          // },
+          firstname: 'ahmed',
+
+        })
+        .then((response) => {
+          console.log(response.data);
+        });
+    // history.push('/check-email/sign-up');
     }
   }, [errors]);
 

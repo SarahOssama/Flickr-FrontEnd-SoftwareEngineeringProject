@@ -29,7 +29,11 @@ function SignUpValidate(values) {
   } else if (values.password.length < 12) {
     errors.password = 'Please use at least: 12 characters';
   }
+  // } else if (!/\S+(?=.{12,})/.test(values.password)) {
+  //   errors.password = 'invalid password';
+  // }
 
   return errors;
 }
-export default SignUpValidate;
+// export default SignUpValidate;
+module.exports = SignUpValidate;
