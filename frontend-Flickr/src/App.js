@@ -12,7 +12,7 @@ import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 import Groups from './Components/Groups/Groups';
 import RecentPhotos from './Components/Explore/RecentPhotos';
-import Galleries from './Components/Profile/Galleries/Galleries';
+import Galleries from './Components/Profile/Gallery/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
 
 function App() {
