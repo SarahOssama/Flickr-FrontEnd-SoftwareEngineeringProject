@@ -1,0 +1,33 @@
+
+
+.uploadLimitRemainingCount {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.dropzoneUpload{
+    height: 100%;
+    width: 100%;
+    max-width: 80%;
+
+}
+
+.emptyUploadState{
+    text-align: center;
+    width: 100%;
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+}
+
+#proUploads{
+    color: #898989;
+    text-decoration: underline;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #898989;
+    font-weight: 300;
+
+}

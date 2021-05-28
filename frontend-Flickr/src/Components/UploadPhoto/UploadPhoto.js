@@ -1,6 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './UploadPhoto.css';
+import Dropzone from 'react-dropzone';
+import MyDropzone from './MyDropzone';
 
 const UploadPhoto = () => (
   <div className=" container-fluid uploadPage">
@@ -25,7 +27,8 @@ const UploadPhoto = () => (
       </div>
     </div>
     <div className=" uploadBody">
-      <h2>Body</h2>
+      <MyDropzone />
+      {/* <Dropzone>Drag and drop photos and videos here</Dropzone> */}
 
     </div>
   </div>

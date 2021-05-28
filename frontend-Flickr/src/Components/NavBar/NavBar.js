@@ -11,8 +11,7 @@ import './SideNav.css';
 import './NavBar.css';
 import NotificationCard from './Notification/NotificationCard';
 
-// eslint-disable-next-line no-unused-vars
-const NavBar = (props) => {
+const NavBar = () => {
   const history = useHistory();
 
   function toggleNotification() {
