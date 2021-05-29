@@ -1,9 +1,14 @@
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {
+  useCallback, useEffect, useState, forwardRef, useImperativeHandle,
+} from 'react';
 import { useDropzone } from 'react-dropzone';
 import './MyDropzone.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UploadImageCard from './UploadImageCard';
+import EmptyState from './EmptyState';
+import AreaControl from './AreaControl';
 
 const thumbsContainer = {
   display: 'flex',
@@ -11,88 +16,62 @@ const thumbsContainer = {
   flexWrap: 'wrap',
   marginTop: 16,
 };
-
-const thumb = {
-  display: 'inline-flex',
-  borderRadius: 2,
-  border: '1px solid #eaeaea',
-  marginBottom: 8,
-  marginRight: 8,
-  width: 100,
-  height: 100,
-  padding: 4,
-  boxSizing: 'border-box',
-};
-
-const thumbInner = {
-  display: 'flex',
-  minWidth: 0,
-  overflow: 'hidden',
-};
-
-const img = {
-  display: 'block',
-  width: 'auto',
-  height: '100%',
-};
-
-function MyDropzone() {
+/**
+ * to Drag and drop images to Upload
+ * @returns image from upload
+ */
+const MyDropzone = forwardRef((props, ref) => {
   const [files, setFiles] = useState([]);
+
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
     setFiles(acceptedFiles.map((file) => Object.assign(file, {
       preview: URL.createObjectURL(file),
     })));
+    document.getElementById('toggleUploadState').classList.toggle('hideonDrop');
+
     console.log(acceptedFiles);
     console.log(rejectedFiles);
   }, []);
-  const thumbs = files.map((file) => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        <img
-          src={file.preview}
-          style={img}
-          alt=""
-        />
-      </div>
-    </div>
-  ));
+
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: 'image/*',
     onDrop,
     noClick: true,
   });
+  useImperativeHandle(ref, () => ({
+
+    getAlert() {
+      open();
+    },
+
+  }));
   useEffect(() => () => {
     // Make sure to revoke the data uris to avoid memory leaks
     files.forEach((file) => URL.revokeObjectURL(file.preview));
   }, [files]);
 
+  const remove = (file) => {
+    const newFiles = [...files]; // make a var for the new array
+    newFiles.splice(file, 1); // remove the file from the array
+    setFiles(newFiles); // update the state
+    document.getElementById('toggleUploadState').classList.toggle('showonRemove'); // show State on Remove
+  };
   return (
     <div {...getRootProps({ noClick: true })}>
       <input {...getInputProps()} />
+      <AreaControl onClickOpen={open} />
       <div className="dropzoneUpload">
-        <aside style={thumbsContainer}>
-          {thumbs}
+        <aside className={thumbsContainer}>
+          <UploadImageCard files={files} />
         </aside>
-        <div className="emptyUploadState">
-          <p className="uploadLimitRemainingCount">You can upload 989 more photos and videos.</p>
-          <p>Drag &amp; drop photos and videos here</p>
-          <p>or</p>
-          <button
-            type="button"
-            onClick={open}
-            className="btn btn-primary"
-          >
-            Choose photos and videos to upload
-
-          </button>
-          <br />
-          <a id="proUploads" href="/account/upgrade/pro?coupon=FLICKRPRO15">Get Pro for unlimited uploads</a>
+        <div className="emptyUploadState" id="toggleUploadState">
+          <EmptyState onClickOpen={open} />
         </div>
-
+        <button type="button" onClick={() => remove()}> DeleteButton </button>
       </div>
 
     </div>
   );
-}
+});
 
 export default MyDropzone;

@@ -1,77 +1,53 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from 'react';
-import { useDropzone } from 'react-dropzone';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import DropzoneComponent from 'react-dropzone-component';
 
-const thumbsContainer = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  marginTop: 16,
-};
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
 
-const thumb = {
-  display: 'inline-flex',
-  borderRadius: 2,
-  border: '1px solid #eaeaea',
-  marginBottom: 8,
-  marginRight: 8,
-  width: 100,
-  height: 100,
-  padding: 4,
-  boxSizing: 'border-box',
-};
+    // For a full list of possible configurations,
+    // please consult http://www.dropzonejs.com/#configuration
+    this.djsConfig = {
+      addRemoveLinks: true,
+      acceptedFiles: 'image/jpeg,image/png,image/gif',
+    };
 
-const thumbInner = {
-  display: 'flex',
-  minWidth: 0,
-  overflow: 'hidden',
-};
+    this.componentConfig = {
+      iconFiletypes: ['.jpg', '.png', '.gif'],
+      showFiletypeIcon: true,
+      postUrl: '/uploadHandler',
+    };
 
-const img = {
-  display: 'block',
-  width: 'auto',
-  height: '100%',
-};
+    // If you want to attach multiple callbacks, simply
+    // create an array filled with all your callbacks.
+    this.callbackArray = [() => console.log('Hi!'), () => console.log('Ho!')];
 
-function Previews() {
-  const [files, setFiles] = useState([]);
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: 'image/*',
-    onDrop: (acceptedFiles) => {
-      setFiles(acceptedFiles.map((file) => Object.assign(file, {
-        preview: URL.createObjectURL(file),
-      })));
-    },
-  });
+    // Simple callbacks work too, of course
+    this.callback = () => console.log('Hello!');
 
-  const thumbs = files.map((file) => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        <img
-          src={file.preview}
-          style={img}
-          alt=""
-        />
-      </div>
-    </div>
-  ));
+    this.success = (file) => console.log('uploaded', file);
 
-  useEffect(() => () => {
-    // Make sure to revoke the data uris to avoid memory leaks
-    files.forEach((file) => URL.revokeObjectURL(file.preview));
-  }, [files]);
+    this.removedfile = (file) => console.log('removing...', file);
 
-  return (
-    <section className="container">
-      <div {...getRootProps({ className: 'dropzone' })}>
-        <input {...getInputProps()} />
-        <p>Drag drop some files here, or click to select files</p>
-      </div>
-      <aside style={thumbsContainer}>
-        {thumbs}
-      </aside>
-    </section>
-  );
+    this.dropzone = null;
+  }
+
+  render() {
+    const config = this.componentConfig;
+    const { djsConfig } = this;
+
+    // For a list of all possible events (there are many), see README.md!
+    const eventHandlers = {
+      // init: (dz) => this.dropzone = dz,
+      drop: this.callbackArray,
+      addedfile: this.callback,
+      success: this.success,
+      removedfile: this.removedfile,
+    };
+
+    return (
+      <DropzoneComponent config={config} eventHandlers={eventHandlers} djsConfig={djsConfig} />
+    );
+  }
 }
-
-export default Previews;

@@ -17,7 +17,7 @@ import About from './Components/NavBar/About';
 import Profile from './Components/Profile/Profile';
 import GroupOverview from './Components/Groups/Groupoverview/GroupOverview';
 import GroupMembers from './Components/Groups/Groupmembers/GroupMembers';
-import UploadPhoto from './Components/UploadPhoto/UploadPhoto';
+import Upload from './Components/UploadPhoto/Upload';
 import ViewPhoto from './Components/ViewPhoto/ViewPhoto';
 import Searchphotosmain from './Components/Search/Searchphotos/Searchphotosmain';
 import Searchpeoplemain from './Components/Search/Searchpeople/Searchpeoplemain';
@@ -35,7 +35,7 @@ function App() {
           <Route path="/profile" exact component={Profile} title="Home | Flickr" />
           <Route path="/groupoverview" exact component={GroupOverview} title="GroupOverview | Flickr" />
           <Route path="/groupmembers" exact component={GroupMembers} title="GroupMembers | Flickr" />
-          <Route path="/photos/upload" exact component={UploadPhoto} />
+          <Route path="/photos/upload" exact component={Upload} />
           <Route path="/photos" exact component={ViewPhoto} />
           <Route path="/searchphotos" exact component={Searchphotosmain} title="SearchPhotos | Flickr" />
           <Route path="/searchpeople" exact component={Searchpeoplemain} title="SearchPeople | Flickr" />
