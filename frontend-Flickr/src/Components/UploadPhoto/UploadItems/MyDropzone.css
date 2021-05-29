@@ -1,0 +1,86 @@
+.uploadLimitRemainingCount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.dropzoneUpload {
+  height: 450px;
+  width: 100%;
+  max-width: 80%;
+  /* margin-left: 232px; Same as the width of the sidenav */
+  padding: 0px ;
+
+}
+
+.emptyUploadState {
+  text-align: center;
+  width: 100%;
+  margin-left: 10%;
+  margin-top: 10%;
+  margin-right: 25%;
+  margin-bottom: 25%;
+}
+/* Hide the Upload State menu (use JS to add this class to the .dropdown-content container when the user clicks on the onDrop button) */
+
+#proUploads {
+  color: #898989;
+  text-decoration: underline;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #898989;
+  font-weight: 300;
+}
+
+
+
+/* //////////////Side////////////////// */
+
+.editPanelScrollWrapper {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+  margin-top: 84px;
+  
+}
+
+.sidenavUpload {
+  width: 232px;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top:83px;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  margin: 14px 0 0 14px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 8px rgb(0 0 0 / 33%);
+  border-radius: 2px;
+  padding: 0 0 12px 0;
+  border-top: 1px solid transparent;
+  overflow: hidden;
+}
+
+.sidenavUpload a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #2196f3;
+  display: block;
+}
+
+.sidenavUpload a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenavUpload {
+    padding-top: 15px;
+  }
+  .sidenavUpload a {
+    font-size: 18px;
+  }
+}

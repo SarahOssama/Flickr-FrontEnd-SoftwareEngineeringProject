@@ -10,25 +10,19 @@ import UploadImageCard from './UploadImageCard';
 import EmptyState from './EmptyState';
 import AreaControl from './AreaControl';
 
-const thumbsContainer = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  marginTop: 16,
-};
 /**
  * to Drag and drop images to Upload
  * @returns image from upload
  */
 const MyDropzone = forwardRef((props, ref) => {
+  const [toggleUpload, setToggleUpload] = useState(false);
   const [files, setFiles] = useState([]);
 
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
     setFiles(acceptedFiles.map((file) => Object.assign(file, {
       preview: URL.createObjectURL(file),
     })));
-    document.getElementById('toggleUploadState').classList.toggle('hideonDrop');
-
+    setToggleUpload(true);
     console.log(acceptedFiles);
     console.log(rejectedFiles);
   }, []);
@@ -54,20 +48,29 @@ const MyDropzone = forwardRef((props, ref) => {
     const newFiles = [...files]; // make a var for the new array
     newFiles.splice(file, 1); // remove the file from the array
     setFiles(newFiles); // update the state
-    document.getElementById('toggleUploadState').classList.toggle('showonRemove'); // show State on Remove
+    setToggleUpload(true);
   };
   return (
     <div {...getRootProps({ noClick: true })}>
       <input {...getInputProps()} />
-      <AreaControl onClickOpen={open} />
-      <div className="dropzoneUpload">
-        <aside className={thumbsContainer}>
-          <UploadImageCard files={files} />
-        </aside>
-        <div className="emptyUploadState" id="toggleUploadState">
-          <EmptyState onClickOpen={open} />
+      <AreaControl onClickOpen={open} toggleUPloadAreaControl={toggleUpload} imgUpload={files} />
+      {toggleUpload && (
+      <div className="editPanelScrollWrapper">
+        <div className="sidenavUpload">
+          <a href="/about">About</a>
+          <a href="/services">Services</a>
+          <a href="/clients">Clients</a>
+          <a href="/contact">Contact</a>
         </div>
-        <button type="button" onClick={() => remove()}> DeleteButton </button>
+      </div>
+      )}
+      <div className="dropzoneUpload">
+
+        <UploadImageCard files={files} />
+        <div className="emptyUploadState" id="toggleUploadState">
+          {!toggleUpload && <EmptyState onClickOpen={open} />}
+        </div>
+        {/* <button type="button" onClick={() => remove()}> DeleteButton </button> */}
       </div>
 
     </div>

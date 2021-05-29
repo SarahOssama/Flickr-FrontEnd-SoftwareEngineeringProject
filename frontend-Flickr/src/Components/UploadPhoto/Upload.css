@@ -9,6 +9,7 @@
   height: 100%;
   /* margin-top:43px; */
   padding: 0;
+  
 }
 .uploadGlobalNavBar {
   display: flex;
@@ -61,6 +62,7 @@
 .uploadRightNavBar {
   display: flex;
   align-items: center;
+  
 }
 
 .uploadRightNavBarLinks {
