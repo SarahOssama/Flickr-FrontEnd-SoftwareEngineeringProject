@@ -25,6 +25,7 @@ const EmptyState = ({ onClickOpen }) => {
 
       </button>
       <br />
+      <br />
       <a id="proUploads" href="/account/upgrade/pro?coupon=FLICKRPRO15">Get Pro for unlimited uploads</a>
 
     </div>
