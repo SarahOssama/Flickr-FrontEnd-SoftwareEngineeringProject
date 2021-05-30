@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMTk0ODgwLCJqdGkiOiJkYzk1MzAwZWZhYTE0M2JiYWY4NDFlOTc1ODM3YTUwYiIsInVzZXJfaWQiOjE1fQ.H8Rs_bXBst1DazgpSifvEIbptdjQe2r4XqjDlnmN6og';
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzk5NTYzLCJqdGkiOiI3YWE4MGExMTUyY2E0YTljOTRiYWFjYWQzOGIzNzRlZSIsInVzZXJfaWQiOjE3fQ.craiilIFPLtgSiOJV4bTfChDh8AZsKDLpmFrru75ffA';
 
 const GetPhoto = () => {
   const [photoData, setphotoData] = useState([]);
@@ -31,7 +31,7 @@ const GetPhoto = () => {
 
     const getTasks = async () => {
       axios
-        .get(`${Conf.backURL}gallery/`, {
+        .get(`${Conf.backURL}/gallery/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
             'content-type': 'application/json',
@@ -46,7 +46,7 @@ const GetPhoto = () => {
           console.log(res.data);
         });
     };
-    // getTasks();
+    getTasks();
   }, [/* dependency array (value when it changes we want the code to run) */]);
   return (
     photoData

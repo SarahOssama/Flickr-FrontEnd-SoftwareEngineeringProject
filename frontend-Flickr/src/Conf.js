@@ -4,7 +4,7 @@ export default {
   localURL: 'http://localhost:5000/photoData',
   localURLUsers: 'http://localhost:5000/users',
   LocalNoPath: 'http://localhost:5000',
-  backURL: 'https://fotone.me/api/',
+  backURL: 'https://fotone.me/api',
   productionURL: 'http://localhost:8000',
 };
 
