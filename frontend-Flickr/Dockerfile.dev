@@ -1,0 +1,13 @@
+#Uses lightweight node image as a base, to use npm
+FROM node:alpine as builder
+
+#Sets work directory
+WORKDIR '/app'
+
+#Installs project dependencies
+COPY ./package.json ./
+RUN npm install --legacy-peer-deps
+
+#Copies project files - unnecessary due to volume
+#but kept for easy migration to different deployment
+COPY ./ ./

@@ -1,0 +1,24 @@
+version: "3"
+services:
+  front:
+    image: ziyadss/flickr-frontend-test
+    build:
+      context: ./flickr-frontend/
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - ./flickr-frontend:/app
+    environment:
+      - CI=true
+    command: ["npm", "run", "test"]
+
+  back:
+    image: ziyadss/flickr-backend-test
+    build:
+      context: ./flickr-backend/
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./flickr-backend:/app
+    environment:
+      - CI=true
+    command: ["python", "manage.py", "test"]
