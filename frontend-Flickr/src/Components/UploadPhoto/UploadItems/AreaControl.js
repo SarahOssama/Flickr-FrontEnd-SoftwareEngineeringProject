@@ -6,16 +6,16 @@ import axios from 'axios';
 import Conf from '../../../Conf';
 
 // import UploadPhoto from '../UploadPhoto';
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzk5NTYzLCJqdGkiOiI3YWE4MGExMTUyY2E0YTljOTRiYWFjYWQzOGIzNzRlZSIsInVzZXJfaWQiOjE3fQ.craiilIFPLtgSiOJV4bTfChDh8AZsKDLpmFrru75ffA';
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDEzNzgzLCJqdGkiOiJmYTNlMmJjOTVkM2Y0ZjAwYjE2NjE1NzNjNWY2NTU4MiIsInVzZXJfaWQiOjE3fQ.G5mHgzVkYS2b3FF3QBnAcoWcYJys3iTb6r-4eG4ha2Q';
 
 const AreaControl = ({ onClickOpen, toggleUPloadAreaControl, imgUpload }) => {
   // const handleUpload = UploadPhoto();
   // useEffect(() => {
-  const getURL = () => (imgUpload.forEach((file) => {
-    URL.revokeObjectURL(file.preview);
-    console.log(file.preview);
-  }));
-  getURL();
+  // const getURL = () => (imgUpload.forEach((file) => {
+  //   URL.revokeObjectURL(file.preview);
+  //   // console.log(file.preview);
+  // }));
+  // getURL();
   const postUploadPhotoBack = () => {
     axios.post(`${Conf.backURL}/photos/upload`, {
       headers: {
@@ -23,11 +23,10 @@ const AreaControl = ({ onClickOpen, toggleUPloadAreaControl, imgUpload }) => {
         'Content-type': 'multipart/form-data',
         accept: '*/*',
       },
-      body: {
-        media_file: 'mediafield',
-        photo_height: 678,
-        photo_width: 456,
-      },
+
+      media_file: 'mediafield',
+      photo_height: 678,
+      photo_width: 456,
 
     })
       .then((response) => {
@@ -62,7 +61,7 @@ const AreaControl = ({ onClickOpen, toggleUPloadAreaControl, imgUpload }) => {
             <h2>Enabled</h2>
             <button
               type="button"
-              onClick={postUploadPhotoBack()}
+              // onClick={/*postUploadPhotoBack()*/}
             >
               Upload
 

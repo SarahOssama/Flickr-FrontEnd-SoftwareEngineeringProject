@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzgxOTAxLCJqdGkiOiIzYTkwN2MyZGExMWE0YWIxYWYwOWEwNzJmZTQ2YmZjMCIsInVzZXJfaWQiOjl9.Gq0_TsxrVpi6XSE1xmYIirpeOCQSrYEpSVlhi86znSk';
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDEzNzgzLCJqdGkiOiJmYTNlMmJjOTVkM2Y0ZjAwYjE2NjE1NzNjNWY2NTU4MiIsInVzZXJfaWQiOjE3fQ.G5mHgzVkYS2b3FF3QBnAcoWcYJys3iTb6r-4eG4ha2Q';
 
 const UploadPhoto = () => {
   const [mediafield, setmediafield] = useState('Test');

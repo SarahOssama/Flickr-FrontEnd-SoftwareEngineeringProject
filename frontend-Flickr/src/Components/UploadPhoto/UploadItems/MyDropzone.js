@@ -6,7 +6,7 @@ import React, {
 import { useDropzone } from 'react-dropzone';
 import './MyDropzone.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UploadImageCard from './UploadImageCard';
+import UploadImageThumb from './UploadImageThumb';
 import EmptyState from './EmptyState';
 import AreaControl from './AreaControl';
 
@@ -19,12 +19,14 @@ const MyDropzone = forwardRef((props, ref) => {
   const [files, setFiles] = useState([]);
 
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    setFiles(acceptedFiles.map((file) => Object.assign(file, {
-      preview: URL.createObjectURL(file),
-    })));
+    setFiles(acceptedFiles[0]);
+    // console.log(acceptedFiles.map((file) => Object.assign(file, {
+    //   preview: URL.createObjectURL(file),
+    // })));
+
     setToggleUpload(true);
     console.log(acceptedFiles);
-    console.log(rejectedFiles);
+    console.log(acceptedFiles[0]);
   }, []);
 
   const { getRootProps, getInputProps, open } = useDropzone({
@@ -66,7 +68,7 @@ const MyDropzone = forwardRef((props, ref) => {
       )}
       <div className="dropzoneUpload">
 
-        <UploadImageCard files={files} />
+        <UploadImageThumb photo={files} />
         <div className="emptyUploadState" id="toggleUploadState">
           {!toggleUpload && <EmptyState onClickOpen={open} />}
         </div>
