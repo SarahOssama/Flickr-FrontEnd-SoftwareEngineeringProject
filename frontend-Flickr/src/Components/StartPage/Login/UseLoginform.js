@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
+import axios from 'axios';
+import Conf from '../../../Conf';
 
 /**
  * UseLoginform
@@ -9,9 +11,9 @@ import { useHistory } from 'react-router-dom';
 const UseLoginform = (LoginValidate) => {
   const history = useHistory();
 
-  const [values, setValues] = useState({
+  const [user, setuser] = useState({
 
-    emailaddress: '',
+    email: '',
     password: '',
 
   });
@@ -26,8 +28,8 @@ const UseLoginform = (LoginValidate) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setValues({
-      ...values,
+    setuser({
+      ...user,
       [name]: value,
     });
   };
@@ -37,20 +39,59 @@ const UseLoginform = (LoginValidate) => {
    */
 
   const handleSubmit = (e) => {
-    setError(LoginValidate(values));
+    setError(LoginValidate(user));
     e.preventDefault();
     setIsSubmitting(true);
   };
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmitting) {
-      console.log(values);
-      history.push('/Home');
+      console.log(user);
+      const {
+        email, password,
+      } = user;
+
+      const LoginUser = async () => {
+        await axios
+          .post(`${Conf.localURL}LoginUsers`, {
+            email,
+            password,
+          })
+          .then((response) => {
+            console.log(response);
+            if (response.status === 201) {
+              history.push('/Home');
+              // response.body.tokens.accessToken=res;
+            }
+          });
+      }; LoginUser();
+
+      const backLoginUser = async () => {
+        await axios
+          .post(`${Conf.backURL}accounts/login/`, {
+            headers: {
+              'content-type': 'application/json',
+              // accept: 'application/json',
+            },
+            body: {
+              email,
+              password,
+            },
+          })
+          .then((response) => {
+            if (response.status === 200) {
+              localStorage.setItem('access token', response.data.tokens.access);
+              history.push('/Home');
+            } else if (response.status === 400) {
+              console.log(response.data);
+            }
+          });
+      }; backLoginUser();
     }
   }, [error]);
 
   return {
-    handleChange, values, handleSubmit, error,
+    handleChange, user, handleSubmit, error,
   };
 };
 

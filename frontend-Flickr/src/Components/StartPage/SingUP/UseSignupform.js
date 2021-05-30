@@ -1,7 +1,9 @@
-import axios from 'axios';
+/* eslint-disable camelcase */
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Conf from '../../../Conf';
+// import AccountService from '../AccountServices';
 
 /**
  * Useform
@@ -11,12 +13,12 @@ import Conf from '../../../Conf';
 const useform = (SignUpValidate) => {
   const history = useHistory();
 
-  const [values, setValues, getValues] = useState({
-    firstname: '',
-    lastname: '',
-    age: '',
-    emailaddress: '',
+  const [newuser, setNewuser] = useState({
+    email: '',
     password: '',
+    first_name: '',
+    last_name: '',
+    age: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -29,8 +31,8 @@ const useform = (SignUpValidate) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setValues({
-      ...values,
+    setNewuser({
+      ...newuser,
       [name]: value,
     });
   };
@@ -38,37 +40,64 @@ const useform = (SignUpValidate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrors(SignUpValidate(values));
+    setErrors(SignUpValidate(newuser));
 
     setIsSubmitting(true);
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log(values);
+      const {
+        email, password, first_name, last_name, age,
+      } = newuser;
 
-      axios
-        .post('http://localhost:5000/user', {
-        // headers: {
+      console.log(newuser);
+      const addUser = async () => {
+        await axios
+          .post(`${Conf.localURL}users/`, {
+            email,
+            password,
+            first_name,
+            last_name,
+            age,
+          })
+          .then((response) => {
+            console.log(response.data);
+            if (response.status === 201) {
+              history.push('/check-email/sign-up');
+            }
+          });
+      }; addUser();
 
-          //   'content-type': 'application/json',
-          //   accept: 'application/json',
-          // },
-          // body: {
-          //   values,
-          // },
-          firstname: 'ahmed',
+      const backaddUser = async () => {
+        await axios
+          .post(`${Conf.backURL}accounts/sign-up/`, {
 
-        })
-        .then((response) => {
-          console.log(response.data);
-        });
-    // history.push('/check-email/sign-up');
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: {
+              email,
+              password,
+              first_name,
+              last_name,
+              age,
+            },
+          })
+          .then((response) => {
+            console.log(response);
+            // if (response.status === 201) {
+            //   history.push('/check-email/sign-up');
+            // } else if (response.status === 400) {
+            //   console.log(response.data);
+            // }
+          });
+      }; backaddUser();
     }
   }, [errors]);
 
   return {
-    handleChange, values, handleSubmit, errors,
+    handleChange, newuser, handleSubmit, errors, useEffect,
   };
 };
 

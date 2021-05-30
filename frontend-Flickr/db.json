@@ -50,17 +50,377 @@
   ],
   "users": [
     {
-      "firstname": "menna",
-      "lastname": "kamel",
-      "age": "22",
-      "emailaddress": "menna@gmail.com",
-      "password": "menna123456789"
-    }
-
-  ],
-  "user": [
+      "newuser": {
+        "firstname": "menna",
+        "lastname": "nawar",
+        "age": "22",
+        "emailaddress": "menna.nawar@gmail.com",
+        "password": "ccccccccccccccccccc"
+      },
+      "id": 1
+    },
     {
-
+      "newuser": {
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22",
+        "email": "menna.nawar99@gmail.com",
+        "password": "Menna123456789"
+      },
+      "id": 2
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar99@gmail.com",
+        "password": "Menna123456789",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 3
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar99@gmail.com",
+        "password": "Mariam123456789",
+        "first_name": "mariam",
+        "last_name": "ghanem",
+        "age": "22"
+      },
+      "id": 4
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "bbbbbbbbbbbbbbbbbbbbbb",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 5
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "xxxxxxxxxxxxxxxxxxxxxx",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 6
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "aaaaaaaaaaaaaaaaaaaaaaaaa",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 7
+    },
+    {
+      "email": {
+        "email": "menna.nawar@gmail.com",
+        "password": "vvvvvvvvvvvvvvvvvvvvvvvvvv",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "age": {
+        "email": "menna.nawar@gmail.com",
+        "password": "vvvvvvvvvvvvvvvvvvvvvvvvvv",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 8
+    },
+    {
+      "": {
+        "email": "menna.nawar@gmail.com",
+        "password": "ttttttttttttttttttt",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 9
+    },
+    {
+      "newuser": {
+        "first_name": "menna",
+        "last_name": "nawar",
+        "email": "menna.nawar@gmail.com",
+        "age": "22",
+        "password": "pppppppppppppppppppppppp"
+      },
+      "id": 10
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "jjjjjjjjjjjjjjjjjjjj",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 11
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "cccccccccccccccccccc",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 12
+    },
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "rrrrrrrrrrrrrrrrrrrrrrr",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 13
+    },
+    {
+      "emailaddress": "menna.nawar99@gmail.com",
+      "id": 14
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 15
+    },
+    {
+      "emailaddress": "mariam@gmail.com",
+      "id": 16
+    },
+    {
+      "email": "ahmed.nawar@gmail.com",
+      "id": 17
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "first_name": "menna",
+      "password": "mmmmmmmmmmmmmmmmmmm",
+      "id": 18
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "nnnnnnnnnnnnnnnn",
+      "first_name": "menna",
+      "last_name": "nawar",
+      "age": "22",
+      "id": 19
+    },
+    {
+      "data": {
+        "email": "menna.nawar99@gmail.com",
+        "password": "llllllllllllllllllllll",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 20
+    },
+    {
+      "email": "menna.nawar99@gmail.com",
+      "password": "Ahmed123456789",
+      "first_name": "ahmed",
+      "last_name": "nawar",
+      "age": "30",
+      "id": 21
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "nnnnnnnnnnnnnnnn",
+      "first_name": "menna",
+      "last_name": "nawar",
+      "age": "22",
+      "id": 22
+    },
+    {
+      "props": "menna.nawar@gmail.com",
+      "id": 23
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 24
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 25
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "menna.nawar@gmail.com",
+      "id": 26
+    },
+    {
+      "email": {
+        "email": "menna.nawar@gmail.com",
+        "password": "uuuuuuuuuuuuuuuuuuuuu",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "password": {
+        "email": "menna.nawar@gmail.com",
+        "password": "uuuuuuuuuuuuuuuuuuuuu",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 27
+    },
+    {
+      "email": {
+        "email": "menna.nawar@gmail.com",
+        "password": "uuuuuuuuuuuuuuuuuuuuu",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "password": {
+        "email": "menna.nawar@gmail.com",
+        "password": "uuuuuuuuuuuuuuuuuuuuu",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 28
+    },
+    {
+      "id": 29
+    },
+    {
+      "id": 30
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "menna.nawar@gmail.com",
+      "first_name": "menna.nawar@gmail.com",
+      "last_name": "menna.nawar@gmail.com",
+      "age": "menna.nawar@gmail.com",
+      "id": 31
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "menna.nawar@gmail.com",
+      "first_name": "menna.nawar@gmail.com",
+      "last_name": "menna.nawar@gmail.com",
+      "age": "menna.nawar@gmail.com",
+      "id": 32
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "menna.nawar@gmail.com",
+      "first_name": "menna.nawar@gmail.com",
+      "last_name": "menna.nawar@gmail.com",
+      "age": "menna.nawar@gmail.com",
+      "id": 33
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 34
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 35
+    },
+    {
+      "props": "menna.nawar@gmail.com",
+      "id": 36
+    },
+    {
+      "props": "menna.nawar@gmail.com",
+      "id": 37
+    },
+    {
+      "props": "menna.nawar@gmail.com",
+      "id": 38
+    },
+    {
+      "user": "menna.nawar@gmail.com",
+      "id": 39
+    },
+    {
+      "user": "menna.nawar@gmail.com",
+      "id": 40
+    },
+    {
+      "props": "menna.nawar@gmail.com",
+      "id": 41
+    },
+    {
+      "email": "menna.nawar@gmail.com",
+      "password": "uuuuuuuuuuuuuuuuuuuuu",
+      "first_name": "menna",
+      "last_name": "nawar",
+      "age": "22",
+      "id": 42
+    }
+  ],
+  "LoginUsers": [
+    {
+      "user": {
+        "emailaddress": "mariam@gmail.com",
+        "password": "vvvvvvvvvvvvvvvvvvvvvv"
+      },
+      "id": 1
+    },
+    {
+      "user": {
+        "email": "menna.nawar@gmail.com",
+        "password": "bbbbbbbbbbbbbbb"
+      },
+      "id": 2
+    },
+    {
+      "user": {
+        "email": "menna.nawar99@gmail.com",
+        "password": "vvvvvvvvvvvvvvvvvvvvvvvvvv"
+      },
+      "id": 3
+    },
+    {
+      "user": {
+        "email": "menna.nawar@gmail.com",
+        "password": "zzzzzzzzzzzzzzzzzzzzzzzzz"
+      },
+      "id": 4
+    },
+    {
+      "user": {
+        "email": "menna.nawar@gmail.com",
+        "password": "Menna12345678"
+      },
+      "id": 5
+    }
+  ],
+  "EmailsToResetPassword": [
+    {
+      "EmailsToReset": {
+        "emailaddress": "ahmed.nawar@gmail.com"
+      },
+      "id": 1
+    },
+    {
+      "EmailsToReset": {
+        "email": "menna.nawar@gmail.com"
+      },
+      "id": 2
+    }
+  ],
+  "newpasswords": [
+    {
+      "usernewpassword": {
+        "password": "bbhhhhhhhhhhhhhhhhhhhhhhh"
+      },
+      "id": 1
     }
   ],
   "profileUsers": [

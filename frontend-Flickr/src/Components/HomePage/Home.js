@@ -28,7 +28,7 @@ const Home = () => {
   useEffect(() => {
     const getPhoto = async () => {
       axios
-        .get(`${Conf.localURL}`, {
+        .get(`${Conf.localURL}photoData/`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
             'content-type': 'application/json',
