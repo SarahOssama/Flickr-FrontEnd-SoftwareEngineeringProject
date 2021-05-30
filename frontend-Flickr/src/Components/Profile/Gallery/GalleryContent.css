@@ -82,7 +82,7 @@ span{
     justify-content: space-between;
 }
 
-.imagesGalleryContent > img{
+.imagesGalleryContent img{
   height:200px;
   object-fit:fill;
   max-height: 200px;

@@ -79,7 +79,7 @@ a.selectedLink {
     padding: 30px;
 }
 
-img{
+.gallery img{
     width:146px ;
     object-fit:fill;
 }
