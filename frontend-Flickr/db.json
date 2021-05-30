@@ -102,5 +102,21 @@
       "imgSrc": "https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg",
       "notifierName": "Sarah Osama"
     }
+  ],
+  "GroupMemberData": [
+    {
+      "id": 1,
+      "Name": "Mennatallah Elkhodary",
+      "avatar": "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg",
+      "Numofpictures": "1234",
+      "Numoffriends": "345"
+    },
+    {
+      "id": 2,
+      "Name": "Sara Osama",
+      "avatar": "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg",
+      "Numofpictures": "54",
+      "Numoffriends": "330"
+    }
   ]
 }

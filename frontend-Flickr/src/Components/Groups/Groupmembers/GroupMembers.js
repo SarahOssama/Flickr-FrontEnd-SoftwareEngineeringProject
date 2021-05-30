@@ -18,13 +18,13 @@ class GroupMembers extends Component {
       <div>
         <CoverPicture />
         <Nav />
-        <Member />
         <div className="Share">
           <a href="/">
             <RiShareForwardLine style={{ height: '30', width: '40', color: 'grey' }} />
             Share
           </a>
         </div>
+        <Member />
       </div>
 
     );
