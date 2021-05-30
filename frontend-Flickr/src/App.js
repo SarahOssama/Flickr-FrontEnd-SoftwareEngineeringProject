@@ -13,9 +13,10 @@ import SetnewPassword from './Components/StartPage/Login/Setnewpassword/SetnewPa
 import Home from './Components/HomePage/Home';
 import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
-// import Footer from './Components/Footer/Footer';
+import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 import GroupOverview from './Components/Groups/Groupoverview/GroupOverview';
+import Photos from './Components/Groups/GroupPhotopool/GroupPool';
 import GroupMembers from './Components/Groups/Groupmembers/GroupMembers';
 import UploadPhoto from './Components/UploadPhoto/UploadPhoto';
 import ViewPhoto from './Components/ViewPhoto/ViewPhoto';
@@ -33,8 +34,9 @@ function App() {
           <Route path="/" exact component={StartPage} title="Find your inspiration. | Flickr" />
           <Route path="/Home" exact component={Home} title="Home | Flickr" />
           <Route path="/profile" exact component={Profile} title="Home | Flickr" />
-          <Route path="/groupoverview" exact component={GroupOverview} title="GroupOverview | Flickr" />
-          <Route path="/groupmembers" exact component={GroupMembers} title="GroupMembers | Flickr" />
+          <Route path="/group" exact component={GroupOverview} title="GroupOverview | Flickr" />
+          <Route path="/groups/members" exact component={GroupMembers} title="GroupMembers | Flickr" />
+          <Route path="/groups/pool" exact component={Photos} title="GroupPhotos | Flickr" />
           <Route path="/photos/upload" exact component={UploadPhoto} />
           <Route path="/photos" exact component={ViewPhoto} />
           <Route path="/searchphotos" exact component={Searchphotosmain} title="SearchPhotos | Flickr" />
@@ -52,7 +54,7 @@ function App() {
 
           <Route path="/about" component={About} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </Router>
 

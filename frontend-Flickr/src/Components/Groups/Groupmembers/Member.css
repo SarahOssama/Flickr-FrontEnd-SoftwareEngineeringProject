@@ -25,7 +25,7 @@ body{
     margin-right: 10px;
     margin-top: 10px;
   }
-  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberName h{
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberName a{
     font-weight: lighter;
     font-size: large;
     color:black;
