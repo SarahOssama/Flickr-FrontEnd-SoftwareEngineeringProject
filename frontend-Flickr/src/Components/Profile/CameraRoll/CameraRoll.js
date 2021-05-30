@@ -5,7 +5,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import Background from '../ProBackground';
 
 const CameraRoll = () => (
-  <div>
+  <div style={{ backgroundColor: '#f3f5f6' }}>
     <Background />
     <div className="cameraRollNavBar">
       <div className="camRollContainerNavBar">
@@ -33,11 +33,12 @@ const CameraRoll = () => (
         </div>
         <div className="toolsCameraRoll">
           <div id="camRollExtraTools">
-            <input type="checkbox" id="myCheck" />
-            Show info &nbsp; &nbsp;
+            <input type="checkbox" id="myCheck" style={{ width: 'min-content', height: 'min-content', margin: '5px' }} />
+            <span style={{ margin: '0px' }}>Show info </span>
           </div>
           <div id="camRollLayoutIcons">
             <li><BsFillGridFill /></li>
+            &nbsp;&nbsp;
             <li><BsFillGrid3X3GapFill /></li>
           </div>
         </div>

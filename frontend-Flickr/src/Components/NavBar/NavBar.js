@@ -36,9 +36,9 @@ const NavBar = (props) => {
               <Link to="/">Photostream</Link>
               <Link to="/">Albums</Link>
               <Link to="/">Faves</Link>
-              <Link to="/">Galleries</Link>
+              <Link to="/Profile/Galleries">Galleries</Link>
               <Link to="/">Groups</Link>
-              <Link to="/">Camera Roll</Link>
+              <Link to="/Profile/CameraRoll">Camera Roll</Link>
               <Link to="/">Recent Acrivity</Link>
               <Link to="/">People</Link>
               <Link to="/">Organize</Link>

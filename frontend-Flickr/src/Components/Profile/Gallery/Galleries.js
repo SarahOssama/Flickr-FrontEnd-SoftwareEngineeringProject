@@ -1,11 +1,12 @@
 import './Galleries.css';
 import { BiAddToQueue } from 'react-icons/bi';
-import { RiShareForwardLine } from 'react-icons/ri';
 import { ImFacebook2, ImTumblr2 } from 'react-icons/im';
 import { FaTwitterSquare, FaPinterestSquare } from 'react-icons/fa';
 import { BsX } from 'react-icons/bs';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Background from '../ProBackground';
+import GalleryItem from './GalleryItem';
 /* import ProNav from '../Profile/Ptools/ProNav'; */
 
 function openForm(e) {
@@ -22,13 +23,6 @@ function closeForm(e) {
   console.log('closeForm');
 }
 
-function shareGallery(e) {
-  document.getElementById('shareGallery').style.display = 'block';
-  e.preventDefault();
-  // eslint-disable-next-line no-console
-  console.log('Share gallery');
-}
-
 function closeShareGallery(e) {
   document.getElementById('shareGallery').style.display = 'none';
   e.preventDefault();
@@ -37,7 +31,20 @@ function closeShareGallery(e) {
 }
 
 const Galleries = () => {
-  const history = useHistory();
+  const [gallery, getGalleryData] = useState([]);
+
+  const fetchGallery = async () => {
+    const res = await fetch('http://localhost:5000/photoData');
+    const data = await res.json();
+    return data;
+  };
+  useEffect(() => {
+    const getGallery = async () => {
+      const galleryFromServer = await fetchGallery();
+      getGalleryData(galleryFromServer);
+    };
+    getGallery();
+  }, []);
   return (
     <div>
       <div style={{ backgroundColor: '#f3f5f6' }}>
@@ -69,10 +76,10 @@ const Galleries = () => {
                   <span>Email</span>
                 </div>
                 <div id="shareIcons">
-                  <ImFacebook2 />
-                  <ImTumblr2 />
-                  <FaTwitterSquare />
-                  <FaPinterestSquare />
+                  <ImFacebook2 style={{ cursor: 'pointer', color: '#4d4d7a' }} />
+                  <ImTumblr2 style={{ cursor: 'pointer' }} />
+                  <FaTwitterSquare style={{ cursor: 'pointer', color: '#53bddd' }} />
+                  <FaPinterestSquare style={{ cursor: 'pointer', color: '#dd2525' }} />
                 </div>
                 <h5 id="shareLink">https://flic.kr/y/3Gy5FCb</h5>
               </div>
@@ -101,19 +108,16 @@ const Galleries = () => {
               New Gallery
             </a>
           </div>
-          <div className="galleriesLayout">
-            <div className="gallery">
-              <img className="imgCover" src="https://149528304.v2.pressablecdn.com/wp-content/uploads/2019/12/cuteiphone10.jpg" alt="" />
-              <img className="imgRow1" src="https://i0.wp.com/www.runtoradiance.com/wp-content/uploads/2018/11/cute-iphone-wallpaper-of-cat.jpg" alt="" />
-              <img className="imgRow2" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg" alt="" />
-              <div className="infoBar">
-                <Link style={{ textDecoration: 'none', color: 'black', padding: '5px' }} href="/" onClick={() => history.push('/Profile/Gallery/GalleryContent')}>The Beginning</Link>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'rgb(131, 129, 129)' }}>
-                  3 items · 4 views · 0 comments
-                  <RiShareForwardLine className="shareIcon" onClick={shareGallery} style={{ alignSelf: 'end', fontSize: 'x-large', cursor: 'pointer' }} />
-                </div>
-              </div>
-            </div>
+          <GalleryItem pGallery={gallery} />
+          <div style={{
+            display: 'flex', width: '60%', marginLeft: 'auto', marginRight: 'auto', marginTop: '60px', paddingBottom: '60px', color: '#c9c9c9', justifyContent: 'center',
+          }}
+          >
+            <hr style={{ width: '100px', color: '#c9c9c9' }} />
+            <span>
+              &nbsp; 1 gallery &nbsp;
+            </span>
+            <hr style={{ width: '100px', color: '#c9c9c9' }} />
           </div>
         </div>
       </div>

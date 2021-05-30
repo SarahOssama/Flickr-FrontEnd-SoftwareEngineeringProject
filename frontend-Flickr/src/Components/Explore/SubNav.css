@@ -60,7 +60,7 @@
     width: 90%;
   }
   
-  .subNavbarExplore a {
+  .subNavbarExplore a{
     height: 100%;
     /* box-sizing:content-box; */
     color: #756e72;
@@ -89,8 +89,13 @@
     color: black;
   }
   
+  .moreExplore:hover > #moreDropDownExplore{
+    opacity: 1;
+    transition: 0.2s ease-in-out;
+  }
   .dropDownContentExplore {
-    display: none;
+    display: block;
+    opacity: 0;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
@@ -104,7 +109,7 @@
     display: inline-block;
   }
   
-  ul.dropDownContentExplore {
+ .dropDownContentExplore {
     list-style: none;
     margin: auto;
     padding-left: 0px;
@@ -116,7 +121,7 @@
     z-index:20;
   }
   
-  .moreExplore:hover .dropDownContent {
+  .moreExplore:hover ul.dropDownContent {
     display: block;
    /*  opacity: 1 !important; */
    background-color: rgb(255, 255, 255);

@@ -34,14 +34,71 @@ span{
 }
 
 .galleryContentGalleryContent > section{
-    margin-top: 100px;
+    margin-top: 80px;
     margin-left: auto;
     margin-right: auto;
     display:flex;
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #galleryContentTitleGalleryContent{
-    width: min-content;
+    width: max-content;
     font-size: x-large;
+    align-self: center;
+}
+
+#galleryContentTitleGalleryContent > h1{
+    color: black;
+}
+
+.descriptionGalleryContent{
+    color: black;
+    margin: 40px;
+    width: 40%;
+    align-self: center;
+    font-size: 100%;
+    font-weight: lighter;
+}
+
+.statusGalleryContent{
+    color: #a1a1a1;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.layoutGalleryContent{
+    justify-content: space-evenly;
+    display: flex;
+    width: 100px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.imagesGalleryContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.imagesGalleryContent > img{
+  height:200px;
+  object-fit:fill;
+  max-height: 200px;
+  width: 150px;
+}
+
+.overlayGalleryContent{
+    position:absolute;
+    color: white;
+    scale: 150%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.imageBoxGallery:hover GiCancel {
+    opacity: 1;
+    transition: 0.3s ease-in-out;
+    z-index: 10;
 }

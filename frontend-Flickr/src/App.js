@@ -14,6 +14,7 @@ import Groups from './Components/Groups/Groups';
 import RecentPhotos from './Components/Explore/RecentPhotos';
 import Galleries from './Components/Profile/Gallery/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
+import GalleryContent from './Components/Profile/Gallery/GalleryContent';
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
           <Route path="/SignUp" exact component={FormSignup} title="Flickr Login" />
           <Route path="/Profile/CameraRoll" exact component={CameraRoll} title="Camera Roll | Flickr" />
           <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" />
-          <Route path="/explore" exact component={RecentPhotos} title="Galleries | Flickr" />
-
+          <Route path="/explore" exact component={RecentPhotos} title="Explore | Flickr" />
+          <Route path="/profile/GalleryContent" exact component={GalleryContent} title="Gallery | Flickr" />
           <Route path="/SignUp" exact>
             <FormSignup />
           </Route>
