@@ -9,6 +9,7 @@ import PhotoCard from './Items/PhotoCard';
 import InfoColumn from './Items/InfoColumn';
 // import Advertise from './Adver/Advertise';
 import GetPhoto from './GetPhoto';
+import OneSignalTest from '../../OneSignalTest';
 
 const Home = () => {
   document.title = 'Home | Flickr';
@@ -39,6 +40,7 @@ const Home = () => {
             }}
           />
           {/* <h2>Feed</h2> */}
+          <OneSignalTest />
           {photoData.length > 0 ? (
             <>
               <PhotoCard

@@ -7,7 +7,6 @@ import { TiArrowForwardOutline } from 'react-icons/ti';
 import { RiDownloadLine } from 'react-icons/ri';
 import './UpperView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Share from './Share';
 
 const UpperView = () => {
