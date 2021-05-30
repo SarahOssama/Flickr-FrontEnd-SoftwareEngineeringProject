@@ -2,8 +2,9 @@
   text-align: center;
   max-height: 0 auto;
 }
+
 body{
-  background-color:rgb(243, 245, 246)
+  background-color:rgb(243, 245, 246);
 }
 
 
@@ -61,3 +62,4 @@ body{
 .contentWrap{
   flex: 1;
 }
+

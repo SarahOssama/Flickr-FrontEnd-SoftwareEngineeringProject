@@ -98,9 +98,9 @@ const NavBar = (props) => {
               <Link to="/">Photostream</Link>
               <Link to="/">Albums</Link>
               <Link to="/">Faves</Link>
-              <Link to="/">Galleries</Link>
+              <Link to="/Profile/Galleries">Galleries</Link>
               <Link to="/">Groups</Link>
-              <Link to="/">Camera Roll</Link>
+              <Link to="/Profile/CameraRoll">Camera Roll</Link>
               <Link to="/">Recent Acrivity</Link>
               <Link to="/">People</Link>
               <Link to="/">Organize</Link>
@@ -110,7 +110,7 @@ const NavBar = (props) => {
             <div className="dropdown">
               <button className="dropbtn" type="button">Explore</button>
               <div className="dropdown-content">
-                <a href="/">Recent Photos</a>
+                <Link to="/explore">Recent Photos</Link>
                 <a href="/">Trending</a>
                 <a href="/">Events</a>
                 <a href="/">The Commons</a>
