@@ -17,7 +17,7 @@ import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
 import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
-import Groups from './Components/Groups/Groups';
+// import Groups from './Components/Groups/Groups';
 import RecentPhotos from './Components/Explore/RecentPhotos';
 import Galleries from './Components/Profile/Gallery/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
@@ -66,7 +66,7 @@ function App() {
 
           <Route path="/about" component={About} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
 
