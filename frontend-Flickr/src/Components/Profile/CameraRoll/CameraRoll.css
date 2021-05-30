@@ -102,3 +102,47 @@ ul#dateTakenMenu{
 #camRollExtraTools{
     align-self: center;
 }
+
+.viewCameraRoll{
+    padding-bottom: 50px;
+}
+
+.sideNavBarCameraRoll{
+    width: max-content;
+    position: absolute;
+    left: 30px;
+    color:#9b9b9b;
+    font-size: small;
+    font-weight: bold;
+}
+
+.yearsCamRoll{
+    cursor: pointer;
+    list-style: none;
+}
+
+.monthCamRoll{
+    position: relative;
+    left: 10px;
+    list-style: none;
+    display: none;
+}
+.photosCameraRoll{
+    margin: 20px;
+}
+
+.photosCameraRoll img{
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.imgContainerCameraRoll{
+    display: flex;
+    flex-direction: row;
+}
+
+.imgContainerCameraRoll > img{
+    margin: 10px;
+}
