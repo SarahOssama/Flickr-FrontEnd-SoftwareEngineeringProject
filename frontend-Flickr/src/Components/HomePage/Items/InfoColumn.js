@@ -19,7 +19,7 @@ const InfoColumn = () => (
     </div>
     <div className="railItem">
       <h2>Flickr Blog</h2>
-      <div className="card  " style={{ backgroundColor: '#ffffff;' }}>
+      <div className="card  " style={{ backgroundColor: '#ffffff' }}>
         <div className="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
           <img
             src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg"
