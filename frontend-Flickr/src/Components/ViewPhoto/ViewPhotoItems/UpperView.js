@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 import { ImEnlarge2 } from 'react-icons/im';
-import { AiOutlinePlusSquare, AiOutlineStar } from 'react-icons/ai';
+import { AiOutlinePlusSquare, AiOutlineStar, AiFillStar } from 'react-icons/ai';
 import { TiArrowForwardOutline } from 'react-icons/ti';
 import { RiDownloadLine } from 'react-icons/ri';
 import './UpperView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Share from './Share';
+import ViewPhotoServices from '../ViewPhotoServices';
 
 const UpperView = () => {
+  const { handleFave } = ViewPhotoServices();
+
   const viewPhotoIcons = {
     color: 'white',
     height: '20',
@@ -17,6 +20,8 @@ const UpperView = () => {
     margin: '7',
   };
   const [show, setShow] = useState(false);
+  const [faved, setFaved] = useState(true);
+
   const imgUrl = 'https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg';
   const imgDown = 'pexels-eberhard-grossgasteiger-691668.jpg';
   const handleClose = () => setShow(false);
@@ -64,7 +69,10 @@ const UpperView = () => {
         <ImEnlarge2 style={viewPhotoIcons} />
       </div>
       <div className="photoEngView">
-        <AiOutlineStar style={viewPhotoIcons} />
+        {faved
+          ? <AiFillStar onClick={handleFave} style={viewPhotoIcons} />
+          : <AiOutlineStar onClick={handleFave} style={viewPhotoIcons} />}
+
         <AiOutlinePlusSquare style={viewPhotoIcons} />
         <TiArrowForwardOutline onClick={handleShow} style={viewPhotoIcons} />
 
