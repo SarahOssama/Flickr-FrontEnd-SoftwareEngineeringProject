@@ -6,7 +6,7 @@ import React, {
 import { useDropzone } from 'react-dropzone';
 import './MyDropzone.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UploadImageThumb from './UploadImageThumb';
+import UploadImageCard from './UploadImageCard';
 import EmptyState from './EmptyState';
 import AreaControl from './AreaControl';
 
@@ -17,22 +17,36 @@ import AreaControl from './AreaControl';
 const MyDropzone = forwardRef((props, ref) => {
   const [toggleUpload, setToggleUpload] = useState(false);
   const [files, setFiles] = useState([]);
+  const [imgURL, setimgURL] = useState('');
 
   const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
-    setFiles(acceptedFiles[0]);
+    // setimgURL(acceptedFiles[0]);
+    setFiles(acceptedFiles.map((file) => Object.assign(file, {
+      preview: URL.createObjectURL(file),
+    })));
+    // setFiles(acceptedFiles[0]);
     // console.log(acceptedFiles.map((file) => Object.assign(file, {
     //   preview: URL.createObjectURL(file),
     // })));
 
+    // console.log(imgURL);
     setToggleUpload(true);
-    console.log(acceptedFiles);
     console.log(acceptedFiles[0]);
   }, []);
+
+  const onDropAccepted = useCallback(
+    (acceptedFiles) => {
+      setimgURL(acceptedFiles[0].name);
+      console.log(imgURL);
+    },
+    [],
+  );
 
   const { getRootProps, getInputProps, open } = useDropzone({
     accept: 'image/*',
     onDrop,
     noClick: true,
+    onDropAccepted,
   });
   useImperativeHandle(ref, () => ({
 
@@ -50,12 +64,14 @@ const MyDropzone = forwardRef((props, ref) => {
     const newFiles = [...files]; // make a var for the new array
     newFiles.splice(file, 1); // remove the file from the array
     setFiles(newFiles); // update the state
-    setToggleUpload(true);
+    setToggleUpload(false);
   };
   return (
     <div {...getRootProps({ noClick: true })}>
       <input {...getInputProps()} />
-      <AreaControl onClickOpen={open} toggleUPloadAreaControl={toggleUpload} imgUpload={files} />
+      <AreaControl onClickOpen={open} toggleUPloadAreaControl={toggleUpload} imgUpload={imgURL} />
+      {/* <button type="button" onClick={() => remove()}> DeleteButton </button> */}
+
       {toggleUpload && (
       <div className="editPanelScrollWrapper">
         <div className="sidenavUpload">
@@ -67,12 +83,11 @@ const MyDropzone = forwardRef((props, ref) => {
       </div>
       )}
       <div className="dropzoneUpload">
+        {toggleUpload && <UploadImageCard files={files} onRemove={remove} />}
 
-        <UploadImageThumb photo={files} />
         <div className="emptyUploadState" id="toggleUploadState">
           {!toggleUpload && <EmptyState onClickOpen={open} />}
         </div>
-        {/* <button type="button" onClick={() => remove()}> DeleteButton </button> */}
       </div>
 
     </div>

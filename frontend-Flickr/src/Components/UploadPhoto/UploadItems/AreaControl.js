@@ -1,41 +1,49 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable camelcase */
+import React from 'react';
 import { FcAddImage } from 'react-icons/fc';
 import '../Upload.css';
-
 import axios from 'axios';
+import UploadPhoto from '../UploadPhoto';
 import Conf from '../../../Conf';
 
 // import UploadPhoto from '../UploadPhoto';
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDEzNzgzLCJqdGkiOiJmYTNlMmJjOTVkM2Y0ZjAwYjE2NjE1NzNjNWY2NTU4MiIsInVzZXJfaWQiOjE3fQ.G5mHgzVkYS2b3FF3QBnAcoWcYJys3iTb6r-4eG4ha2Q';
+const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDI1OTgzLCJqdGkiOiI2ZWJlODE4ZGFhOGE0ZmUzYmZhMGUxZGRhMGJiOTQzNyIsInVzZXJfaWQiOjE3fQ.3DCoK4MxJXX-mITOw3m9uWKRCCw1O8VMSq2DEP7MEWI';
 
 const AreaControl = ({ onClickOpen, toggleUPloadAreaControl, imgUpload }) => {
-  // const handleUpload = UploadPhoto();
+  const { handleUpload } = UploadPhoto({ imgUpload });
   // useEffect(() => {
   // const getURL = () => (imgUpload.forEach((file) => {
   //   URL.revokeObjectURL(file.preview);
   //   // console.log(file.preview);
   // }));
   // getURL();
-  const postUploadPhotoBack = () => {
-    axios.post(`${Conf.backURL}/photos/upload`, {
-      headers: {
-        authorization: `Bearer ${accessToken}`,
-        'Content-type': 'multipart/form-data',
-        accept: '*/*',
-      },
+  // console.log(imgUpload);
+  // const photo_height = 234;
+  // const photo_width = 234;
+  // const media_file = imgUpload;
 
-      media_file: 'mediafield',
-      photo_height: 678,
-      photo_width: 456,
+  // const headers = {
+  //   authorization: `Bearer ${accessToken}`,
+  //   'Content-type': 'multipart/form-data',
+  //   accept: '*/*',
+  // };
+  // const data = {
+  //   media_file,
+  //   photo_width,
+  //   photo_height,
+  // };
 
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // const postUploadPhotoBack = () => {
+  //   axios.post(`${Conf.backURL}/photos/upload`, data, {
+  //     headers,
+  //   })
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   // }, []);
   return (
@@ -58,10 +66,9 @@ const AreaControl = ({ onClickOpen, toggleUPloadAreaControl, imgUpload }) => {
       {toggleUPloadAreaControl
         ? (
           <div className="uploadEnabledRightAreaControl">
-            <h2>Enabled</h2>
             <button
               type="button"
-              // onClick={/*postUploadPhotoBack()*/}
+              onClick={handleUpload}
             >
               Upload
 

@@ -7,7 +7,7 @@ const thumb = {
   border: '1px solid #eaeaea',
   marginBottom: 8,
   marginRight: 8,
-  marginLeft: 250,
+  marginLeft: 80,
   width: 100,
   height: 100,
   padding: 4,
@@ -27,17 +27,15 @@ const img = {
 };
 const thumbsContainer = {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   flexWrap: 'wrap',
-  marginTop: 16,
+  marginTop: 1,
 };
-const UploadImageThumb = ({ photo }) => (
+const UploadImageThumb = ({ photo, onRemove }) => (
   <div>
     <aside className={thumbsContainer}>
       <div style={thumb} key={photo.name}>
-        <div className="test">
-          <h2>Test</h2>
-        </div>
+
         <div style={thumbInner}>
           <img
             src={photo.preview}
@@ -45,8 +43,14 @@ const UploadImageThumb = ({ photo }) => (
             alt=""
           />
         </div>
+
+      </div>
+      <div className="test">
+        <h2>Test</h2>
       </div>
     </aside>
+    <button type="button" onClick={() => onRemove()}> DeleteButton </button>
+
   </div>
 );
 
