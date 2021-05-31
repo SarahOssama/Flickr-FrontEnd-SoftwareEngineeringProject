@@ -18,12 +18,12 @@ const UpperView = () => {
   };
   const [show, setShow] = useState(false);
   const imgUrl = 'https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg';
-
+  const imgDown = 'pexels-eberhard-grossgasteiger-691668.jpg';
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const download = (e) => {
-    console.log(e.target.href);
+    console.log(e);
     fetch(e.target.href, {
       method: 'GET',
       headers: { responseType: 'arraybuffer' },
@@ -74,10 +74,13 @@ const UpperView = () => {
           onClose={handleClose}
           style={viewPhotoIcons}
         />
+        {/* <Link to={imgDown} target="_blank" download> </Link> */}
         <RiDownloadLine
           onClick={(e) => download(e)}
           style={viewPhotoIcons}
         />
+        Download
+
       </div>
       <div className="backEntryPoint">
         <Link to="/Home">

@@ -1,0 +1,10 @@
+.attributeView,
+.subPhotoTitleDesc,
+.subPhotoFavView,
+.subPhotoComments{
+    border-bottom: 1px solid #cfd6d9;
+    padding-bottom: 20px;
+    display: flex;
+    background: #f3f5f6;
+    color: #212124;
+}

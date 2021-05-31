@@ -75,10 +75,22 @@ const MyDropzone = forwardRef((props, ref) => {
       {toggleUpload && (
       <div className="editPanelScrollWrapper">
         <div className="sidenavUpload">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/clients">Clients</a>
-          <a href="/contact">Contact</a>
+          <div className="editorPanel">
+            <div className="editorPanelWrapper">
+              <h3 id="editPanelTitle">Edit 1 photo:</h3>
+              <div className="editPanelForm">
+                <ul className="editorOptions">
+                  <li className="editorOption">Title</li>
+                  <li className="editorOption">Tags</li>
+                  <li className="editorOption">People</li>
+                  <li className="editorOption">Albums</li>
+                  <li className="editorOption">Groups</li>
+                  <li className="editorOption">Settings</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
       )}

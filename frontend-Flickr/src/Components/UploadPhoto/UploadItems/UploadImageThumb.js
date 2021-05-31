@@ -1,56 +1,84 @@
 import React from 'react';
 import './UploadImageThumb.css';
+import { FaTimes } from 'react-icons/fa';
 
 const thumb = {
-  display: 'inline-flex',
+  display: 'inline-block',
   borderRadius: 2,
-  border: '1px solid #eaeaea',
-  marginBottom: 8,
-  marginRight: 8,
-  marginLeft: 80,
+  marginBottom: 0,
+  marginRight: 0,
+  marginLeft: 0,
   width: 100,
   height: 100,
-  padding: 4,
+  padding: 0,
   boxSizing: 'border-box',
+  minWidth: '64px',
+  minHeight: '42px',
+  maxHeight: '126px',
+  maxWidth: '172px',
 };
 
 const thumbInner = {
   display: 'flex',
-  minWidth: 0,
   overflow: 'visible',
+  minWidth: '64px',
+  minHeight: '42px',
+  maxHeight: '126px',
+  maxWidth: '172px',
 };
 
 const img = {
   display: 'block',
   width: 'auto',
-  height: '100%',
+  height: 'auto',
+  maxWidth: '166px',
+  maxHeight: '120px',
+  verticalAlign: 'bottom',
+  padding: '1px',
+  border: '1px solid #eaeaea',
+
 };
 const thumbsContainer = {
   display: 'flex',
   flexDirection: 'column',
+  position: 'absolute',
   flexWrap: 'wrap',
-  marginTop: 1,
+  marginTop: 0,
+  marginLeft: 216,
 };
 const UploadImageThumb = ({ photo, onRemove }) => (
   <div>
-    <aside className={thumbsContainer}>
-      <div style={thumb} key={photo.name}>
+    <aside style={thumbsContainer}>
+      <div className="photoItemContent">
+        <div className="photoWrapper">
+          <div style={thumb} key={photo.name}>
+            <FaTimes
+              style={{ color: 'red', cursor: 'pointer' }}
+              onClick={() => onRemove()}
+            />
+            <div style={thumbInner}>
+              <img
+                src={photo.preview}
+                style={img}
+                alt=""
+              />
+            </div>
+          </div>
+          <a href="/" className="gridItemDelete">
+            <span>[x]</span>
+          </a>
 
-        <div style={thumbInner}>
-          <img
-            src={photo.preview}
-            style={img}
-            alt=""
-          />
+        </div>
+        <div className="photoEditable">
+          <div className="test">
+            <h2>Test</h2>
+          </div>
         </div>
 
       </div>
-      <div className="test">
-        <h2>Test</h2>
-      </div>
-    </aside>
-    <button type="button" onClick={() => onRemove()}> DeleteButton </button>
 
+    </aside>
+    <h2>. </h2>
   </div>
 );
 

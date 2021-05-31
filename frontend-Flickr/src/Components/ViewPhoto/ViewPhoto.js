@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './ViewPhoto.css';
 
 import UpperView from './ViewPhotoItems/UpperView';
+import LeftView from './ViewPhotoItems/LeftView';
+import RightView from './ViewPhotoItems/RightView';
 
 const ViewPhoto = () => (
   <div className=" viewPhotoPage">
@@ -14,10 +16,10 @@ const ViewPhoto = () => (
       {/* <div className=" centered-content   subPhotoContainer"> */}
       <div className="col-xl-12 rowViewPhotoInfo">
         <div className="col-lg-7 viewSubViewLeft">
-          <h2>Left View</h2>
+          <LeftView />
         </div>
         <div className="col-lg-5 viewSubViewPhotoRight">
-          <h2>Right View</h2>
+          <RightView />
         </div>
       </div>
     </div>
