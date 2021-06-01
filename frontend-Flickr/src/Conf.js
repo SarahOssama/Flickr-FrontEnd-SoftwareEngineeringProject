@@ -4,7 +4,7 @@ export default {
   localURL: 'http://localhost:5000/',
   LocalNoPath: 'http://localhost:5000',
   backURL: 'https://fotone.me/api/',
-  productionURL: 'http://localhost:8000',
+  productionURL: 'http://back:8000/api/',
 
 };
 // https://fotone.me/api/?format=openapi
