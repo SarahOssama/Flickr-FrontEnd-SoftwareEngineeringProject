@@ -22,25 +22,30 @@
   padding-left: 7% !important ;
 }
 .form-inline {
-  height: 33px !important;
-  width: 250px !important;
-  margin-top: 0px !important;
+  height: 35px !important;
+  width: 270px !important;
+  margin-top: 4px !important;
   background-color: #d2d2d3 !important;
 }
 
 .form-control,
 .input-group-text {
   background-color: #d2d2d3 !important;
+  
 }
 /* .input-group-text {
   width: 30px !important;
 }*/
 
+.input-group-text {
+  margin-bottom: 0px !important;
+}
 .form-control {
-  font-size: 15px;
-  /* padding: 6px 10px; */
-  /* width: 180px !important; */
-  height: 33px !important;
+  font-size: 15px !important;
+  padding: 0;
+  width: 180px !important;
+  height: 30px !important;
+  
 }
 
 #searchIcon {
@@ -199,8 +204,6 @@
 }
 
 /*////////////////////Notification///////////////////////*
-
-
 /* The container <div> - needed to position the dropdown content */
 .dropdownNotification {
   float: right;

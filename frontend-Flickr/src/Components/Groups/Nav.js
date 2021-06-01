@@ -7,9 +7,9 @@ const Nav = () => (
   <div>
     <nav className="Nav">
       <div className="link">
-        <a href="/groupoverview">Overview </a>
-        <a href="/">Photos</a>
-        <a href="/groupmembers">Members</a>
+        <a href="/group">Overview </a>
+        <a href="/groups/pool">Photos</a>
+        <a href="/groups/members">Members</a>
         <a href="/">Map</a>
       </div>
     </nav>
