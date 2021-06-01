@@ -8,7 +8,7 @@ import SetnewpasswordValidate from './SetnewpasswordValidate';
  */
 function Setnewpassword() {
   const {
-    handleChange, values, handleSubmit, passworderror,
+    handleChange, usernewpassword, handleSubmit, passworderror,
   } = UseSetnewPassword(SetnewpasswordValidate);
 
   return (
@@ -25,7 +25,7 @@ function Setnewpassword() {
             name="password"
             className="passwordInput"
             placeholder="Password"
-            value={values.password}
+            value={usernewpassword.password}
             onChange={handleChange}
           />
           {passworderror.password && <p>{passworderror.password}</p>}

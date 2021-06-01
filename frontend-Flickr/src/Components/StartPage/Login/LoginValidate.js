@@ -1,23 +1,24 @@
 /**
  * LoginValidate
- * @param {[string]} values [inputs of user]
+ * @param {[string]} user [inputs of user]
  * @returns {[error]}  [error message when user input is invalid]
  */
-function LoginValidate(values) {
+function LoginValidate(props) {
   const error = {};
 
-  if (!values.emailaddress) {
-    error.emailaddress = 'Required';
-  } else if (!/\S+@\S+\.\S+/.test(values.emailaddress)) {
-    error.emailaddress = 'invalid email';
+  if (!props.email) {
+    error.email = 'Required';
+  } else if (!/\S+@\S+\.\S+/.test(props.email)) {
+    error.email = 'invalid email';
   }
 
-  if (!values.password) {
+  if (!props.password) {
     error.password = 'Required';
-  } else if (values.password.length < 12) {
+  } else if (props.password.length < 12) {
     error.password = 'invalid password';
   }
 
   return error;
 }
-export default LoginValidate;
+// export default LoginValidate;
+module.exports = LoginValidate;

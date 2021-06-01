@@ -50,16 +50,48 @@
   ],
   "users": [
     {
-      "firstname": "menna",
-      "lastname": "kamel",
-      "age": "22",
-      "emailaddress": "menna@gmail.com",
-      "password": "menna123456789"
+      "newuser": {
+        "email": "menna@gmail.com",
+        "password": "Menna123456789",
+        "first_name": "menna",
+        "last_name": "nawar",
+        "age": "22"
+      },
+      "id": 1
     }
   ],
-  "user": [
-    {}
+  "CompleteSignup": [
+    {
+      "ResendemailSignup": "menna@gmail.com",
+      "id": 1
+    }
   ],
+  "LoginUsers": [
+    {
+      "user": {
+        "email": "menna@gmail.com",
+        "password": "Menna123456789"
+      },
+      "id": 1
+    }
+  ],
+  "EmailsToResetPassword": [
+    {
+      "EmailsToReset": {
+        "email": "menna@gmail.com"
+      },
+      "id": 1
+    }
+  ],
+  "newpasswords": [
+    {
+      "usernewpassword": {
+        "password": "iiiiiiiiiiiiiiiii"
+      },
+      "id": 1
+    }
+  ],
+
   "notificationData": [
     {
       "id": 1,
