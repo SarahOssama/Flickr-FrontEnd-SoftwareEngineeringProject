@@ -2,11 +2,11 @@
   "photoData": [
     {
       "id": 1,
-      "photoName": "The First Photo",
+      "title": "The First Photo",
       "avatar": "https://www.w3schools.com/w3images/avatar2.png",
       "img": "https://api.time.com/wp-content/uploads/2019/08/better-smartphone-photos.jpg",
       "owner": {
-        "ownerName": "Sara",
+        "username": "Sara",
         "ownerId": "123"
       },
       "description": "Such a great description for a great photo",
@@ -15,37 +15,37 @@
         "isFriend": false,
         "isFamily": false
       },
-      "commentNum": 5,
-      "favoritsNum": 4,
-      "date": "4h ago"
+      "count_comments": 5,
+      "count_favourites": 4,
+      "date_posted": "2021-06-01T10:38:23.004000Z"
     },
     {
       "id": 2,
-      "photoName": "The Second Photo",
+      "title": "The Second Photo",
       "avatar": "https://www.w3schools.com/howto/img_avatar.png",
       "img": "https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg",
       "owner": {
-        "ownerName": "Aya",
+        "username": "Aya",
         "ownerId": "234"
       },
       "description": "Such a great description for a great photo",
-      "commentNum": 11,
-      "favoritsNum": 50,
-      "date": "6h ago"
+      "count_comments": 11,
+      "count_favourites": 50,
+      "date_posted": "2021-06-01T10:38:23.004000Z"
     },
     {
       "id": 3,
-      "photoName": "The Third Photo",
+      "title": "The Third Photo",
       "avatar": "https://www.w3schools.com/howto/img_avatar2.png",
       "img": "https://www.pandasecurity.com/en/mediacenter/src/uploads/2013/11/pandasecurity-facebook-photo-privacy.jpg",
       "owner": {
-        "ownerName": "Ahmed",
+        "username": "Ahmed",
         "ownerId": "345"
       },
       "description": "Such a great description for a great photo",
-      "commentNum": 30,
-      "favoritsNum": 90,
-      "date": "6h ago"
+      "count_comments": 30,
+      "count_favourites": 90,
+      "date_posted": "2021-06-01T10:38:23.004000Z"
     }
   ],
   "users": [

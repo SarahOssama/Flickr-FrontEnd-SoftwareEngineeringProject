@@ -27,7 +27,7 @@ const GetPhoto = () => {
           setphotoData(photoFromServer);
         });
     };
-    // getPhoto();
+    getPhoto();
 
     const getHomePhoto = async () => {
       axios

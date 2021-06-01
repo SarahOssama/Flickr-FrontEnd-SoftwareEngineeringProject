@@ -16,7 +16,7 @@ const PhotoSet1 = ({ pCard }) => {
   // console.log(moment.utc(pCard.date_posted).local().startOf('seconds').fromNow());
   const date = moment.utc(pCard.date_posted).local().startOf('seconds').fromNow();
   const imgSrc = `https://fotone.me${pCard.media_file}`;
-  // console.log(imgSrc);
+  // const imgSrc = pCard.img;
   const avatar = 'https://www.w3schools.com/w3images/avatar2.png';
   // const [viewGetPhotoData, setViewGetphotoData] = useState([]);
   // const handleGetViewPhoto = () => {
