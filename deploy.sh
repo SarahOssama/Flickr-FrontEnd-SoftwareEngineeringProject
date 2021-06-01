@@ -17,7 +17,8 @@ rm frontend-Flickr/Dockerfile*
 #Sending of project files to be used as volumes,
 #allowing static files to be changed without reloading containers
 #rsync -e "ssh -o StrictHostKeyChecking=no" -au frontend-Flickr upload/docker-compose.yml ubuntu@$EC2_INSTANCE:fotone
-scp -o StrictHostKeyChecking=no -r frontend-Flickr upload/docker-compose.yml ubuntu@$EC2_INSTANCE:fotone
+ssh-keyscan -H $EC2_INSTANCE >> ~/.ssh/known_hosts
+scp -r frontend-Flickr upload/docker-compose.yml ubuntu@$EC2_INSTANCE:fotone
 
 #From instance, pulls updated images and reloads the containers if they were changed.
 ssh ubuntu@$EC2_INSTANCE "cd fotone; sudo docker-compose pull; sudo docker-compose up --build -d"
