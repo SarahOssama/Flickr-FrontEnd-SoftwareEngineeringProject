@@ -32,9 +32,10 @@
 .input-group-text {
   background-color: #d2d2d3 !important;
 }
-.input-group-text {
-  /* width: 30px !important; */
-}
+/* .input-group-text {
+  width: 30px !important;
+}*/
+
 .form-control {
   font-size: 15px;
   /* padding: 6px 10px; */

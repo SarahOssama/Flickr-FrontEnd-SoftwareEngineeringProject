@@ -2,8 +2,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { useEffect } from 'react';
 import './App.css';
-import Category from './Category/Category';
-import categories from './Data/data';
+// import Category from './Category/Category';
+// import categories from './Data/data';
 
 function OneSignalTest() {
   window.OneSignal = window.OneSignal || [];

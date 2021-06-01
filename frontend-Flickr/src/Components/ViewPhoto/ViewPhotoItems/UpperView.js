@@ -20,20 +20,21 @@ const UpperView = () => {
     margin: '7',
   };
   const [show, setShow] = useState(false);
-  const [faved, setFaved] = useState(true);
+  const [faved, setFaved] = useState(false);
 
   const imgUrl = 'https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg';
-  const imgDown = 'pexels-eberhard-grossgasteiger-691668.jpg';
+  // const imgDown = 'pexels-eberhard-grossgasteiger-691668.jpg';
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const download = (e) => {
-    console.log(e);
+    // console.log(e);
     fetch(e.target.href, {
       method: 'GET',
       headers: { responseType: 'arraybuffer' },
     })
       .then((response) => {
+        // eslint-disable-next-line no-unused-vars
         response.arrayBuffer().then((buffer) => {
           const url = window.URL.createObjectURL(new Blob([response.data]));
           const link = document.createElement('a');
@@ -43,8 +44,8 @@ const UpperView = () => {
           link.click();
         });
       })
-      .catch((err) => {
-        console.log(err);
+      .catch(() => {
+        // console.log(err);
       });
   };
 
