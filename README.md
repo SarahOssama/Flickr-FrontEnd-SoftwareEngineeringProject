@@ -56,7 +56,7 @@ use JSON server in mocking
 
 ## Unit Testing 
  ```
- jest 
+npm i -D jest
  ```
 
 ## For building the website
