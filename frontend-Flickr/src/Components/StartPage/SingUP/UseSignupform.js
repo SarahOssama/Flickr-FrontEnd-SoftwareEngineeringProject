@@ -1,5 +1,9 @@
+/* eslint-disable camelcase */
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Conf from '../../../Conf';
+import AccountServices from '../AccountServices';
 
 /**
  * Useform
@@ -9,17 +13,18 @@ import { useHistory } from 'react-router-dom';
 const useform = (SignUpValidate) => {
   const history = useHistory();
 
-  const [values, setValues] = useState({
-    firstname: '',
-    lastname: '',
-    age: '',
-    emailaddress: '',
+  const [newuser, setNewuser] = useState({
+    email: '',
     password: '',
+    first_name: '',
+    last_name: '',
+    age: '',
   });
 
   const [errors, setErrors] = useState({});
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   /**
    * handleChange
    * @param {*} e
@@ -27,8 +32,8 @@ const useform = (SignUpValidate) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setValues({
-      ...values,
+    setNewuser({
+      ...newuser,
       [name]: value,
     });
   };
@@ -36,19 +41,70 @@ const useform = (SignUpValidate) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrors(SignUpValidate(values));
+    setErrors(SignUpValidate(newuser));
+
     setIsSubmitting(true);
   };
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log(values);
-      history.push('/check-email/sign-up');
+      const {
+        email,
+      } = newuser;
+
+      // setResendemail(email);
+      // console.log(setResendemail);
+      // const addUser = async () => {
+      //   await axios
+      //     .post(`${Conf.localURL}users/`, {
+      //       newuser,
+      //     })
+      //     .then((response) => {
+      //       if (response.status === 201) {
+      //         history.push('/check-email/sign-up');
+      //       }
+      //     });
+      // }; addUser();
+
+      // const backaddUser = async () => {
+      //   await axios
+      //     .post(`${Conf.backURL}accounts/sign-up/`, {
+
+      //       headers: {
+      //         'content-type': 'application/json',
+      //       },
+
+      //       email,
+      //       password,
+      //       first_name,
+      //       last_name,
+      //       age,
+
+      //     })
+      //     .then((response) => {
+      //       console.log(response);
+      //       if (response.status === 201) {
+      //         history.push('/check-email/sign-up');
+      //       } else if (response.status === 400) {
+      //         // console.log(response.body);
+      //       }
+      //     });
+      // }; backaddUser();
+      // setgotoComplete(true);
+
+      localStorage.removeItem('ResendemailSignup');
+      localStorage.setItem('ResendemailSignup', email);
+      console.log(localStorage.getItem('ResendemailSignup'));
+
+      const GotoComplete = AccountServices.addUser(newuser);
+
+      const gotoComplete = AccountServices.backaddUser(newuser);
+      if (GotoComplete || gotoComplete) { history.push('/check-email/sign-up'); }
     }
   }, [errors]);
 
   return {
-    handleChange, values, handleSubmit, errors,
+    handleChange, newuser, handleSubmit, errors,
   };
 };
 

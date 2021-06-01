@@ -10,7 +10,7 @@ import './FormLogin.css';
  */
 const FormLogin = () => {
   const {
-    handleChange, values, handleSubmit, error,
+    handleChange, user, handleSubmit, error,
   } = UseLoginform(LoginValidate);
 
   return (
@@ -24,13 +24,13 @@ const FormLogin = () => {
 
           <input
             type="text"
-            name="emailaddress"
+            name="email"
             className="loginInput"
             placeholder="Email address"
-            value={values.emailaddress}
+            value={user.emailaddress}
             onChange={handleChange}
           />
-          {error.emailaddress && <p>{error.emailaddress}</p>}
+          {error.email && <p>{error.email}</p>}
 
         </div>
 
@@ -41,13 +41,13 @@ const FormLogin = () => {
             name="password"
             className="loginInput"
             placeholder="Password"
-            value={values.password}
+            value={user.password}
             onChange={handleChange}
           />
           {error.password && <p>{error.password}</p>}
           <label htmlFor="rememberCheckbox" className="formSignUp">
 
-            <input id="rememberCheckbox" type="checkbox" checked />
+            <input id="rememberCheckbox" type="checkbox" />
             Remember email address
           </label>
 

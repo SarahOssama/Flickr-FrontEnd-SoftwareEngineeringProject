@@ -48,22 +48,6 @@
       "date": "6h ago"
     }
   ],
-  "users": [
-    {
-      "NewuserFirstname": "sara",
-      "NewuserLastname": "osama",
-      "Newuserage": "21",
-      "Newuseremailaddress": "sara@gmail.com",
-      "Newuserpassword": "sara123456789"
-    },
-    {
-      "NewuserFirstname": "ahmed",
-      "NewuserLastname": "ali",
-      "Newuserage": "35",
-      "Newuseremailaddress": "ahmed@gmail.com",
-      "Newuserpassword": "ahmed123456789"
-    }
-  ],
   "profileUsers": [
     {
       "Name": "Omar Magdy",
@@ -103,5 +87,29 @@
       "imgSrc": "https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg",
       "notifierName": "Sarah Osama"
     }
-  ]
+  ],
+  "users": [
+    {
+      "newuser": {
+        "email": "ahmed2021@yahoo.com",
+        "password": "7654321234567890-9876",
+        "first_name": "Sarah Osama",
+        "last_name": "Ahmed",
+        "age": "43"
+      },
+      "id": 1
+    }
+  ],
+  "CompleteSignup": [],
+  "LoginUsers": [
+    {
+      "user": {
+        "email": "sarahosama28@gmail.com",
+        "password": "q23456tyui987654321`"
+      },
+      "id": 1
+    }
+  ],
+  "EmailsToResetPassword": [],
+  "newpasswords": []
 }

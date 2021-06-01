@@ -7,9 +7,6 @@ const PhotoCard = ({
   photoData, layout1, layout2, layout3,
 }) => (
   <>
-    {/* {photoData.map((pDetails) => (
-      <h2 key={pDetails.id}>{pDetails.owner.ownerName}</h2>))} */}
-
     {photoData.map((pDetails) => (
       <>
 

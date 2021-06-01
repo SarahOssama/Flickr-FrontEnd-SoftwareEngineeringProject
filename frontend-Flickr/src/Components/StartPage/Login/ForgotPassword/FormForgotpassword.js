@@ -12,7 +12,7 @@ import './FormForgotpassword.css';
  */
 function Forgotpassword() {
   const {
-    handleChange, values, handleSubmit, emailerror,
+    handleChange, EmailsToReset, handleSubmit, emailerror,
   } = Useforgotpasswordform(Forgotpasswordvalidate);
 
   return (
@@ -36,13 +36,13 @@ function Forgotpassword() {
 
           <input
             type="text"
-            name="emailaddress"
+            name="email"
             className="emailInput"
             placeholder="Email address"
-            value={values.emailaddress}
+            value={EmailsToReset.email}
             onChange={handleChange}
           />
-          {emailerror.emailaddress && <p>{emailerror.emailaddress}</p>}
+          {emailerror.email && <p>{emailerror.email}</p>}
 
         </div>
 

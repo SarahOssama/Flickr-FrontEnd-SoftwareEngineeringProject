@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useform from './UseSignupform';
-import SignUpValidate from './SignUpValidate';
+import SignUpValidate from './Validate';
 import './FormSignup.css';
 
 /**
@@ -10,7 +10,7 @@ import './FormSignup.css';
  */
 const FormSignup = () => {
   const {
-    handleChange, values, handleSubmit, errors,
+    handleChange, newuser, handleSubmit, errors,
   } = useform(SignUpValidate);
 
   return (
@@ -18,20 +18,20 @@ const FormSignup = () => {
 
       <form onSubmit={handleSubmit} className="signupForm">
         <i className="flickrIcon" />
-        <h className="signupformTitle"> Sign up for Flickr </h>
+        <p className="signupformTitle"> Sign up for Flickr </p>
 
         <div className="signupInputs">
 
           <input
             type="text"
-            name="firstname"
+            name="first_name"
             className="signupInput"
             placeholder="First name"
             no-autoFocus
-            value={values.firstname}
+            value={newuser.first_name}
             onChange={handleChange}
           />
-          {errors.firstname && <p>{errors.firstname}</p>}
+          {errors.first_name && <p>{errors.first_name}</p>}
 
         </div>
 
@@ -39,13 +39,13 @@ const FormSignup = () => {
 
           <input
             type="text"
-            name="lastname"
+            name="last_name"
             className="signupInput"
             placeholder="last name"
-            value={values.lastname}
+            value={newuser.last_name}
             onChange={handleChange}
           />
-          {errors.lastname && <p>{errors.lastname}</p>}
+          {errors.last_name && <p>{errors.last_name}</p>}
 
         </div>
 
@@ -56,7 +56,7 @@ const FormSignup = () => {
             name="age"
             className="signupInput"
             placeholder="Your age"
-            value={values.age}
+            value={newuser.age}
             onChange={handleChange}
           />
           {errors.age && <p>{errors.age}</p>}
@@ -67,14 +67,14 @@ const FormSignup = () => {
 
           <input
             type="text"
-            name="emailaddress"
+            name="email"
             className="signupInput"
             placeholder="Email address"
-            value={values.emailaddress}
+            value={newuser.email}
             onChange={handleChange}
             novalid
           />
-          {errors.emailaddress && <p>{errors.emailaddress}</p>}
+          {errors.email && <p>{errors.email}</p>}
 
         </div>
 
@@ -85,7 +85,7 @@ const FormSignup = () => {
             name="password"
             className="signupInput"
             placeholder="Password"
-            value={values.Newuserpassword}
+            value={newuser.password}
             onChange={handleChange}
           />
           {errors.password && <p>{errors.password}</p>}
@@ -95,6 +95,7 @@ const FormSignup = () => {
         <button
           className="signupButton"
           type="submit"
+
         >
           Sign up
         </button>
