@@ -33,6 +33,10 @@
   background-color: #d2d2d3 !important;
   
 }
+/* .input-group-text {
+  width: 30px !important;
+}*/
+
 .input-group-text {
   margin-bottom: 0px !important;
 }

@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Container, Row, Col } from 'react-bootstrap';
 import { useState, useEffect, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -9,64 +8,15 @@ import HomeToolBar from './HomeToolBar';
 import PhotoCard from './Items/PhotoCard';
 import InfoColumn from './Items/InfoColumn';
 // import Advertise from './Adver/Advertise';
-
-// import axiosInstance from '../../axios';
-import Conf from '../../Conf';
-
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIxOTk1OTQyLCJqdGkiOiJlOGQ5MTQ3NzllOWY0MTQyOGYwYzUyYWY4NDM3NDcyNCIsInVzZXJfaWQiOjExfQ.9r6dwQDoYybI_crqUHVbazz8hsbx30L5UpTFQZRoz28';
+import GetPhoto from './GetPhoto';
+import OneSignalTest from '../../OneSignalTest';
 
 const Home = () => {
   document.title = 'Home | Flickr';
   const [showComp, setShowComp] = useState(true);
   const [showComp2, setShowComp2] = useState(false);
   const [showComp3, setShowComp3] = useState(false);
-
-  /**
- * to hold the Photo from the backend
- */
-  const [photoData, setphotoData] = useState([]);
-  useEffect(() => {
-    const getPhoto = async () => {
-      axios
-        .get(`${Conf.localURL}`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'content-type': 'application/json',
-            accept: 'application/json',
-          },
-          body: {
-
-          },
-        })
-        .then((res) => {
-          // eslint-disable-next-line no-console
-          // console.log(res.data);
-          const photoFromServer = res.data;
-          setphotoData(photoFromServer);
-        });
-    };
-    getPhoto();
-
-    const getTasks = async () => {
-      axios
-        .get(`${Conf.backURL}gallery/`, {
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-            'content-type': 'application/json',
-            accept: 'application/json',
-          },
-          body: {
-
-          },
-        })
-        .then((res) => {
-          // eslint-disable-next-line no-console
-          console.log(res.data);
-        });
-    };
-    getTasks();
-  }, [/* dependency array (value when it changes we want the code to run) */]);
-
+  const photoData = GetPhoto();
   return (
     <div className=".container fluid-centered  OrowHomePage">
       <div className="advertise" />
@@ -90,6 +40,7 @@ const Home = () => {
             }}
           />
           {/* <h2>Feed</h2> */}
+          <OneSignalTest />
           {photoData.length > 0 ? (
             <>
               <PhotoCard

@@ -1,0 +1,63 @@
+.viewPhotoPage{
+    margin-top: 43px;
+    background-color: #212124;
+
+}
+.viewPhotoUpperComp {
+  height: 543px;
+  width: 100%;
+  background-color: #212124;
+  display: flex;
+position: relative;
+}
+.viewSubPhotoInfo {
+  background-color: rgb(243, 245, 246);
+  
+
+}
+
+.rowViewPhotoInfo {
+  height: max-content;
+  display: flex;
+  align-items: top;
+  max-height: auto;
+  margin: 0 auto;
+  padding: 0 auto;
+
+  padding-top: 20px;
+  background-color: rgb(243, 245, 246);
+  justify-content: space-between;
+}
+
+.viewSubViewLeft {
+  background: #f3f5f6;
+  height: 100%;
+  width: 100%;
+  min-height: auto;
+  margin-right: auto;
+  position: relative;
+  padding-right: 60px;
+
+  /* background-color: rgb(243, 245, 246); */
+}
+
+.viewSubViewPhotoRight {
+  /* background-color: rgb(243, 245, 246); */
+  background: #f3f5f6;
+  position: relative;
+  height: 500vh;
+  margin-left: auto;
+
+}
+@media screen and (max-width: 1150px) {
+    .viewSubViewPhotoRight {
+    }
+    .rowViewPhotoInfo {
+      max-width: 100%;
+      display: block;
+    }
+    .viewSubViewLeft {
+      max-width: 100%;
+    }
+  }
+ 
