@@ -98,8 +98,12 @@ const useform = (SignUpValidate) => {
 
       const GotoComplete = AccountServices.addUser(newuser);
 
-      const gotoComplete = AccountServices.backaddUser(newuser);
-      if (GotoComplete || gotoComplete) { history.push('/check-email/sign-up'); }
+      const goto = AccountServices.backaddUser(newuser);
+
+      if (goto === false) {
+        console.log('account with this email already exist');
+      }
+      if (goto || GotoComplete) { history.push('/check-email/sign-up'); }
     }
   }, [errors]);
 

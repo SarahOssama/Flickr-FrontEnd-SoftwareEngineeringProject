@@ -45,11 +45,11 @@ const FormLogin = () => {
             onChange={handleChange}
           />
           {error.password && <p>{error.password}</p>}
-          <label htmlFor="rememberCheckbox" className="formSignUp">
+          {/* <label htmlFor="rememberCheckbox" className="formSignUp">
 
             <input id="rememberCheckbox" type="checkbox" />
             Remember email address
-          </label>
+          </label> */}
 
         </div>
 
