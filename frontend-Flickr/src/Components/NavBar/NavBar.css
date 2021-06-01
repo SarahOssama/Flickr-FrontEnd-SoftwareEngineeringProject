@@ -22,29 +22,32 @@
   padding-left: 7% !important ;
 }
 .form-inline {
-  height: 35px !important;
+  height: 38px !important;
   width: 270px !important;
   margin-top: 4px !important;
+  padding: 0 !important;
   background-color: #d2d2d3 !important;
 }
 
 .form-control,
 .input-group-text {
   background-color: #d2d2d3 !important;
-  
+  margin: 0;
+  padding-left: 5;
 }
-/* .input-group-text {
-  width: 30px !important;
-}*/
+
 
 .input-group-text {
-  margin-bottom: 0px !important;
-}
+  margin-bottom: 0px !important; 
+  height: 33px !important
+};
+
 .form-control {
   font-size: 15px !important;
-  padding: 0;
+  padding: 0 !important;
   width: 180px !important;
-  height: 30px !important;
+  height: 0 !important;
+  margin: 0 !important;
   
 }
 

@@ -60,20 +60,6 @@
   "user": [
     {}
   ],
-  "profileUsers": [
-    {
-      "Name": "Omar Magdy",
-      "followers": "5",
-      "followings": "7",
-      "img": "//combo.staticflickr.com/pw/images/buddyicon00_r.png#192812172@N04",
-      "email": "mercol58@ymail.com",
-      "DateJoined": "2021",
-      "PhotoImg": "//live.staticflickr.com/65535/51128077926_2efaaaeeae_n.jpg",
-      "description": "picName",
-      "NumberOfPhotos": "1",
-      "imgOwner": "You"
-    }
-  ],
   "notificationData": [
     {
       "id": 1,
@@ -100,8 +86,7 @@
       "notifierName": "Sarah Osama"
     }
   ],
-  "upload": [
-    ]
+  "upload": [],
   "profileUsers": [
     {
       "Name": "Omar Magdy",
@@ -130,6 +115,7 @@
         "imgCover2": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg"
       }
     }
+  ],
   "GroupMemberData": [
     {
       "id": 1,
@@ -145,6 +131,5 @@
       "Numofpictures": "54",
       "Numoffriends": "330"
     }
-
   ]
 }
