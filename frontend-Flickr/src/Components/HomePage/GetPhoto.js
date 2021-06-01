@@ -10,7 +10,7 @@ const GetPhoto = () => {
   useEffect(() => {
     const getPhoto = async () => {
       axios
-        .get(`${Conf.localURL}`, {
+        .get(`${Conf.LocalNoPath}/photoData`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
             'content-type': 'application/json',

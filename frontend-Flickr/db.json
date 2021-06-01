@@ -58,6 +58,26 @@
         "age": "22"
       },
       "id": 1
+    },
+    {
+      "newuser": {
+        "email": "sarahosama28@gmail.com",
+        "password": "2345678909876543234567890",
+        "first_name": "Sarah Osama",
+        "last_name": "Ahmed",
+        "age": "878"
+      },
+      "id": 2
+    },
+    {
+      "newuser": {
+        "email": "sarahosama28@gmail.com",
+        "password": "65432345678765432",
+        "first_name": "cvf",
+        "last_name": "afvawef",
+        "age": "3423"
+      },
+      "id": 3
     }
   ],
   "CompleteSignup": [
@@ -91,7 +111,6 @@
       "id": 1
     }
   ],
-
   "notificationData": [
     {
       "id": 1,
