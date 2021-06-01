@@ -36,7 +36,7 @@ const MyDropzone = forwardRef((props, ref) => {
 
   const onDropAccepted = useCallback(
     (acceptedFiles) => {
-      setimgURL(acceptedFiles[0].name);
+      setimgURL(acceptedFiles[0]);
       console.log(imgURL);
     },
     [],

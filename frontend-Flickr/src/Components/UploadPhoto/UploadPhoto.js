@@ -3,20 +3,20 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDYyMzAyLCJqdGkiOiJlMGMzN2JhMzQ5ZTc0OWFjOWVmYTU5ZWQ3MjU4Njc1NSIsInVzZXJfaWQiOjF9.ZxiNRDibN0bxAzsFNi8PzmdIMwV4HZXWu-ViFifAxsc';
+const accessToken = localStorage.getItem('access token');
 
 const UploadPhoto = ({ imgUpload }) => {
   // const [mediafield, setmediafield] = useState('Test');
   const [upload, setUpload] = useState(false);
   //   imgUpload.forEach((file) => setmediafield(file.preview));
   // eslint-disable-next-line no-console
-  // console.log(imgUpload);
+  console.log(imgUpload);
   const photo_height = 234;
   const photo_width = 234;
   // const file = imgUpload;
   // const media_file = document.querySelector('input[type="file"]').imgUpload;
   // data.append("data", imagedata);
-  const media_file = imgUpload;
+  const media_file = '@"/C:/Users/sarah/Pictures/wallpaper/69F88801-E0B7-48F0-AC94-F0680BB33A6C.jpg"';
   // const formData = new FormData();
   // formData.append('image', imgUpload);
   // formData.append()
@@ -28,11 +28,20 @@ const UploadPhoto = ({ imgUpload }) => {
     'Content-type': 'multipart/form-data',
     accept: '*/*',
   };
-  const data = {
-    media_file,
-    photo_width,
-    photo_height,
-  };
+  const body = new FormData();
+  // eslint-disable-next-line no-useless-escape
+  body.append('media_file', imgUpload);
+  body.append('', '\\');
+  body.append('photo_height', '123');
+  body.append('', '\\');
+  body.append('photo_width', '234');
+  body.append('', '\\');
+  body.append('is_public', 'true');
+  // {
+  //   media_file,
+  //   photo_width,
+  //   photo_height,
+  // };
   const handleUpload = (e) => {
     e.preventDefault();
 
@@ -43,10 +52,10 @@ const UploadPhoto = ({ imgUpload }) => {
     console.log(upload, 'reachUpload');
 
     if (upload) {
-      console.log(data);
+      console.log(body);
 
       axios
-        .post(`${Conf.backURL}/photos/upload`, data, {
+        .post(`${Conf.backURL}photos/upload`, body, {
           headers,
         })
         .then((response) => {
