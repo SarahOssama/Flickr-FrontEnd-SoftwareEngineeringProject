@@ -6,6 +6,8 @@ services:
     volumes:
       - /app/node_modules
       - ./frontend-Flickr:/app
+    environment:
+      - CI=true
     ports:
       - "3000:3000"
 

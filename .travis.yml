@@ -26,12 +26,12 @@ notifications:
       #- $LEAD_EMAIL
 
 #Before building for production, build for testing
-#before_script:
-# - docker-compose -f docker-compose.dev.yml build
+before_script:
+ - docker-compose -f docker-compose.dev.yml build
 
 #Run tests from docker-compose.dev, if successfull login to Docker Hub and build for production
 script:
-  # - docker-compose -f docker-compose.dev.yml up
+  - docker-compose -f docker-compose.dev.yml up
   - echo "$DOCKER_ACCESS_KEY" | docker login -u "$DOCKER_ID" --password-stdin
   - docker-compose build
 
