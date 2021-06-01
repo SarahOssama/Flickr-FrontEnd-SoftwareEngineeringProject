@@ -7,6 +7,6 @@ export default {
   productionURL: 'http://localhost:8000',
 
 };
-
+// https://fotone.me/api/?format=openapi
 // eslint-disable-next-line eol-last
 // GALLERY_URL_GET

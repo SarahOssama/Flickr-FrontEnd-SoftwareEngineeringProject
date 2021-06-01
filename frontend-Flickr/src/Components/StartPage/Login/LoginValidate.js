@@ -20,4 +20,5 @@ function LoginValidate(props) {
 
   return error;
 }
-export default LoginValidate;
+// export default LoginValidate;
+module.exports = LoginValidate;

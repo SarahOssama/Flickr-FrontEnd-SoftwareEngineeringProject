@@ -14,4 +14,5 @@ function SetnewpasswordValidate(props) {
   return passworderror;
 }
 
-export default SetnewpasswordValidate;
+// export default SetnewpasswordValidate;
+module.exports = SetnewpasswordValidate;

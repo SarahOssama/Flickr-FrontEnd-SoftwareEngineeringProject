@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import Conf from '../../../Conf';
+import AccountServices from '../AccountServices';
 
 /**
  * UseLoginform
@@ -43,50 +44,49 @@ const UseLoginform = (LoginValidate) => {
     e.preventDefault();
     setIsSubmitting(true);
   };
-
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmitting) {
-      console.log(user);
-      const {
-        email, password,
-      } = user;
+      // console.log(user);
 
-      const LoginUser = async () => {
-        await axios
-          .post(`${Conf.localURL}LoginUsers`, {
-            email,
-            password,
-          })
-          .then((response) => {
-            console.log(response);
-            if (response.status === 201) {
-              history.push('/Home');
-              // response.body.tokens.accessToken=res;
-            }
-          });
-      }; LoginUser();
+      // const LoginUser = async () => {
+      //   await axios
+      //     .post(`${Conf.localURL}LoginUsers`, {
+      //       email,
+      //       password,
+      //     })
+      //     .then((response) => {
+      //       console.log(response);
+      //       if (response.status === 201) {
+      //         history.push('/Home');
+      //         // response.body.tokens.accessToken=res;
+      //       }
+      //     });
+      // }; LoginUser();
 
-      const backLoginUser = async () => {
-        await axios
-          .post(`${Conf.backURL}accounts/login/`, {
-            headers: {
-              'content-type': 'application/json',
-              // accept: 'application/json',
-            },
-            body: {
-              email,
-              password,
-            },
-          })
-          .then((response) => {
-            if (response.status === 200) {
-              localStorage.setItem('access token', response.data.tokens.access);
-              history.push('/Home');
-            } else if (response.status === 400) {
-              console.log(response.data);
-            }
-          });
-      }; backLoginUser();
+      // const backLoginUser = async () => {
+      //   await axios
+      //     .post(`${Conf.backURL}accounts/login/`, {
+      //       headers: {
+      //         'content-type': 'application/json',
+      //       },
+      //       user,
+      //       // email,
+      //       // password,
+
+      //     })
+      //     .then((response) => {
+      //       console.log(response);
+      //       if (response.status === 200) {
+      //         localStorage.setItem('access token', response.data.tokens.access);
+      //         history.push('/Home');
+      //       } // else if (response.status === 401) { // unauthorizrd "Invalid email or password"
+      //       //   // console.log(response.data.detail);
+      //       // }
+      //     });
+      // };
+      const GotoHome = AccountServices.LoginUser(user);
+      const gotohome = AccountServices.backLoginUser(user);
+      if (GotoHome || gotohome) { history.push('/Home'); }
     }
   }, [error]);
 

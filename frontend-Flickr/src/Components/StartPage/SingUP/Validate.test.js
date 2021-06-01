@@ -1,6 +1,6 @@
 const SignUpValidate = require('./Validate');
 
-// test by passing all data
+// test by passing all Signup data
 const data = {
   first_name: 'menna',
   last_name: 'kamel',
@@ -8,11 +8,11 @@ const data = {
   email: 'menna@gmail.com',
   password: '11111111111111111',
 };
-test('complete all data', () => {
+test('complete SignUp data', () => {
   expect(SignUpValidate(data)).toEqual({});
 });
 
-// test by passing no data
+// test by passing emipty signup form
 const allNull = {
   first_name: '',
   last_name: '',
@@ -20,7 +20,7 @@ const allNull = {
   email: '',
   password: '',
 };
-test('missing all data', () => {
+test('missing all SignUp data', () => {
   expect(SignUpValidate(allNull)).toEqual({
     first_name: 'Required',
     last_name: 'Required',
@@ -30,7 +30,7 @@ test('missing all data', () => {
   });
 });
 
-// test by passing complete data with invalid email
+// test by passing complete SignUp data with invalid email
 const invalideEmail = {
   first_name: 'ahmed',
   last_name: 'kamel',
@@ -38,13 +38,13 @@ const invalideEmail = {
   email: 'ahmedgmail',
   password: 'ggggggggggggggggg',
 };
-test('email is not valid', () => {
+test('email in SignUp is not valid', () => {
   expect(SignUpValidate(invalideEmail)).toEqual({
     email: 'invalid email',
   });
 });
 
-// test by passing complete data with short password
+// test by passing complete SignUp data with short password
 const invalidePassword = {
   first_name: 'sara',
   last_name: 'osama',
@@ -52,7 +52,7 @@ const invalidePassword = {
   email: 'sara@gmail.com',
   password: 'mmmm',
 };
-test('password is too short', () => {
+test('password in SignUp is too short', () => {
   expect(SignUpValidate(invalidePassword)).toEqual({
     password: 'Please use at least: 12 characters',
   });

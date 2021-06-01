@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Conf from '../../../Conf';
-// import AccountService from '../AccountServices';
+import AccountServices from '../AccountServices';
 
 /**
  * Useform
@@ -24,6 +24,7 @@ const useform = (SignUpValidate) => {
   const [errors, setErrors] = useState({});
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+
   /**
    * handleChange
    * @param {*} e
@@ -48,56 +49,62 @@ const useform = (SignUpValidate) => {
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       const {
-        email, password, first_name, last_name, age,
+        email,
       } = newuser;
 
-      console.log(newuser);
-      const addUser = async () => {
-        await axios
-          .post(`${Conf.localURL}users/`, {
-            email,
-            password,
-            first_name,
-            last_name,
-            age,
-          })
-          .then((response) => {
-            console.log(response.data);
-            if (response.status === 201) {
-              history.push('/check-email/sign-up');
-            }
-          });
-      }; addUser();
+      // setResendemail(email);
+      // console.log(setResendemail);
+      // const addUser = async () => {
+      //   await axios
+      //     .post(`${Conf.localURL}users/`, {
+      //       newuser,
+      //     })
+      //     .then((response) => {
+      //       if (response.status === 201) {
+      //         history.push('/check-email/sign-up');
+      //       }
+      //     });
+      // }; addUser();
 
-      const backaddUser = async () => {
-        await axios
-          .post(`${Conf.backURL}accounts/sign-up/`, {
+      // const backaddUser = async () => {
+      //   await axios
+      //     .post(`${Conf.backURL}accounts/sign-up/`, {
 
-            headers: {
-              'content-type': 'application/json',
-            },
-            body: {
-              email,
-              password,
-              first_name,
-              last_name,
-              age,
-            },
-          })
-          .then((response) => {
-            console.log(response);
-            // if (response.status === 201) {
-            //   history.push('/check-email/sign-up');
-            // } else if (response.status === 400) {
-            //   console.log(response.data);
-            // }
-          });
-      }; backaddUser();
+      //       headers: {
+      //         'content-type': 'application/json',
+      //       },
+
+      //       email,
+      //       password,
+      //       first_name,
+      //       last_name,
+      //       age,
+
+      //     })
+      //     .then((response) => {
+      //       console.log(response);
+      //       if (response.status === 201) {
+      //         history.push('/check-email/sign-up');
+      //       } else if (response.status === 400) {
+      //         // console.log(response.body);
+      //       }
+      //     });
+      // }; backaddUser();
+      // setgotoComplete(true);
+
+      localStorage.removeItem('ResendemailSignup');
+      localStorage.setItem('ResendemailSignup', email);
+      console.log(localStorage.getItem('ResendemailSignup'));
+
+      const GotoComplete = AccountServices.addUser(newuser);
+
+      const gotoComplete = AccountServices.backaddUser(newuser);
+      if (GotoComplete || gotoComplete) { history.push('/check-email/sign-up'); }
     }
   }, [errors]);
 
   return {
-    handleChange, newuser, handleSubmit, errors, useEffect,
+    handleChange, newuser, handleSubmit, errors,
   };
 };
 

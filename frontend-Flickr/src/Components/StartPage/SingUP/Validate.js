@@ -29,9 +29,6 @@ function SignUpValidate(props) {
   } else if (props.password.length < 12) {
     errors.password = 'Please use at least: 12 characters';
   }
-  // } else if (!/\S+(?=.{12,})/.test(values.password)) {
-  //   errors.password = 'invalid password';
-  // }
 
   return errors;
 }

@@ -47,7 +47,7 @@ const FormLogin = () => {
           {error.password && <p>{error.password}</p>}
           <label htmlFor="rememberCheckbox" className="formSignUp">
 
-            <input id="rememberCheckbox" type="checkbox" checked />
+            <input id="rememberCheckbox" type="checkbox" />
             Remember email address
           </label>
 
