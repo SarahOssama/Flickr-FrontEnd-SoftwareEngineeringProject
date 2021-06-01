@@ -3,15 +3,16 @@
  * @param {*} values
  * @returns passworderror
  */
-function SetnewpasswordValidate(values) {
+function SetnewpasswordValidate(props) {
   const passworderror = {};
-  if (!values.newpassword) {
-    passworderror.newpassword = 'Required';
-  } else if (values.newpassword.length < 12) {
-    passworderror.newpassword = 'Please use at least: 12 characters';
+  if (!props.password) {
+    passworderror.password = 'Required';
+  } else if (props.password.length < 12) {
+    passworderror.password = 'Please use at least: 12 characters';
   }
 
   return passworderror;
 }
 
-export default SetnewpasswordValidate;
+// export default SetnewpasswordValidate;
+module.exports = SetnewpasswordValidate;

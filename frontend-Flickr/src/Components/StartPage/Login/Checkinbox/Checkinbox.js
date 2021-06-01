@@ -1,19 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Checkinbox.css';
+import UseCheckinbox from './UseCheckinbox';
 
 /**
  * Checkinbox
  * @returns Checkinbox Form
  */
 function Checkinbox() {
-  /**
-   * handleSubmit
-   * @param {*} e
-   */
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const { handleSubmit } = UseCheckinbox();
   return (
     <div className="formcheckinboxContent">
       <form onSubmit={handleSubmit} className="checkinboxForm">

@@ -16,7 +16,9 @@ const PhotoSet1 = ({ pCard }) => (
       <MdMoreHoriz style={{ color: 'rgb(137, 137, 137)', marginLeft: '7px' }} />
     </div>
     <div className="photoCardHolder">
-      <img src={pCard.img} alt="Avatar" className="imageCompHome" />
+      <Link to="/photos">
+        <img src={pCard.img} alt="Avatar" className="imageCompHome" />
+      </Link>
       <div className="imgOverlayHome">
         <div className="overlayLeftContHome">
           <Link className="photoNameLinkHome" to="/photos">{pCard.photoName}</Link>

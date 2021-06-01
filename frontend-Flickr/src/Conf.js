@@ -1,11 +1,12 @@
 export default {
 
   apiURL: 'http://127.0.0.1:8000',
-  localURL: 'http://localhost:5000/photoData',
+  localURL: 'http://localhost:5000/',
   LocalNoPath: 'http://localhost:5000',
-  backURL: 'https://fotone.me/api/',
+  backURL: 'https://fotone.me/api',
   productionURL: 'http://localhost:8000',
-};
 
+};
+// https://fotone.me/api/?format=openapi
 // eslint-disable-next-line eol-last
 // GALLERY_URL_GET
