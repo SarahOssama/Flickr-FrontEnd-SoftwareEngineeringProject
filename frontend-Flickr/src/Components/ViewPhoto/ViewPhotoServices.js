@@ -2,43 +2,44 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyNDYyMzAyLCJqdGkiOiJlMGMzN2JhMzQ5ZTc0OWFjOWVmYTU5ZWQ3MjU4Njc1NSIsInVzZXJfaWQiOjF9.ZxiNRDibN0bxAzsFNi8PzmdIMwV4HZXWu-ViFifAxsc';
+const accessToken = localStorage.getItem('access token');
 
-const ViewPhotoServices = () => {
-  const [fave, setFave] = useState(false);
-
-  const handleFave = (e) => {
+const ViewPhotoServices = ({ id, setViewGetphotoData }) => {
+  // const [viewphoto, viewPhoto] = useState(true);
+  // const [viewGetPhotoData, setViewGetphotoData] = useState([]);
+  // const id = 1;
+  console.log(id);
+  const handleViewPhoto = (e) => {
     e.preventDefault();
 
-    setFave(!fave);
+    // viewPhoto(!viewphoto);
   };
-  const headers = {
-    authorization: `Bearer ${accessToken}`,
-    'Content-type': 'multipart/form-data',
-    accept: '*/*',
-  };
-  const data = {
 
-  };
+  const viewphoto = true;
+
   useEffect(() => {
-    console.log(fave, 'reachUpload');
+    console.log(viewphoto, 'reachUpload');
 
-    if (fave) {
-      console.log(data);
-
+    if (viewphoto) {
       axios
-        .post(`${Conf.backURL}/photos/upload`, data, {
-          headers,
+        .get(`${Conf.backURL}photos/${id}`, {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'content-type': 'application/json',
+            accept: 'application/json',
+          },
+          body: {
+
+          },
         })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
+        .then((res) => {
+          // eslint-disable-next-line no-console
+          console.log(res.data);
+          setViewGetphotoData(res.data.photo);
         });
     }
-  }, [fave]);
-  return { handleFave };
+  }, [viewphoto]);
+  return { };
 };
 
 export default ViewPhotoServices;
