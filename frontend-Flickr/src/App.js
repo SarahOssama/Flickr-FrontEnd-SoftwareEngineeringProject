@@ -15,7 +15,7 @@ import SetnewPassword from './Components/StartPage/Login/Setnewpassword/SetnewPa
 import Home from './Components/HomePage/Home';
 import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
-import Footer from './Components/Footer/Footer';
+// import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 
 // import Groups from './Components/Groups/Groups';
