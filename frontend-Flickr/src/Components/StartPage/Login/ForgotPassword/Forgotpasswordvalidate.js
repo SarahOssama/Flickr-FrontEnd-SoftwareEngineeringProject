@@ -3,13 +3,13 @@
  * @param {[string]} values [inputs of user]
  * @returns {[emailerror]}  [emailerror message when user input is invalid]
  */
-function Forgotpasswordvalidate(values) {
+function Forgotpasswordvalidate(props) {
   const emailerror = {};
 
-  if (!values.emailaddress) {
-    emailerror.emailaddress = 'Required';
-  } else if (!/\S+@\S+\.\S+/.test(values.emailaddress)) {
-    emailerror.emailaddress = 'invalid email';
+  if (!props.email) {
+    emailerror.email = 'Required';
+  } else if (!/\S+@\S+\.\S+/.test(props.email)) {
+    emailerror.email = 'invalid email';
   }
 
   return emailerror;

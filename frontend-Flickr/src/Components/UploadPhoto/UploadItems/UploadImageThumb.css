@@ -1,0 +1,84 @@
+/*/------Preview-----------*/
+
+.thumbsContainer {
+  display: "flex";
+  flex-direction: "row";
+  flex-wrap: "wrap";
+  margin-top: 16;
+}
+
+.thumbUpload {
+  display: "inline-flex";
+  border-radius: 2;
+  border: "1px solid #eaeaea";
+  margin-bottom: 8;
+  margin-right: 8;
+  width: 100px;
+  height: 100px ;
+  padding: 4;
+  box-sizing: "border-box";
+}
+
+.thumbInnerUpload {
+  display: "flex";
+  min-width: 0;
+  overflow: "hidden";
+}
+
+.imgUpload {
+  display: "block";
+  width: "auto";
+  height: "100%";
+}
+.test{
+    color:blueviolet;
+}
+
+.photoItemContent{
+  width: 200px;
+  height: 220px;
+  font-size: 12px;
+  vertical-align: top;
+  display: inline-block;
+  position: relative;
+  text-align: left;
+}
+
+.photoWrapper{
+  background-color: transparent !important;
+  position: relative;
+  padding: 0;
+  margin: 15px auto 0 auto;
+  text-align: center;
+  display: block;
+  font-size: 12px;
+}
+
+.photoEditable{
+  position: absolute;
+  padding: 0 7px;
+  top: 156px;
+  width: 190px;
+  margin: 0;
+  margin-left: 40px;
+  line-height: 18px;
+    color: #000;
+}
+
+.gridItemDelete{
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 14px;
+  height: 14px;
+  background: #222 url(https://combo.staticflickr.com/pw/images/editr-grid-delete.png) no-repeat -9px -8px;
+  margin: -8px -8px 0 0;
+  border: 2px solid #444;
+  text-align: center;
+  overflow: hidden;
+  z-index: 3;
+  border-radius: 16px;
+  box-shadow: 0 0 1px rgb(0 0 0 / 50%);
+  display: none;
+}

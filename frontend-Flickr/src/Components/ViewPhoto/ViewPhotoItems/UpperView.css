@@ -1,0 +1,92 @@
+/* Previous and Next */
+.navigateTargetNavigatePrev {
+  height: 430px;
+  width: 50%;
+  opacity: 0;
+  cursor: default;
+  left: 0;
+  z-index: 101;
+  position: absolute;
+}
+
+.navigateTargetNavigateNext {
+  height: 430px;
+  width: 50%;
+  opacity: 0;
+  cursor: default;
+  right: 0;
+  min-width: 200px;
+  z-index: 101;
+  position: absolute;
+}
+
+/* Image Comp */
+.photoViewMedia {
+  padding: 50px 0;
+  z-index: 102;
+  display: flex;
+  position: relative;
+  margin: auto;
+}
+
+/* Icons divs Style */
+.toggleEnlarge {
+  z-index: 104;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  margin: 10px;
+}
+
+.photoEngView {
+  position: absolute;
+  bottom: 6px;
+  right: 0;
+  z-index: 111;
+}
+.photoEngViewShare{
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    z-index: 111;
+}
+
+
+.backEntryPoint {
+  position: absolute;
+  z-index: 108;
+  top: 18px;
+  left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+
+}
+.backEntryPoint a{
+    text-decoration: none;
+    color: white;
+}
+.backEntryPoint a:hover{
+    text-decoration: underline;
+}
+
+.imageSlidder {
+  position: absolute;
+  z-index: 105;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  height: 50px;
+  width: 210px;
+  margin: 0 auto;
+  background-position: 0 30px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    0deg,
+    rgba(33, 33, 36, 0.5) 55px,
+    rgba(33, 33, 36, 0) 80px
+  );
+}

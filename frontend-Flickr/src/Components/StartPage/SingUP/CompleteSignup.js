@@ -1,15 +1,15 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import '../Login/Checkinbox/Checkinbox';
-
+import UseCompleteSignup from './UseCompleteSignup';
 /**
  * CompleteSignup
  * @returns CompleteSignup Form
  */
 function CompleteSignup() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const {
+    handleSubmit,
+  } = UseCompleteSignup();
+
   return (
     <div className="formcheckinboxContent">
       <form onSubmit={handleSubmit} className="checkinboxForm">

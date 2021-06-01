@@ -17,15 +17,16 @@ import NavBar from './Components/NavBar/NavBar';
 import About from './Components/NavBar/About';
 import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
-/* import Groups from './Components/Groups/Groups'; */
-import RecentPhotos from './Components/Explore/RecentPhotos';
-import Galleries from './Components/Profile/Gallery/Galleries';
+
+// import Groups from './Components/Groups/Groups';
+// import RecentPhotos from './Components/Explore/RecentPhotos';
+// import Galleries from './Components/Profile/Gallery/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
 import GalleryContent from './Components/Profile/Gallery/GalleryContent';
 import GroupOverview from './Components/Groups/Groupoverview/GroupOverview';
 import Photos from './Components/Groups/GroupPhotopool/GroupPool';
 import GroupMembers from './Components/Groups/Groupmembers/GroupMembers';
-import UploadPhoto from './Components/UploadPhoto/UploadPhoto';
+import Upload from './Components/UploadPhoto/Upload';
 import ViewPhoto from './Components/ViewPhoto/ViewPhoto';
 import Searchphotosmain from './Components/Search/Searchphotos/Searchphotosmain';
 import Searchpeoplemain from './Components/Search/Searchpeople/Searchpeoplemain';
@@ -41,15 +42,17 @@ function App() {
           <Route path="/" exact component={StartPage} title="Find your inspiration. | Flickr" />
           <Route path="/Home" exact component={Home} title="Home | Flickr" />
           <Route path="/profile" exact component={Profile} title="Home | Flickr" />
+
+          <Route path="/photos/upload" exact component={Upload} />
+
           <Route path="/Profile/CameraRoll" exact component={CameraRoll} title="Camera Roll | Flickr" />
-          <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" />
-          <Route path="/explore" exact component={RecentPhotos} title="Explore | Flickr" />
+          {/* <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" /> */}
+          {/* <Route path="/explore" exact component={RecentPhotos} title="Explore | Flickr" /> */}
           <Route path="/profile/GalleryContent" exact component={GalleryContent} title="Gallery | Flickr" />
 
           <Route path="/group" exact component={GroupOverview} title="GroupOverview | Flickr" />
           <Route path="/groups/members" exact component={GroupMembers} title="GroupMembers | Flickr" />
           <Route path="/groups/pool" exact component={Photos} title="GroupPhotos | Flickr" />
-          <Route path="/photos/upload" exact component={UploadPhoto} />
           <Route path="/photos" exact component={ViewPhoto} />
           <Route path="/searchphotos" exact component={Searchphotosmain} title="SearchPhotos | Flickr" />
           <Route path="/searchpeople" exact component={Searchpeoplemain} title="SearchPeople | Flickr" />
@@ -66,7 +69,7 @@ function App() {
 
           <Route path="/about" component={About} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
 

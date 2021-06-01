@@ -1,22 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Notification = ({ nCard }) => (
-  <div>
-    <div className="card w-100 h-25 ">
-      <div className="card-body">
-        <h5 className="card-title">{nCard.type}</h5>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/" className="test">Button</a>
+const Notification = ({ nCard }) => {
+  // const [notificationMsg, setnotificationMsg] = useState('');
+  // const msgCheck = nCard.type;
+  // if (msgCheck === 'comment') {
+  //   setnotificationMsg('commented on Your photo');
+  // } else if (msgCheck === 'faved') {
+  //   setnotificationMsg('faved your photo');
+  // } else {
+  //   setnotificationMsg('is now following you!');
+  // }
+  const Message = `${nCard.notifierName} commented on Your photo `;
+  return (
+    <div>
+      <div className="card w-100 h-25 ">
+        <div className="card-body">
+          <h5 className="card-title">{nCard.type}</h5>
+          <p className="card-text">{Message}</p>
+          <a href="/" className="test">Button</a>
+        </div>
       </div>
+
     </div>
-
-  </div>
-);
-
-Notification.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  nCard: PropTypes.object.isRequired,
+  );
 };
 
 export default Notification;
