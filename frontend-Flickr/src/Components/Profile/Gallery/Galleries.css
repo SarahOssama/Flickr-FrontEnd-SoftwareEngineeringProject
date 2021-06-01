@@ -152,21 +152,21 @@ a.selectedLink {
     border: 1px solid hsla(0, 0%, 54%, 0.3);
 }
 
-.formLayout{
+.formLayoutGalleries{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction:column;
 }
 
-h4{
+.formLayoutGalleries h4{
     font-weight: lighter;
     font-size: large;
     margin-top: 0px;
     margin-left: 2%;
 }
 
-textarea{
+.formLayoutGalleries textarea{
     resize: none;
     width: 97%;
     align-self: center;
@@ -177,7 +177,7 @@ textarea{
     border-width: thin;
 }
 
-input{
+.buttonsGalleries input{
     width: 80px;
     margin: 10px;
     border-radius: 3px;
@@ -189,7 +189,7 @@ input{
     height: 30px;
 }
 
-.buttons{
+.buttonsGalleries{
     display: flex;
     flex-direction: row-reverse;
 }

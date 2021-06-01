@@ -51,12 +51,12 @@ const Galleries = () => {
         <div id="newGallery">
           <div className="addGalleryLayout">
             <div className="addGalleryForm">
-              <div className="formLayout">
+              <div className="formLayoutGalleries">
                 <BsX style={{ alignSelf: 'end', cursor: 'pointer' }} onClick={closeForm} />
                 <h4>Create a new gallery</h4>
                 <textarea placeholder="Gallery name" rows="1" />
                 <textarea placeholder="Description (optional)" rows="4" style={{ marginBottom: '50px' }} />
-                <div className="buttons">
+                <div className="buttonsGalleries">
                   <input type="button" value="Create" id="1" style={{ backgroundColor: 'rgb(110, 161, 255)' }} />
                   <input type="button" onClick={closeForm} value="Cancel" id="2" style={{ backgroundColor: 'gray' }} />
                 </div>
