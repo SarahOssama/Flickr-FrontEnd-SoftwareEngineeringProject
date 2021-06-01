@@ -85,8 +85,8 @@ const UseLoginform = (LoginValidate) => {
       //     });
       // };
       const GotoHome = AccountServices.LoginUser(user);
-      const gotohome = AccountServices.backLoginUser(user);
-      if (GotoHome || gotohome) { history.push('/Home'); }
+      const home = AccountServices.backLoginUser(user);
+      if (GotoHome || home) { history.push('/Home'); }
     }
   }, [error]);
 
