@@ -1,0 +1,55 @@
+body{
+    background:rgb(241, 241, 241);
+}
+.memberprofile-container{
+  
+    background-color:white;
+    width: 400px;
+    height: 95px;
+    position: fixed;
+    top: 400px;
+    left: 100px;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-image{
+    height: 70px;
+    float: left;
+    margin-left: 15px;
+
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-image img{
+    max-height: 100%;
+    min-height: 100%;
+    border-radius: 50%;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links{
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberName a{
+    font-weight: lighter;
+    font-size: large;
+    color:black;
+    margin-left: 20px;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberName a:link{
+    color:black;
+    text-decoration: none;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberName button{
+    padding: 4px 14px;
+    border-radius: 4px;
+    background-color:rgb(100, 100, 248);
+    border-color: rgb(100, 100, 248);
+    font-size: small;
+    font-weight: bold;
+    float: right;
+    color:white;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberLinks a {
+      margin-left: 10px;
+      color:grey;
+  }
+  .memberprofile-container .memberprofile-overlay .memberprofile-links .memberLinks a:hover {
+    color:grey;
+}
+

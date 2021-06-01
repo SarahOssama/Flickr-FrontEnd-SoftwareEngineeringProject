@@ -1,0 +1,67 @@
+/* First Raw */
+.rightRow1,
+.subPhotoCharmView,
+.subPhotoContexts,
+.subPhotoTags,
+.subPhotoAdditionalInfo{
+    border-bottom: 1px solid #cfd6d9;
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    background: #f3f5f6;
+    color: #212124;
+}
+.subPhotoRightStars{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+    margin-right: 30px;
+    margin-top: 13px;
+    float: left;
+    width: 223px;
+    display: flex;
+    flex-direction: column;
+}
+/* Stars */
+.starsDetails{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}
+.viewCount,
+.faveCount,
+.commentCount{
+    width: auto;
+    float: none;
+    max-width: 40%;
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}
+.starsLabel,
+.favesLabel,
+.commentsLabel{
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #898989;
+    line-height: 18px;
+}
+
+.viewCountLabel,
+.favesCountLabel,
+.commentsCountLabel{
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 18px;
+}
+
+.dateLicenseContainer{
+    display: flex;
+    flex-direction: column;
+}

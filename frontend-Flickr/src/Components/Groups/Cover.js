@@ -12,7 +12,7 @@ const Cover = () => (
         <img
           className="ProImg"
           src="https://i.pinimg.com/736x/6e/ff/53/6eff53e82b80fb5dd7614d5ba054f144.jpg"
-          img-responsive
+          // img-responsive="true"
           height="40%"
           alt=""
         />
@@ -23,7 +23,7 @@ const Cover = () => (
             {Data.Groups.map((data) => (
               <a href="/">{data.GroupName}</a>
             ))}
-            <button type="button" onClick="alert('Group Rules')">+ Join Group</button>
+            <button type="button">+ Join Group</button>
           </ul>
         </div>
         <div className="links">

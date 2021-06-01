@@ -11,8 +11,7 @@ import './SideNav.css';
 import './NavBar.css';
 import NotificationCard from './Notification/NotificationCard';
 
-// eslint-disable-next-line no-unused-vars
-const NavBar = (props) => {
+const NavBar = () => {
   const history = useHistory();
 
   function toggleNotification() {
@@ -98,9 +97,9 @@ const NavBar = (props) => {
               <Link to="/">Photostream</Link>
               <Link to="/">Albums</Link>
               <Link to="/">Faves</Link>
-              <Link to="/">Galleries</Link>
+              <Link to="/Profile/Galleries">Galleries</Link>
               <Link to="/">Groups</Link>
-              <Link to="/">Camera Roll</Link>
+              <Link to="/Profile/CameraRoll">Camera Roll</Link>
               <Link to="/">Recent Acrivity</Link>
               <Link to="/">People</Link>
               <Link to="/">Organize</Link>
@@ -110,7 +109,7 @@ const NavBar = (props) => {
             <div className="dropdown">
               <button className="dropbtn" type="button">Explore</button>
               <div className="dropdown-content">
-                <a href="/">Recent Photos</a>
+                <Link to="/explore">Recent Photos</Link>
                 <a href="/">Trending</a>
                 <a href="/">Events</a>
                 <a href="/">The Commons</a>
@@ -141,9 +140,13 @@ const NavBar = (props) => {
           <div className="input-group">
             <div className="input-group-prepend">
               <span className="input-group-text" id="basic-addon1">
-                {' '}
-                <AiOutlineSearch color="black" size="18px" style={{ paddingLeft: 0 }} />
-                {' '}
+                <AiOutlineSearch
+                  color="black"
+                  onClick={() => history.push('/searchgroups')}
+                  size="18px"
+                  style={{ paddingLeft: 0 }}
+                />
+
               </span>
 
             </div>

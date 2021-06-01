@@ -91,20 +91,7 @@
       "id": 1
     }
   ],
-  "profileUsers": [
-    {
-      "Name": "Omar Magdy",
-      "followers": "5",
-      "followings": "7",
-      "img": "//combo.staticflickr.com/pw/images/buddyicon00_r.png#192812172@N04",
-      "email": "mercol58@ymail.com",
-      "DateJoined": "2021",
-      "PhotoImg": "//live.staticflickr.com/65535/51128077926_2efaaaeeae_n.jpg",
-      "description": "picName",
-      "NumberOfPhotos": "1",
-      "imgOwner": "You"
-    }
-  ],
+
   "notificationData": [
     {
       "id": 1,
@@ -129,6 +116,52 @@
       "imageExist": true,
       "imgSrc": "https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg",
       "notifierName": "Sarah Osama"
+    }
+  ],
+  "upload": [],
+  "profileUsers": [
+    {
+      "Name": "Omar Magdy",
+      "followers": "5",
+      "followings": "7",
+      "img": "//combo.staticflickr.com/pw/images/buddyicon00_r.png#192812172@N04",
+      "email": "mercol58@ymail.com",
+      "DateJoined": "2021",
+      "PhotoImg": "//live.staticflickr.com/65535/51128077926_2efaaaeeae_n.jpg",
+      "description": "picName",
+      "NumberOfPhotos": "1",
+      "imgOwner": "You"
+    }
+  ],
+  "gallery": [
+    {
+      "galleryName": "The Beginning",
+      "items": "3",
+      "comments": "0",
+      "views": "4",
+      "createdBy": "YOU!",
+      "galleryDescription": "my first gallery",
+      "galleryPhotos": {
+        "imgCover": "https://149528304.v2.pressablecdn.com/wp-content/uploads/2019/12/cuteiphone10.jpg",
+        "imgCover1": "https://i0.wp.com/www.runtoradiance.com/wp-content/uploads/2018/11/cute-iphone-wallpaper-of-cat.jpg",
+        "imgCover2": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/cute-cat-photos-1593441022.jpg"
+      }
+    }
+  ],
+  "GroupMemberData": [
+    {
+      "id": 1,
+      "Name": "Mennatallah Elkhodary",
+      "avatar": "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg",
+      "Numofpictures": "1234",
+      "Numoffriends": "345"
+    },
+    {
+      "id": 2,
+      "Name": "Sara Osama",
+      "avatar": "https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2019/07/Man-Silhouette.jpg",
+      "Numofpictures": "54",
+      "Numoffriends": "330"
     }
   ]
 }
