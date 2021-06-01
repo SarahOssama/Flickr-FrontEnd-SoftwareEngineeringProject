@@ -1,15 +1,15 @@
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .formSignUpContent {
-  background-image: url('./signupandloginbackground.jpg');
+  background-image: url("./signupandloginbackground.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
-  background-size:100% 100%;
-  
+  background-size: 100% 100%;
+
   margin: 0px auto;
   width: 100%;
   position: relative;
@@ -19,104 +19,95 @@ input[type=number]::-webkit-outer-spin-button {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'PT Sans', sans-serif;
-
-  }
-
-  .flickrIcon {
-    content: url("https://aux.iconspalace.com/uploads/flickr-icon-256-50650844.png"); width: 25px; height: 25px;
-    display: inline-block;
-  }
-  .signupformTitle
-  {
-    margin-top: -7%;
-  }
-
-
-.signupForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 620px;
-    width: 320px;
-    border-radius: 5px;
-    display: flex;
-    background:white;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-   
-  }
-  
-
-  .signupInputs{
-    margin-bottom: -3%;
-    margin-top: -3%;
-
-    width: 90%;    
-  }
-
-  .signupInputs p {
-    font-weight: 1;
-    font-size: 0.7rem;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    color: #f00e0e;
-    text-align:left;
-  }
-
-  .signupInput {
-    padding-left: 10px;
-    border-radius: 4px;
-    height: 50px;
-    width: 100%;
-    border-width: 1px;
-    border-color:rgb(211, 211, 211);
-    border-style: solid;
-    background-color: white;
-    margin-top: 0rem;
-    margin-bottom:0%;
-  }
-
-  
-  .signupInput:focus {
-    outline: none !important;
-    border:1px solid rgb(69, 137, 240);
-  }
-  
- 
-  
-  .signupButton {
-    width: 90%;
-    height: 35px;
-    border-radius: 2px;
-    outline: none;
-    border: none;
-    color:white;
-    font-size: 1rem;
-    background-color:rgb(69, 137, 240);
-    margin-bottom: -4%;
-
-  }
-  
-
-  .seperationLine {
-    border: 0;
-    width: 100%;               
-    background-color:rgb(211, 211, 211);
-    height: 1px;
+  font-family: "PT Sans", sans-serif;
 }
 
-  .formLogin {
-    font-size: 0.8rem;
-    color:black;
-    text-align: center;
-  }
+.flickrIcon {
+  content: url("https://aux.iconspalace.com/uploads/flickr-icon-256-50650844.png");
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+.signupformTitle {
+  margin-top: -7%;
+}
 
-  .formLogin h {
-    text-decoration: none;
-    color:rgb(69, 137, 240);
-    text-align: center;
+.signupForm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 620px;
+  width: 320px;
+  border-radius: 5px;
+  display: flex;
+  background: white;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  }
+.signupInputs {
+  margin-bottom: -3%;
+  margin-top: -3%;
+
+  width: 90%;
+}
+
+.signupInputs p {
+  font-weight: 1;
+  font-size: 0.7rem;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  color: #f00e0e;
+  text-align: left;
+}
+
+.signupInput {
+  padding-left: 10px;
+  border-radius: 4px;
+  height: 50px;
+  width: 100%;
+  border-width: 1px;
+  border-color: rgb(211, 211, 211);
+  border-style: solid;
+  background-color: white;
+  margin-top: 0rem;
+  margin-bottom: 0%;
+}
+
+.signupInput:focus {
+  outline: none !important;
+  border: 1px solid rgb(69, 137, 240);
+}
+
+.signupButton {
+  width: 90%;
+  height: 35px;
+  border-radius: 2px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  background-color: rgb(69, 137, 240);
+  margin-bottom: -4%;
+}
+
+.seperationLine {
+  border: 0;
+  width: 100%;
+  background-color: rgb(211, 211, 211);
+  height: 1px;
+}
+
+.formLogin {
+  font-size: 0.8rem;
+  color: black;
+  text-align: center;
+}
+
+.formLogin h {
+  text-decoration: none;
+  color: rgb(69, 137, 240);
+  text-align: center;
+}

@@ -25,7 +25,7 @@
 
 .imgOverlayHome {
   position: absolute;
-  display: flex;
+    /* display: flex; */
   bottom: 0;
   background: rgb(0, 0, 0);
   background: rgba(161, 161, 161, 0); /* Black see-through */

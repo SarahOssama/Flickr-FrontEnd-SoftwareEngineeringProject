@@ -18,8 +18,8 @@ import About from './Components/NavBar/About';
 import Footer from './Components/Footer/Footer';
 import Profile from './Components/Profile/Profile';
 // import Groups from './Components/Groups/Groups';
-import RecentPhotos from './Components/Explore/RecentPhotos';
-import Galleries from './Components/Profile/Gallery/Galleries';
+// import RecentPhotos from './Components/Explore/RecentPhotos';
+// import Galleries from './Components/Profile/Gallery/Galleries';
 import CameraRoll from './Components/Profile/CameraRoll/CameraRoll';
 import GalleryContent from './Components/Profile/Gallery/GalleryContent';
 import GroupOverview from './Components/Groups/Groupoverview/GroupOverview';
@@ -45,8 +45,8 @@ function App() {
           <Route path="/photos/upload" exact component={Upload} />
 
           <Route path="/Profile/CameraRoll" exact component={CameraRoll} title="Camera Roll | Flickr" />
-          <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" />
-          <Route path="/explore" exact component={RecentPhotos} title="Explore | Flickr" />
+          {/* <Route path="/Profile/Galleries" exact component={Galleries} title="Galleries | Flickr" /> */}
+          {/* <Route path="/explore" exact component={RecentPhotos} title="Explore | Flickr" /> */}
           <Route path="/profile/GalleryContent" exact component={GalleryContent} title="Gallery | Flickr" />
 
           <Route path="/group" exact component={GroupOverview} title="GroupOverview | Flickr" />

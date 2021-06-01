@@ -66,13 +66,15 @@ function OneSignalTest() {
   //   };
 
   return (
-    <div className="grid-container">
-      {
-        <h1>One Signal - React DEMO</h1>
-         // eslint-disable-next-line max-len
-        //  categories.map((category, index) => <Category key={index} {...category} onSubscribe={subscriptionHandler} />)
-      }
-    </div>
+    <></>
+    // <div className="grid-container">
+    //   {
+    //     // <h1>One Signal - React DEMO</h1>
+    //      // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len
+    //     //  categories.map((category, index) => <Category key={index} {...category} onSubscribe={subscriptionHandler} />)
+    //   }
+    // </div>
   );
 }
 
