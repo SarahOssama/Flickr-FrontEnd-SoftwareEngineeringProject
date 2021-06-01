@@ -9,7 +9,7 @@ function dropDownMenu(e) {
 }
 
 const SubNav = () => (
-  <div className="subNavbarExplore" style={{ top: '75px', position: 'fixed', zIndex: '10' }}>
+  <div className="subNavbarExplore" style={{ top: '50px', position: 'fixed', zIndex: '10' }}>
     <div className="scrollingLayoutExplore">
       <div>
         <div className="containerExplore">

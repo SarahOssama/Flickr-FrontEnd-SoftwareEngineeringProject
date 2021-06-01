@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import './ImageGrid.css';
-import PhotoSet1 from '../HomePage/Items/PhotoSet1';
+import Photo from '../HomePage/Items/PhotoSet1';
+
 
 const ImageGrid = ({ photoData }) => (
   <div className="imageContainer" style={{ justifyContent: 'space-between' }}>
