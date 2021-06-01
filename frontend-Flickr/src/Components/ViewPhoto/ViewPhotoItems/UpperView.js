@@ -11,8 +11,7 @@ import Share from './Share';
 import ViewPhotoServices from '../ViewPhotoServices';
 
 const UpperView = () => {
-  const { handleFave } = ViewPhotoServices();
-
+  // const { handleFave } = ViewPhotoServices();
   const viewPhotoIcons = {
     color: 'white',
     height: '20',
@@ -20,13 +19,19 @@ const UpperView = () => {
     margin: '7',
   };
   const [show, setShow] = useState(false);
-  const [faved, setFaved] = useState(false);
+  const [faved, setFaved] = useState(true);
 
-  const imgUrl = 'https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg';
   // const imgDown = 'pexels-eberhard-grossgasteiger-691668.jpg';
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  // const viewPhotoData = ViewPhotoServices();
+  // const imgUrl = `https://fotone.me${viewPhotoData.media_file}`;
+  const imgUrl = 'https://mdbcdn.b-cdn.net/img/new/standard/nature/111.jpg';
+  // console.log(imgUrl);
+  /**
+   * fetch download to download an image
+   * @param {event} e
+   */
   const download = (e) => {
     // console.log(e);
     fetch(e.target.href, {
@@ -71,8 +76,8 @@ const UpperView = () => {
       </div>
       <div className="photoEngView">
         {faved
-          ? <AiFillStar onClick={handleFave} style={viewPhotoIcons} />
-          : <AiOutlineStar onClick={handleFave} style={viewPhotoIcons} />}
+          ? <AiFillStar style={viewPhotoIcons} />
+          : <AiOutlineStar style={viewPhotoIcons} />}
 
         <AiOutlinePlusSquare style={viewPhotoIcons} />
         <TiArrowForwardOutline onClick={handleShow} style={viewPhotoIcons} />

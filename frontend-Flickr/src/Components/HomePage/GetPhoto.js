@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Conf from '../../Conf';
 
-const accessToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjIyMzk5NTYzLCJqdGkiOiI3YWE4MGExMTUyY2E0YTljOTRiYWFjYWQzOGIzNzRlZSIsInVzZXJfaWQiOjE3fQ.craiilIFPLtgSiOJV4bTfChDh8AZsKDLpmFrru75ffA';
+const accessToken = localStorage.getItem('access token');
 
 const GetPhoto = () => {
   const [photoData, setphotoData] = useState([]);
@@ -29,9 +29,9 @@ const GetPhoto = () => {
     };
     getPhoto();
 
-    const getTasks = async () => {
+    const getHomePhoto = async () => {
       axios
-        .get(`${Conf.backURL}/gallery/`, {
+        .get(`${Conf.backURL}photos/home`, {
           headers: {
             Authorization: `Bearer ${accessToken}`,
             'content-type': 'application/json',
@@ -43,10 +43,12 @@ const GetPhoto = () => {
         })
         .then((res) => {
           // eslint-disable-next-line no-console
-          console.log(res.data);
+          console.log(res.data.results.public_photos);
+          const photoFromServer = res.data.results.public_photos;
+          setphotoData(photoFromServer);
         });
     };
-    getTasks();
+    getHomePhoto();
   }, [/* dependency array (value when it changes we want the code to run) */]);
   return (
     photoData

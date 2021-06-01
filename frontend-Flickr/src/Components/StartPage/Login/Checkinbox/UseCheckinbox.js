@@ -24,7 +24,7 @@ const UseCheckinbox = () => {
   };
   useEffect(() => {
     if (isSubmitting) {
-      const ResendemailLogin = localStorage.getItem('ResendemailLogin');
+      // const ResendemailLogin = localStorage.getItem('ResendemailLogin');
 
       // const ResendEmailsToReset = async () => {
       //   await axios
@@ -52,8 +52,8 @@ const UseCheckinbox = () => {
       //       }
       //     });
       // }; backResendEmailsToReset();
-      AccountServices.CompleteSignup(ResendemailLogin);
-      AccountServices.backCompleteSignup(ResendemailLogin);
+      AccountServices.ResendEmailsToReset();
+      AccountServices.backResendEmailsToReset();
     }
   }, [isSubmitting]);
   return {

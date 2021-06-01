@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Forgotpasswordvalidate from './Forgotpasswordvalidate';
 import Useforgotpasswordform from './UseforgotpasswordForm';
-// import UseLoginform from '../UseLoginform';
-// import LoginValidate from '../LoginValidate';
 
 import './FormForgotpassword.css';
 /**

@@ -28,7 +28,7 @@ const GetNotification = () => {
           setNotification(notificationFromServer);
         });
     };
-    getNotification();
+    // getNotification();
   }, [/* dependency array (value when it changes we want the code to run) */]);
 
   return (

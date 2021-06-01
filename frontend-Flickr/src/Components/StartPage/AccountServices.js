@@ -3,20 +3,19 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 import axios from 'axios';
-import { useState } from 'react';
-import { Link, Route, history } from 'react-router-dom';
 import Conf from '../../Conf';
 
 const AccountServices = {
 
   // Sign Up Form
   addUser: async (props) => {
-    let go;
+    let go = false;
     await axios
       .post(`${Conf.localURL}users/`, {
         newuser: props,
       })
       .then((response) => {
+        console.log(response);
         if (response.status === 201) {
           go = true;
         }
@@ -26,7 +25,7 @@ const AccountServices = {
   },
 
   backaddUser: async (props) => {
-    let go;
+    let go = false;
     const {
       email, password, first_name, last_name, age,
     } = props;
@@ -52,6 +51,8 @@ const AccountServices = {
         console.log(response);
         if (response.status === 201) {
           go = true;
+        } else if (response.status === 400) {
+          go = false;
         }
       });
     return go;
@@ -76,14 +77,15 @@ const AccountServices = {
     // const { ResendemailSignup } = props;
     console.log(props);
     await axios
-      .post(`${Conf.backURL}accounts/login/`, {
-        headers: {
-          'content-type': 'application/json',
-        },
+      .post(`${Conf.backURL}accounts/resend-verify-mail/`, {
+        // headers: {
+        //   'content-type': 'application/json',
+        // },
         props,
       })
       .then((response) => {
-        if (response.status === 200) {
+        console.log(response);
+        if (response.status === 201) {
           console.log(response);
         }
       });
@@ -94,17 +96,17 @@ const AccountServices = {
 
   LoginUser: async (props) => {
     // const history = useHistory();
-    let go;
+    let go = false;
 
     await axios
       .post(`${Conf.localURL}LoginUsers`, {
         user: props,
       })
       .then((response) => {
+        console.log(response);
         if (response.status === 201) {
           go = true;
-          console.log(response);
-        }
+        } else { go = false; }
       });
     return go;
   },
@@ -115,7 +117,7 @@ const AccountServices = {
     } = props;
     console.log(email);
     console.log(password);
-    let go;
+    let go = false;
 
     await axios
       .post(`${Conf.backURL}accounts/login/`, {
@@ -132,6 +134,8 @@ const AccountServices = {
         if (response.status === 200) {
           localStorage.setItem('access token', response.data.tokens.access);
           go = true;
+        } else if (response.status === 401) {
+          go = false;
         }
       });
     console.log(localStorage);
@@ -143,9 +147,12 @@ const AccountServices = {
   // Forgot Password Form
   // 1-enter email
   emailToResetPassword: async (props) => {
-    let go;
+    let go = false;
+    const {
+      email,
+    } = props;
     await axios
-      .post(`${Conf.localURL}EmailsToResetPassword/`, { EmailsToReset: props })
+      .post(`${Conf.localURL}EmailsToResetPassword/`, { email })
       .then((response) => {
         if (response.status === 201) {
           console.log(response);
@@ -159,9 +166,9 @@ const AccountServices = {
     const {
       email,
     } = props;
-    let go;
+    let go = false;
     await axios
-      .post(`${Conf.backURL}accounts/password-reset-email/`, {
+      .post(`${Conf.backURL}accounts/password-reset-email`, {
         headers: {
           'content-type': 'application/json',
         },
@@ -171,7 +178,7 @@ const AccountServices = {
         if (response.status === 200) {
           console.log(response);
           go = true;
-        }
+        } else { go = false; }
       });
     return go;
   },
@@ -179,10 +186,11 @@ const AccountServices = {
 
   // Resend reset-password email
 
-  ResendEmailsToReset: async (props) => {
+  ResendEmailsToReset: async () => {
+    const data = localStorage.getItem('ResendemailLogin');
     await axios
       .post(`${Conf.localURL}EmailsToResetPassword`, {
-        ResendemailLogin: props,
+        emailToResetPassword: data,
       })
       .then((response) => {
         if (response.status === 201) {
@@ -193,10 +201,10 @@ const AccountServices = {
 
   backResendEmailsToReset: async (props) => {
     await axios
-      .post(`${Conf.backURL}accounts/login/`, {
-        headers: {
-          'content-type': 'application/json',
-        },
+      .post(`${Conf.backURL}accounts/resend-password-reset-email`, {
+        // headers: {
+        //   'content-type': 'application/json',
+        // },
         props,
       })
       .then((response) => {
@@ -211,7 +219,7 @@ const AccountServices = {
   // 2-enter password
 
   addNewPassword: async (props) => {
-    let go;
+    let go = false;
     await axios
       .post(`${Conf.localURL}newpasswords/`, { // with back server will be PUT request
         usernewpassword: props,
