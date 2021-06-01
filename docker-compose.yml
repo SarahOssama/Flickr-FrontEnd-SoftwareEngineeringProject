@@ -1,0 +1,13 @@
+version: "3"
+services:
+  front:
+    image: ziyadss/flickr-frontend
+    build: ./frontend-Flickr
+    volumes:
+      - /app/node_modules
+      - ./frontend-Flickr:/app
+    environment:
+      - CI=true
+    ports:
+      - "3000:3000"
+

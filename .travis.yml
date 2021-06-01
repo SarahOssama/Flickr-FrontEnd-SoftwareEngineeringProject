@@ -1,0 +1,49 @@
+#Uncomment for OSS deployment - when repo is public
+#arch:
+#  - arm64
+#  - ppc64le
+#  - s390x
+
+#Travis environment setup
+language:       ruby
+os:             linux
+dist:           focal
+services:       docker
+
+#Get entire repo history when cloning
+#To get commits info, for use in git-restore-mtime in deploy.sh
+git:
+  depth:        false
+
+#Emails to notify about build result
+#Default unchanged, sends on success if previous build failed, and on every fail
+notifications:
+  email:
+    recipients:
+      - $DEVOPS_EMAIL
+    on_success: always
+    on_failure: always
+      #- $LEAD_EMAIL
+
+#Before building for production, build for testing
+before_script:
+ - docker-compose -f docker-compose.dev.yml build
+
+#Run tests from docker-compose.dev, if successfull login to Docker Hub and build for production
+script:
+  - docker-compose -f docker-compose.dev.yml up
+  - echo "$DOCKER_ACCESS_KEY" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker-compose build
+
+#If tests and production build succeed, do ???
+#after_success:
+
+#If tests and production build fail, do ???
+#after_failure:
+
+#If tests and production build succeed, deploy using deploy.sh
+deploy:
+  provider:     script
+  script:       bash deploy.sh $EC2_INSTANCE
+  on:
+    branch:     main
