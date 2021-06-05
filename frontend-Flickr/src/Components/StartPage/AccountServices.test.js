@@ -15,19 +15,18 @@ test('Correct SignUp data', () => {
 // test by passing all Login data
 const info = {
   email: 'menna@gmail.com',
-  password: '11111111111111111',
+  password: 'Menna123456789',
 };
 test('Correct Login data', () => {
   expect(AccountServices.LoginUser(info)).toBeTruthy();
 });
 
-// test by passing all correct email
-const emailToResetPassword = {
+// test by passing correct email
+const email = {
   email: 'menna@gmail.com',
-
 };
-test('Correct Login data', () => {
-  expect(AccountServices.emailToResetPassword(emailToResetPassword)).toBeTruthy();
+test('Correct Email To reset password', () => {
+  expect(AccountServices.emailToResetPassword(email)).toBeTruthy();
 });
 
 // test by passing correct new password

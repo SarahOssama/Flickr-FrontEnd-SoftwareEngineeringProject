@@ -48,25 +48,8 @@
       "date_posted": "2021-06-01T10:38:23.004000Z"
     }
   ],
-  "users": [
-    {
-      "newuser": {
-        "email": "menna@gmail.com",
-        "password": "Menna123456789",
-        "first_name": "menna",
-        "last_name": "nawar",
-        "age": "22"
-      },
-      "id": 1
-    }
-  ],
-
-  "CompleteSignup": [
-    {
-      "ResendemailSignup": "menna@gmail.com",
-      "id": 1
-    }
-  ],
+  "users": [],
+  "CompleteSignup": [],
   "LoginUsers": [
     {
       "user": {
@@ -74,27 +57,54 @@
         "password": "Menna123456789"
       },
       "id": 1
-    }
-  ],
-  "EmailsToResetPassword": [
-    {
-      "EmailsToReset": {
-        "email": "menna@gmail.com"
-      },
-      "id": 1
     },
-
     {
-      "ResendEmailsToReset": "menna.nawar99@gmail.com",
+      "user": {
+        "email": "menna@gmail.com",
+        "password": "Menna123456789"
+      },
       "id": 2
+    },
+    {
+      "user": {
+        "email": "menna@gmail.com",
+        "password": "Menna123456789"
+      },
+      "id": 3
+    },
+    {
+      "user": {
+        "email": "menna@gmail.com",
+        "password": "Menna123456789"
+      },
+      "id": 4
     }
   ],
+  "EmailsToResetPassword": [],
   "newpasswords": [
     {
       "usernewpassword": {
-        "password": "iiiiiiiiiiiiiiiii"
+        "password": "11111111111111111"
       },
       "id": 1
+    },
+    {
+      "usernewpassword": {
+        "password": "11111111111111111"
+      },
+      "id": 2
+    },
+    {
+      "usernewpassword": {
+        "password": "11111111111111111"
+      },
+      "id": 3
+    },
+    {
+      "usernewpassword": {
+        "password": "11111111111111111"
+      },
+      "id": 4
     }
   ],
   "notificationData": [

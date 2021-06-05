@@ -147,7 +147,7 @@ const AccountServices = {
   // Forgot Password Form
   // 1-enter email
   emailToResetPassword: async (props) => {
-    let go = false;
+    let go;
     const {
       email,
     } = props;
