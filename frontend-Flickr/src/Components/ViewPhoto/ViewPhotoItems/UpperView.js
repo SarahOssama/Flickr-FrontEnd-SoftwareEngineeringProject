@@ -25,7 +25,7 @@ const UpperView = ({ photoInfo }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [PhotoProps, setPhotoProps] = useState({
-    id: 6,
+    id: localStorage.getItem('ImgID'),
     Token: accessToken,
   });
   const handleAddFaved = async () => {

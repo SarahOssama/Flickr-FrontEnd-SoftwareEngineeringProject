@@ -9,7 +9,7 @@ const UseViewPhotoServices = () => {
   // const [viewphoto, viewPhoto] = useState(true);
   const [viewGetPhotoData, setViewGetphotoData] = useState([]);
   const [PhotoProps, setPhotoProps] = useState({
-    id: 6,
+    id: localStorage.getItem('ImgID'),
     Token: accessToken,
   });
   // console.log(id);
@@ -22,11 +22,11 @@ const UseViewPhotoServices = () => {
   const viewphoto = false;
 
   useEffect(async () => {
-    console.log(viewphoto, 'reachUpload');
+  //  console.log(viewphoto, 'reachUpload');
 
     // if (viewphoto) {
     const response = await ViewPhotoServices.getPhotoInfo(PhotoProps);
-    console.log(response);
+    // console.log(response);
     await setViewGetphotoData(response);
     // }
   }, [viewphoto]);

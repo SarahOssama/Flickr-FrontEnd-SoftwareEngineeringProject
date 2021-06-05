@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState, useHistory, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+
 import './Photo.css';
 import { MdMoreHoriz } from 'react-icons/md';
 import { AiOutlinePlusSquare, AiOutlineStar } from 'react-icons/ai';
 import { RiChat3Line } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+
 import moment from 'moment';
 // import ViewPhoto from '../../ViewPhoto/ViewPhoto';
 import ViewPhotoServices from '../../ViewPhoto/ViewPhotoServices';
@@ -14,21 +16,22 @@ import ViewPhotoServices from '../../ViewPhoto/ViewPhotoServices';
 /* eslint-disable react/prop-types */
 
 const PhotoSet1 = ({ pCard }) => {
-  // const history = useHistory();
+  const history = useHistory();
   // console.log(moment.utc(pCard.date_posted).local().startOf('seconds').fromNow());
   const date = moment.utc(pCard.date_posted).local().startOf('seconds').fromNow();
   const imgSrc = `https://fotone.me${pCard.media_file}`;
   // const imgSrc = pCard.img;
   const avatar = 'https://www.w3schools.com/w3images/avatar2.png';
   // const [viewGetPhotoData, setViewGetphotoData] = useState([]);
-  useEffect(() => {
-    const handleGetViewPhoto = (e) => {
-      ViewPhotoServices(pCard.id);
-      console.log(e);
-      // ViewPhoto(imgSrc);
-      // const route = history.push('/photo');
-    };
-  }, []);
+  const handleGetViewPhoto = (e) => {
+    // ViewPhotoServices(pCard.id);
+    // console.log(e);
+    // ViewPhoto(imgSrc);
+    localStorage.removeItem('ImgID');
+    localStorage.setItem('ImgID', pCard.id);
+    // console.log(localStorage.getItem('ImgID'));
+    history.push('/photo');
+  };
 
   return (
     <div className="containerHome">
@@ -46,6 +49,7 @@ const PhotoSet1 = ({ pCard }) => {
             src={imgSrc}
             alt="Avatar"
             className="imageCompHome"
+            onClick={handleGetViewPhoto}
           />
         </Link>
         <div className="imgOverlayHome">

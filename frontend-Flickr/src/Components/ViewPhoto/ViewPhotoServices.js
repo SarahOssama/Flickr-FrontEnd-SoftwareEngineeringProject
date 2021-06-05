@@ -8,7 +8,7 @@ const ViewPhotoServices = {
     let go = false;
     let response = [];
     const { id, Token } = props;
-    console.log(id, Token);
+    // console.log(id, Token);
     await axios
       .get(`${Conf.backURL}photos/${id}`, {
         headers: {
@@ -23,7 +23,7 @@ const ViewPhotoServices = {
       .then((res) => {
         // eslint-disable-next-line no-console
         response = res.data.photo;
-        console.log(response);
+        // console.log(response);
         go = true;
       });
     return response;
