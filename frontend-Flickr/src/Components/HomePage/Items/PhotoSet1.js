@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useState, useHistory, useEffect } from 'react';
 import './Photo.css';
 import { MdMoreHoriz } from 'react-icons/md';
 import { AiOutlinePlusSquare, AiOutlineStar } from 'react-icons/ai';
@@ -9,23 +9,26 @@ import { RiChat3Line } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 // import ViewPhoto from '../../ViewPhoto/ViewPhoto';
-// import ViewPhotoServices from '../../ViewPhoto/ViewPhotoServices';
+import ViewPhotoServices from '../../ViewPhoto/ViewPhotoServices';
 
 /* eslint-disable react/prop-types */
 
 const PhotoSet1 = ({ pCard }) => {
+  // const history = useHistory();
   // console.log(moment.utc(pCard.date_posted).local().startOf('seconds').fromNow());
   const date = moment.utc(pCard.date_posted).local().startOf('seconds').fromNow();
   const imgSrc = `https://fotone.me${pCard.media_file}`;
   // const imgSrc = pCard.img;
   const avatar = 'https://www.w3schools.com/w3images/avatar2.png';
   // const [viewGetPhotoData, setViewGetphotoData] = useState([]);
-  // const handleGetViewPhoto = () => {
-  //   // const viewPhotoData = ViewPhotoServices(pCard.id, setViewGetphotoData);
-  //   // console.log(viewPhotoData);
-  //   // ViewPhoto(imgSrc);
-  //   history.push('/photo');
-  // };
+  useEffect(() => {
+    const handleGetViewPhoto = (e) => {
+      ViewPhotoServices(pCard.id);
+      console.log(e);
+      // ViewPhoto(imgSrc);
+      // const route = history.push('/photo');
+    };
+  }, []);
 
   return (
     <div className="containerHome">
@@ -38,7 +41,6 @@ const PhotoSet1 = ({ pCard }) => {
       <div className="photoCardHolder">
         <Link
           to="/photos"
-
         >
           <img
             src={imgSrc}
