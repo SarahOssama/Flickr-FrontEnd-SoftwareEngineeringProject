@@ -8,9 +8,11 @@ const accessToken = localStorage.getItem('access token');
 const UploadPhoto = ({ imgUpload }) => {
   // const [mediafield, setmediafield] = useState('Test');
   const [upload, setUpload] = useState(false);
+  const [done, setDone] = useState(false);
+
   //   imgUpload.forEach((file) => setmediafield(file.preview));
   // eslint-disable-next-line no-console
-  console.log(imgUpload);
+  // console.log(imgUpload);
   const photo_height = 234;
   const photo_width = 234;
   // const file = imgUpload;
@@ -48,18 +50,20 @@ const UploadPhoto = ({ imgUpload }) => {
     setUpload(true);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     console.log(upload, 'reachUpload');
 
     if (upload) {
       console.log(body);
 
-      axios
+      await axios
         .post(`${Conf.backURL}photos/upload`, body, {
           headers,
         })
         .then((response) => {
-          console.log(response);
+          if (response.status === 201) {
+            setDone(true);
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -108,7 +112,7 @@ const UploadPhoto = ({ imgUpload }) => {
   //   };
   // }, []);
   return {
-    handleUpload,
+    handleUpload, done,
   };
 };
 

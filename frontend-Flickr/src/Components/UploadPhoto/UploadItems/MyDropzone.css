@@ -92,6 +92,10 @@
   padding: 0;
   display: block;
   color: white;
+  display: block;
+  width: 95%;
+  border: 0;
+  background: rgba(0,0,0,0.1);
 }
 .editorOptions {
   margin: 0;
@@ -113,4 +117,50 @@
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+#editr-title {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.25em;
+  height: 1.25em;
+  margin-bottom: 6px;
+  display: block;
+  width: 95%;
+  border: 0;
+  padding: 0 2px;
+  border-radius: 6px;
+  background: #666;
+  margin: 0 0 0 3px;
+
+}
+
+#editr-description-dupe {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  right: auto;
+  bottom: auto;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: scroll !important;
+  padding: 3px 0 3px 3px;
+  margin: 0 0 0 3px;
+  font-size: 14px;
+  border-radius: 6px;
+  background: #666;
+}
+#editr-description{
+  font-size: 14px;
+    overflow: hidden;
+    padding: 3px 0 3px 3px;
+    margin: 0 0 0 3px;
+    overflow-y: hidden;
+    height: 24px;
+    min-height: 24px;
+    display: block;
+    width: 95%;
+    border: 0;
+    color: #CCC;
+    background-color: transparent;
 }

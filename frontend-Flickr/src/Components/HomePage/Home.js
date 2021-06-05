@@ -40,7 +40,7 @@ const Home = () => {
             }}
           />
           {/* <h2>Feed</h2> */}
-          <OneSignalTest />
+          {/* <OneSignalTest /> */}
           {photoData.length > 0 ? (
             <>
               <PhotoCard

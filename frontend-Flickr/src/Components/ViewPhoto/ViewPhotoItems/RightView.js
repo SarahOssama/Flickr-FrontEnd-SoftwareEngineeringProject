@@ -2,10 +2,10 @@ import React from 'react';
 import './RightView.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const RightView = () => {
-  const views = 234;
-  const faves = 3;
-  const comments = 9;
+const RightView = ({ photoInfo }) => {
+  const views = 6;
+  const faves = photoInfo.count_favourites;
+  const comments = photoInfo.count_comments;
   return (
     <div>
       <div className="rightRow1">
