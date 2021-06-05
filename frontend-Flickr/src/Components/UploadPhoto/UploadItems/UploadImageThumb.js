@@ -71,7 +71,7 @@ const UploadImageThumb = ({ photo, onRemove }) => (
         </div>
         <div className="photoEditable">
           <div className="test">
-            <h2>Test</h2>
+            {/* <h2>Test</h2> */}
           </div>
         </div>
 
