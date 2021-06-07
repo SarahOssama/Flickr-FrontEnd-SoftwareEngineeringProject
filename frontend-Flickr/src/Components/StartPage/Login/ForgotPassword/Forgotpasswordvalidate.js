@@ -14,5 +14,4 @@ function Forgotpasswordvalidate(props) {
 
   return emailerror;
 }
-// export default Forgotpasswordvalidate;
 module.exports = Forgotpasswordvalidate;
