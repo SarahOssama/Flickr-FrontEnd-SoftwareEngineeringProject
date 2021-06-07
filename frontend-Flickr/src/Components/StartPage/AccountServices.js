@@ -80,8 +80,10 @@ const AccountServices = {
   /**
    * backCompleteSignup
    * @param {user emailaddress to Resend verification email} props
+   * @returns response status
    */
   backCompleteSignup: async (props) => {
+    let res;
     await axios
       .post(`${Conf.backURL}accounts/resend-verify-mail/`, {
 
@@ -91,15 +93,11 @@ const AccountServices = {
         console.log(response);
         if (response.status === 201) {
           console.log(response);
+          res = response.status;
         }
       });
 
-    // Verify email
-    // await axios
-    //   .get(`${Conf.backURL}accounts/email-verify/?token=nisi velit in`, { })
-    //   .then((response) => {
-    //     console.log(response);
-    //   });
+    return res;
   },
 
   /**
@@ -224,9 +222,11 @@ const AccountServices = {
   /**
    * backResendEmailsToReset
    * @param {user emailaddress to Resend reset password email} props
+   * @returns response status
    */
 
   backResendEmailsToReset: async (props) => {
+    let res;
     await axios
       .post(`${Conf.backURL}accounts/resend-password-reset-email`, {
 
@@ -235,8 +235,10 @@ const AccountServices = {
       .then((response) => {
         if (response.status === 200) {
           console.log(response);
+          res = response.status;
         }
       });
+    return res;
   },
 
   /**
@@ -262,3 +264,4 @@ const AccountServices = {
 
 };
 export default AccountServices;
+// module.exports = AccountServices;
