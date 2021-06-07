@@ -16,6 +16,10 @@ function SignUpValidate(props) {
 
   if (!props.age) {
     errors.age = 'Required';
+  } else if (props.age < 13) {
+    errors.age = 'In order to use Flickr, you must be 13 or older';
+  } else if (props.age > 120) {
+    errors.age = 'Invalid age';
   }
 
   if (!props.email) {
@@ -33,5 +37,4 @@ function SignUpValidate(props) {
   return errors;
 }
 
-// export default SignUpValidate;
 module.exports = SignUpValidate;

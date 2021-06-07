@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
@@ -7,7 +6,11 @@ import Conf from '../../Conf';
 
 const AccountServices = {
 
-  // Sign Up Form
+  /**
+   * addUser
+   * @param {list of SignUp Form inputs} props
+   * @returns Flag to route to complete SignUp page
+   */
   addUser: async (props) => {
     let go = false;
     await axios
@@ -24,16 +27,16 @@ const AccountServices = {
     return go;
   },
 
+  /**
+   * backaddUser
+   * @param {list of SignUp Form inputs} props
+   * @returns Flag to route to complete SignUp page
+   */
   backaddUser: async (props) => {
     let go = false;
     const {
       email, password, first_name, last_name, age,
     } = props;
-    console.log(email);
-    console.log(password);
-    console.log(first_name);
-    console.log(last_name);
-    console.log(age);
     await axios
       .post(`${Conf.backURL}accounts/sign-up/`, {
 
@@ -57,13 +60,14 @@ const AccountServices = {
       });
     return go;
   },
-  /// //////
 
-  // Complete Sign Up Form
-
+  /**
+   * CompleteSignup
+   * @param {user emailaddress to Resend verification email} props
+   */
   CompleteSignup: async (props) => {
     await axios
-      .post(`${Conf.localURL}CompleteSignup`, {
+      .post(`${Conf.localURL}CompleteSignup/`, {
         ResendemailSignup: props,
       })
       .then((response) => {
@@ -73,15 +77,15 @@ const AccountServices = {
       });
   },
 
+  /**
+   * backCompleteSignup
+   * @param {user emailaddress to Resend verification email} props
+   */
   backCompleteSignup: async (props) => {
-    // const { ResendemailSignup } = props;
-    console.log(props);
     await axios
       .post(`${Conf.backURL}accounts/resend-verify-mail/`, {
-        // headers: {
-        //   'content-type': 'application/json',
-        // },
-        props,
+
+        email: props,
       })
       .then((response) => {
         console.log(response);
@@ -89,17 +93,25 @@ const AccountServices = {
           console.log(response);
         }
       });
+
+    // Verify email
+    // await axios
+    //   .get(`${Conf.backURL}accounts/email-verify/?token=nisi velit in`, { })
+    //   .then((response) => {
+    //     console.log(response);
+    //   });
   },
-  /// ///////
 
-  // Login Form
-
+  /**
+   * LoginUser
+   * @param {list of login form inputs} props
+   * @returns Flag to route to user Start page
+   */
   LoginUser: async (props) => {
-    // const history = useHistory();
     let go = false;
 
     await axios
-      .post(`${Conf.localURL}LoginUsers`, {
+      .post(`${Conf.localURL}LoginUsers/`, {
         user: props,
       })
       .then((response) => {
@@ -111,12 +123,15 @@ const AccountServices = {
     return go;
   },
 
+  /**
+   * backLoginUser
+   * @param {list of login form inputs} props
+   * @returns Flag to route to user Start page
+   */
   backLoginUser: async (props) => {
     const {
       email, password,
     } = props;
-    console.log(email);
-    console.log(password);
     let go = false;
 
     await axios
@@ -138,21 +153,22 @@ const AccountServices = {
           go = false;
         }
       });
-    console.log(localStorage);
     return go;
   },
 
-  /// ///////
+  /**
+   * emailToResetPassword
+   * @param {user emailaddress to send reset password email} props
+   * @returns Flag to route to check your inbox page
+   */
 
-  // Forgot Password Form
-  // 1-enter email
   emailToResetPassword: async (props) => {
     let go;
     const {
       email,
     } = props;
     await axios
-      .post(`${Conf.localURL}EmailsToResetPassword/`, { email })
+      .post(`${Conf.localURL}EmailsToResetPassword/`, { EmailToResetPassword: email })
       .then((response) => {
         if (response.status === 201) {
           console.log(response);
@@ -161,6 +177,12 @@ const AccountServices = {
       });
     return go;
   },
+
+  /**
+   * backemailToResetPassword
+   * @param {user emailaddress to send reset password email} props
+   * @returns Flag to route to check your inbox page
+   */
 
   backemailToResetPassword: async (props) => {
     const {
@@ -182,15 +204,15 @@ const AccountServices = {
       });
     return go;
   },
-  /// ///////
 
-  // Resend reset-password email
-
-  ResendEmailsToReset: async () => {
-    const data = localStorage.getItem('ResendemailLogin');
+  /**
+   * ResendEmailsToReset
+   * @param {user emailaddress to Resend reset password email} props
+   */
+  ResendEmailsToReset: async (props) => {
     await axios
       .post(`${Conf.localURL}EmailsToResetPassword`, {
-        emailToResetPassword: data,
+        ResendEmailToResetPassword: props,
       })
       .then((response) => {
         if (response.status === 201) {
@@ -199,13 +221,16 @@ const AccountServices = {
       });
   },
 
+  /**
+   * backResendEmailsToReset
+   * @param {user emailaddress to Resend reset password email} props
+   */
+
   backResendEmailsToReset: async (props) => {
     await axios
       .post(`${Conf.backURL}accounts/resend-password-reset-email`, {
-        // headers: {
-        //   'content-type': 'application/json',
-        // },
-        props,
+
+        email: props,
       })
       .then((response) => {
         if (response.status === 200) {
@@ -213,10 +238,12 @@ const AccountServices = {
         }
       });
   },
-  /// ///////
 
-  // Forgot Password Form
-  // 2-enter password
+  /**
+   * addNewPassword
+   * @param {new password} props
+   * @returns Flag to route to Congratulation page
+   */
 
   addNewPassword: async (props) => {
     let go = false;
@@ -232,7 +259,6 @@ const AccountServices = {
       });
     return go;
   },
-  /// ///////
 
 };
 export default AccountServices;

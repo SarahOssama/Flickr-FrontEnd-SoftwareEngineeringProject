@@ -48,43 +48,110 @@
       "date_posted": "2021-06-01T10:38:23.004000Z"
     }
   ],
-  "users": [],
-  "CompleteSignup": [],
+  "users": [
+    {
+      "newuser": {
+        "email": "menna.nawar@gmail.com",
+        "password": "Mennakamel123456",
+        "first_name": "menna",
+        "last_name": "kamel",
+        "age": "22"
+      },
+      "id": 1
+    },
+    {
+      "newuser": {
+        "email": "ahmed.kamelnawar@gmail.com",
+        "password": "Ahmedkamel123456",
+        "first_name": "ahmed",
+        "last_name": "nawar",
+        "age": "31"
+      },
+      "id": 2
+    }
+  ],
+  "CompleteSignup": [
+    {
+      "ResendemailSignup": "menna.nawar@gmail.com",
+      "id": 1
+    },
+    {
+      "ResendemailSignup": {
+        "email": "menna.nawar@gmail.com"
+      },
+      "id": 2
+    },
+    {
+      "ResendemailSignup": {
+        "email": "menna.nawar@gmail.com"
+      },
+      "id": 3
+    }
+  ],
   "LoginUsers": [
     {
       "user": {
-        "email": "menna@gmail.com",
-        "password": "Menna123456789"
+        "email": "menna.nawar@gmail.com",
+        "password": "Mennakamel123456"
       },
       "id": 1
     },
     {
       "user": {
-        "email": "menna@gmail.com",
-        "password": "Menna123456789"
+        "email": "menna.nawar@gmail.com",
+        "password": "Mennakamel123456"
       },
       "id": 2
     },
     {
       "user": {
-        "email": "menna@gmail.com",
-        "password": "Menna123456789"
+        "email": "menna.nawar99@gmail.com",
+        "password": "Saraossama11111111"
       },
       "id": 3
     },
     {
       "user": {
-        "email": "menna@gmail.com",
-        "password": "Menna123456789"
+        "email": "menna.nawar@gmail.com",
+        "password": "Mennakamel123456"
       },
       "id": 4
     }
   ],
-  "EmailsToResetPassword": [],
+  "EmailsToResetPassword": [
+    {
+      "email": "menna.nawar@gmail.com",
+      "id": 1
+    },
+    {
+      "emailToResetPassword": "menna.nawar@gmail.com",
+      "id": 2
+    },
+    {
+      "EmailToResetPassword": "menna.nawar@gmail.com",
+      "id": 3
+    },
+    {
+      "ResendEmailToResetPassword": {
+        "email": "menna.nawar@gmail.com"
+      },
+      "id": 4
+    },
+    {
+      "EmailToResetPassword": "menna.nawar@gmail.com",
+      "id": 5
+    },
+    {
+      "ResendEmailToResetPassword": {
+        "email": "menna.nawar@gmail.com"
+      },
+      "id": 6
+    }
+  ],
   "newpasswords": [
     {
       "usernewpassword": {
-        "password": "11111111111111111"
+        "password": "Dfghjkl11111111111"
       },
       "id": 1
     },
@@ -93,18 +160,6 @@
         "password": "11111111111111111"
       },
       "id": 2
-    },
-    {
-      "usernewpassword": {
-        "password": "11111111111111111"
-      },
-      "id": 3
-    },
-    {
-      "usernewpassword": {
-        "password": "11111111111111111"
-      },
-      "id": 4
     }
   ],
   "notificationData": [
