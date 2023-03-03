@@ -1,6 +1,13 @@
 # Project Title
  Mimicking Flickr Website for Educational Purposes
 
+## Overview
+
+
+https://user-images.githubusercontent.com/62894826/222704025-0b14d732-84eb-484d-b9cc-aaa1af587560.mp4
+
+
+
 ## Requirements 
  ```
  Node.js
@@ -64,7 +71,6 @@ npm i -D jest
  ```
  npm run build
  ```
-
 ## Credits 
  This project is done by Team 5 Front-End Software Engineering course Cairo University, Faculty of Engineering 
 ### Under the supervision of:
@@ -78,3 +84,5 @@ npm i -D jest
 * Mennatallah Hany Elkhodary
 * Mennatallah Kamel Nawar
 * Omar Mohamed Magdy
+
+
